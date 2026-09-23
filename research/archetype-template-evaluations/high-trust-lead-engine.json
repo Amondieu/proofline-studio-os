@@ -1,0 +1,25 @@
+{
+  "schema_version": "studio.archetype-template-evaluation.v1",
+  "evaluation_id": "eval_high_trust_lead_engine_v1",
+  "archetype_id": "high-trust-lead-engine",
+  "template_ref": "templates/archetypes/high-trust-lead-engine-master.v1.md",
+  "source_ids": ["src_w3c_wcag22", "src_baymard_methodology", "src_nng_b2b_usability", "src_trust_company_case"],
+  "scores": {
+    "decision_clarity": 4,
+    "buyer_confidence": 4,
+    "action_path": 4,
+    "accessibility": 4,
+    "performance": 4,
+    "archetype_fit": 4,
+    "craft_and_distinctiveness": 3,
+    "maintainability": 4
+  },
+  "normative_gates_passed": false,
+  "functional_gates_passed": false,
+  "human_test_completed": false,
+  "human_reviewed": false,
+  "decision": "candidate",
+  "rationale": "The template foregrounds safety, scope, privacy, and response expectations, but legal text, consent handling, sensitive-data behavior, and human testing are deliberately still open.",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

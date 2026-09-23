@@ -9,7 +9,7 @@
   "scripts": {
     "graph:validate": "graphify profile validate --config graphify.yaml",
     "graph:update": "graphify profile build . --config graphify.yaml && node scripts/normalize_graphify_manifest.mjs .",
-    "graph:code": "graphify update . --scope all --no-description --no-label",
+    "graph:code": "graphify update . --scope all --no-description --no-label && node scripts/normalize_graphify_manifest.mjs .",
     "graph:status": "graphify check-update .",
     "graph:portable": "graphify portable-check .",
     "studio:validate": "python scripts/validate_studio_contracts.py",

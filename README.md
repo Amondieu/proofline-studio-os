@@ -72,6 +72,11 @@ network dependency and its teardown form is a local demonstration only.
   send gate, and evidence-backed quality standard.
 - `docs/strategy/32-ARCHETYPE-QUALITY-INTELLIGENCE.md` — source hierarchy,
   archetype research protocol, and master-template evaluation rules.
+- `.specify/` and `specs/` — lightweight project-local specification workflow,
+  constitution, plan, tasks, and convergence evidence.
+- `templates/archetypes/` and `research/archetype-template-evaluations/` — five
+  direction-neutral master templates and their deliberately human-gated
+  candidate evaluations.
 - `docs/architecture/LAYA-ADVISORY-LAYER.md` — optional model routing,
   abstention, calibration, and authority boundaries.
 - `LLMarena/` — preserved deep-research bundle; see

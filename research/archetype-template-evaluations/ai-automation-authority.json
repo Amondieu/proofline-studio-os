@@ -1,0 +1,25 @@
+{
+  "schema_version": "studio.archetype-template-evaluation.v1",
+  "evaluation_id": "eval_ai_automation_authority_v1",
+  "archetype_id": "ai-automation-authority",
+  "template_ref": "templates/archetypes/ai-automation-authority-master.v1.md",
+  "source_ids": ["src_w3c_wcag22", "src_webdev_cwv_thresholds", "src_nng_b2b_usability", "src_design_critique_directory"],
+  "scores": {
+    "decision_clarity": 4,
+    "buyer_confidence": 3,
+    "action_path": 4,
+    "accessibility": 3,
+    "performance": 3,
+    "archetype_fit": 4,
+    "craft_and_distinctiveness": 3,
+    "maintainability": 4
+  },
+  "normative_gates_passed": false,
+  "functional_gates_passed": false,
+  "human_test_completed": false,
+  "human_reviewed": false,
+  "decision": "candidate",
+  "rationale": "Strong decision and proof boundaries are specified, but the template has not yet been tested with a real buyer, implemented in a working route, or reviewed for claims, accessibility, performance, and rights.",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

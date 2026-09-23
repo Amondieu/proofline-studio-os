@@ -14,7 +14,7 @@ def audit(root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     # LLMarena is a preserved research archive. Its report intentionally uses
     # URL-like route examples and is not an operational project manifest.
-    ignored = {".git", "node_modules", ".graphify", "__pycache__", "LLMarena"}
+    ignored = {".git", ".venv", "node_modules", ".graphify", "__pycache__", "LLMarena"}
     for path in root.rglob("*"):
         if not path.is_file() or any(part in ignored for part in path.parts) or "tests" in path.parts:
             continue

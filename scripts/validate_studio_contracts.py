@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import sys
+import csv
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -62,6 +63,38 @@ def validate(root: Path = ROOT) -> list[str]:
         StudioProject.model_validate(_load(manifest))
     except Exception as exc:  # intentionally surfaces the exact contract error
         errors.append(f"{manifest.relative_to(root)}: {exc}")
+
+    archetypes_path = root / "config" / "studio" / "archetypes.v1.json"
+    evaluation_dir = root / "research" / "archetype-template-evaluations"
+    source_register = root / "research" / "archetype-source-register.csv"
+    try:
+        from studio.quality_research import ArchetypeTemplateEvaluation
+
+        archetype_ids = {
+            item["id"] for item in _load(archetypes_path).get("archetypes", [])
+        }
+        evaluation_paths = sorted(evaluation_dir.glob("*.json"))
+        evaluation_ids: set[str] = set()
+        registered_source_ids: set[str] = set()
+        with source_register.open(encoding="utf-8", newline="") as handle:
+            registered_source_ids = {
+                row["source_id"] for row in csv.DictReader(handle) if row.get("source_id")
+            }
+        for path in evaluation_paths:
+            evaluation = ArchetypeTemplateEvaluation.model_validate(_load(path))
+            evaluation_ids.add(evaluation.archetype_id)
+            if not (root / evaluation.template_ref).is_file():
+                errors.append(f"{path.relative_to(root)}: missing template {evaluation.template_ref}")
+            unknown_sources = set(evaluation.source_ids) - registered_source_ids
+            if unknown_sources:
+                errors.append(f"{path.relative_to(root)}: unknown source ids {sorted(unknown_sources)}")
+        if evaluation_ids != archetype_ids:
+            errors.append(
+                "archetype evaluations must cover exactly the catalog: "
+                f"expected={sorted(archetype_ids)}, found={sorted(evaluation_ids)}"
+            )
+    except Exception as exc:  # intentionally surfaces the exact contract error
+        errors.append(f"archetype template evaluations: {exc}")
     return errors
 
 

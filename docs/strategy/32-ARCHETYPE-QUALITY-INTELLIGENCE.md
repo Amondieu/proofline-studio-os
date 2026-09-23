@@ -84,6 +84,17 @@ on an essential gate cannot be averaged away by visual craft.
 6. Review the result with a human and set `candidate`, `pilot`,
    `gold_candidate`, `revise`, or `reject`.
 
+The project-local specification run for this system lives in
+`.specify/memory/constitution.md` and
+`specs/001-archetype-quality-intelligence/`. It adapts the
+[GitHub Spec Kit](https://github.com/github/spec-kit) sequence — constitution,
+specify, plan, tasks, implement, converge — without adding a second runtime or
+delegating authority to an agent. The five direction-neutral master templates
+are in `templates/archetypes/`; their initial records are in
+`research/archetype-template-evaluations/`. All five records intentionally
+remain `candidate` with human and functional gates false until real task tests,
+rights/claims review, and human approval are completed.
+
 ## Repository contracts
 
 - `config/studio/quality-source-policy.v1.json` defines source classes and
@@ -93,6 +104,9 @@ on an essential gate cannot be averaged away by visual craft.
   reviews and prevents a gold candidate without human evidence.
 - `templates/archetype-quality-review.md` is the manual review form.
 - `studio/quality_research.py` provides the typed models.
+- `tests/test_archetype_evaluations.py` and
+  `scripts/validate_studio_contracts.py` enforce exact five-archetype coverage,
+  registered sources, template references, and the no-false-Gold boundary.
 
 ## Initial high-signal sources
 

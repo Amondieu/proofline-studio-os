@@ -1,0 +1,25 @@
+{
+  "schema_version": "studio.archetype-template-evaluation.v1",
+  "evaluation_id": "eval_expert_authority_v1",
+  "archetype_id": "expert-authority",
+  "template_ref": "templates/archetypes/expert-authority-master.v1.md",
+  "source_ids": ["src_w3c_wcag22", "src_nng_b2b_usability", "src_nextlevel_case", "src_siteinspire_gallery"],
+  "scores": {
+    "decision_clarity": 4,
+    "buyer_confidence": 3,
+    "action_path": 4,
+    "accessibility": 4,
+    "performance": 4,
+    "archetype_fit": 4,
+    "craft_and_distinctiveness": 3,
+    "maintainability": 4
+  },
+  "normative_gates_passed": false,
+  "functional_gates_passed": false,
+  "human_test_completed": false,
+  "human_reviewed": false,
+  "decision": "candidate",
+  "rationale": "The template makes point of view, fit, method, and engagement legible, but its proof slots and application path still require permission checks, buyer testing, implementation evidence, and human review.",
+  "reviewed_by": null,
+  "reviewed_on": null
+}

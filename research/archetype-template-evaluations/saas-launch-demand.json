@@ -1,0 +1,25 @@
+{
+  "schema_version": "studio.archetype-template-evaluation.v1",
+  "evaluation_id": "eval_saas_launch_demand_v1",
+  "archetype_id": "saas-launch-demand",
+  "template_ref": "templates/archetypes/saas-launch-demand-master.v1.md",
+  "source_ids": ["src_w3c_wcag22", "src_webdev_cwv_thresholds", "src_baymard_saas_2025", "src_whip_around_case"],
+  "scores": {
+    "decision_clarity": 4,
+    "buyer_confidence": 3,
+    "action_path": 4,
+    "accessibility": 3,
+    "performance": 3,
+    "archetype_fit": 4,
+    "craft_and_distinctiveness": 3,
+    "maintainability": 4
+  },
+  "normative_gates_passed": false,
+  "functional_gates_passed": false,
+  "human_test_completed": false,
+  "human_reviewed": false,
+  "decision": "candidate",
+  "rationale": "The sequence connects use case, product evidence, fit, and demo or trial action, but no real product walkthrough, current launch context, human test, or independent proof review has been completed.",
+  "reviewed_by": null,
+  "reviewed_on": null
+}
