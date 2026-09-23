@@ -17,6 +17,7 @@
     "build": { "$ref": "#/$defs/build" },
     "qa_receipt": { "$ref": "qa-receipt.v1.json" },
     "launch_review": { "$ref": "#/$defs/launch_review" },
+    "archetype_assessment": { "$ref": "../client-archetype-assessment.schema.json" },
     "asset_records": { "type": "array", "items": { "$ref": "asset-record.v1.json" } },
     "approvals": { "type": "array", "items": { "$ref": "approval-record.v1.json" } }
   },

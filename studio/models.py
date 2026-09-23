@@ -6,7 +6,7 @@ from datetime import date, datetime
 from enum import StrEnum
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field
+from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 
 class Contract(BaseModel):
@@ -253,6 +253,76 @@ class LaunchReview(Contract):
     reviewed_at: datetime | None = None
 
 
+class ArchetypeRecord(Contract):
+    """A human-reviewed business archetype blueprint, not an industry template."""
+
+    schema_version: Literal["studio.archetype-record.v1"] = "studio.archetype-record.v1"
+    archetype_id: str = Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+){1,60}$")
+    name: str = Field(min_length=3, max_length=160)
+    status: Literal["pilot", "approved", "retired"] = "pilot"
+    ideal_client: list[str] = Field(min_length=1, max_length=12)
+    primary_jtbd: str = Field(min_length=20, max_length=1000)
+    buyer_hesitations: list[str] = Field(min_length=1, max_length=12)
+    primary_conversion: str = Field(min_length=3, max_length=160)
+    secondary_conversion: str | None = None
+    primary_kpi: str = Field(min_length=3, max_length=160)
+    hero_principle: str = Field(min_length=10, max_length=600)
+    proof_requirements: list[str] = Field(min_length=1, max_length=20)
+    core_sections: list[str] = Field(min_length=6, max_length=14)
+    recommended_design_direction: Literal["precision", "cinematic", "editorial"]
+    motion_rule: str = Field(min_length=10, max_length=500)
+    prohibited_patterns: list[str] = Field(min_length=1, max_length=20)
+    recommended_offer_tier: Literal["conversion-starter", "authority-sprint", "launch-system"]
+    qualification_signals: list[str] = Field(min_length=1, max_length=20)
+    disqualifiers: list[str] = Field(default_factory=list, max_length=20)
+    required_gates: list[Stage] = Field(min_length=1, max_length=6)
+    reviewed_by: str | None = None
+    reviewed_on: date | None = None
+
+
+class ArchetypeScore(Contract):
+    archetype_id: str = Field(pattern=r"^[a-z0-9]+(?:-[a-z0-9]+){1,60}$")
+    score: float = Field(ge=0, le=100)
+    rationale: str = Field(min_length=10, max_length=500)
+
+
+class ClientArchetypeAssessment(Contract):
+    """A recommendation record; it cannot approve a direction, offer, or launch."""
+
+    schema_version: Literal["studio.client-archetype-assessment.v1"] = "studio.client-archetype-assessment.v1"
+    project_id: str = Field(pattern=r"^studio_[a-z0-9_-]{4,80}$")
+    business_type: str = Field(min_length=2, max_length=240)
+    primary_offer: str = Field(min_length=10, max_length=1000)
+    ideal_buyer: str = Field(min_length=10, max_length=1000)
+    buying_trigger: str = Field(min_length=10, max_length=1000)
+    primary_job_to_be_done: str = Field(min_length=20, max_length=1000)
+    primary_conversion: str = Field(min_length=3, max_length=160)
+    deal_value: str = Field(min_length=1, max_length=160)
+    sales_cycle: str = Field(min_length=1, max_length=160)
+    proof_available: list[str] = Field(default_factory=list, max_length=30)
+    highest_buyer_risk: str = Field(min_length=10, max_length=1000)
+    content_complexity: Literal["low", "medium", "high"]
+    visual_intensity: Literal["low", "medium", "high"]
+    privacy_or_regulatory_risk: Literal["low", "medium", "high"]
+    candidate_scores: list[ArchetypeScore] = Field(min_length=1, max_length=8)
+    recommended_archetype: str | None = None
+    recommended_design_direction: Literal["precision", "cinematic", "editorial"] | None = None
+    recommended_offer_tier: Literal["conversion-starter", "authority-sprint", "launch-system"] | None = None
+    required_human_review: list[str] = Field(min_length=1, max_length=20)
+    rationale: str = Field(min_length=10, max_length=1000)
+    assessed_by: str = Field(min_length=2, max_length=160)
+    assessed_on: date
+    human_confirmed: bool = False
+    confirmed_by: str | None = None
+    confirmed_on: date | None = None
+
+    @model_validator(mode="after")
+    def confirmation_requires_a_person(self) -> "ClientArchetypeAssessment":
+        if self.human_confirmed and (not self.confirmed_by or not self.confirmed_on):
+            raise ValueError("human confirmation requires confirmed_by and confirmed_on")
+        return self
+
+
 class StudioProject(Contract):
     schema_version: Literal["studio.project.v1"] = "studio.project.v1"
     project_id: str = Field(pattern=r"^studio_[a-z0-9_-]{4,80}$")
@@ -264,5 +334,6 @@ class StudioProject(Contract):
     build: BuildChecklist | None = None
     qa_receipt: QAReceipt | None = None
     launch_review: LaunchReview | None = None
+    archetype_assessment: ClientArchetypeAssessment | None = None
     asset_records: list[AssetRecord] = Field(default_factory=list, max_length=500)
     approvals: list[ApprovalRecord] = Field(default_factory=list, max_length=200)

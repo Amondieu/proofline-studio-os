@@ -40,6 +40,7 @@ def validate(root: Path = ROOT) -> list[str]:
         "config/studio/qa-policy.v1.json",
         "config/studio/evidence-policy.v1.json",
         "config/studio/cookbook-policy.v1.json",
+        "config/studio/archetypes.v1.json",
     ):
         path = root / relative
         try:

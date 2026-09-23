@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:archetype-record:v1",
+  "title": "Proofline Business Archetype Record v1",
+  "description": "A human-reviewed conversion blueprint organized around observable buying jobs.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "archetype_id", "name", "status", "ideal_client", "primary_jtbd", "buyer_hesitations", "primary_conversion", "primary_kpi", "hero_principle", "proof_requirements", "core_sections", "recommended_design_direction", "motion_rule", "prohibited_patterns", "recommended_offer_tier", "qualification_signals", "required_gates"],
+  "properties": {
+    "schema_version": { "const": "studio.archetype-record.v1" },
+    "archetype_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+){1,60}$" },
+    "name": { "type": "string", "minLength": 3 },
+    "status": { "enum": ["pilot", "approved", "retired"] },
+    "ideal_client": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "primary_jtbd": { "type": "string", "minLength": 20 },
+    "buyer_hesitations": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "primary_conversion": { "type": "string", "minLength": 3 },
+    "secondary_conversion": { "type": ["string", "null"] },
+    "primary_kpi": { "type": "string", "minLength": 3 },
+    "hero_principle": { "type": "string", "minLength": 10 },
+    "proof_requirements": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "core_sections": { "type": "array", "minItems": 6, "maxItems": 14, "items": { "type": "string" } },
+    "recommended_design_direction": { "enum": ["precision", "cinematic", "editorial"] },
+    "motion_rule": { "type": "string", "minLength": 10 },
+    "prohibited_patterns": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "recommended_offer_tier": { "enum": ["conversion-starter", "authority-sprint", "launch-system"] },
+    "qualification_signals": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "disqualifiers": { "type": "array", "items": { "type": "string" } },
+    "required_gates": { "type": "array", "minItems": 1, "maxItems": 6, "items": { "enum": ["discovery", "message", "direction", "build", "qa", "launch"] } },
+    "reviewed_by": { "type": ["string", "null"] },
+    "reviewed_on": { "type": ["string", "null"], "format": "date" }
+  }
+}

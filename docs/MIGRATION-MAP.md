@@ -16,6 +16,7 @@ domain machinery that belongs to social-media publishing.
 | Graphify-ready source corpus | `graphify.yaml` + studio ontology | Strategy and standards remain retrievable and reviewable. |
 | Human review / compliance gates | Discovery, message, direction, build, QA, and launch gates | Quality is a process and ownership boundary, not a visual style. |
 | Research-backed receipts and rights records | `schemas/studio/qa-receipt.v1.json`, `asset-record.v1.json`, `approval-record.v1.json` | QA, provenance, and human approvals remain portable instead of living in chat history. |
+| Business archetype thinking | `config/studio/archetypes.v1.json`, `ClientArchetypeAssessment`, docs/strategy/19–22 | Reuse observable buyer jobs and conversion blueprints without turning them into industry templates or automatic approvals. |
 
 ## Exclude from the first studio slice
 
@@ -44,6 +45,8 @@ domain machinery that belongs to social-media publishing.
   findings do not silently become live policy.
 - A closed-loop pattern cookbook: research candidate → evidence → local proof →
   human review → pilot/approval → QA receipt → revised or deprecated rule.
+- Five pilot business archetypes with two deliberately public on the master site;
+  fit remains subject to Discovery and human confirmation.
 
 ## Acceptance check
 

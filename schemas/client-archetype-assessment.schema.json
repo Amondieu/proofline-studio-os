@@ -1,0 +1,48 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:client-archetype-assessment:v1",
+  "title": "Proofline Client Archetype Assessment v1",
+  "description": "A recommendation record that keeps archetype fit subject to human Discovery review.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "business_type", "primary_offer", "ideal_buyer", "buying_trigger", "primary_job_to_be_done", "primary_conversion", "deal_value", "sales_cycle", "proof_available", "highest_buyer_risk", "content_complexity", "visual_intensity", "privacy_or_regulatory_risk", "candidate_scores", "required_human_review", "rationale", "assessed_by", "assessed_on", "human_confirmed"],
+  "properties": {
+    "schema_version": { "const": "studio.client-archetype-assessment.v1" },
+    "project_id": { "type": "string", "pattern": "^studio_[a-z0-9_-]{4,80}$" },
+    "business_type": { "type": "string", "minLength": 2 },
+    "primary_offer": { "type": "string", "minLength": 10 },
+    "ideal_buyer": { "type": "string", "minLength": 10 },
+    "buying_trigger": { "type": "string", "minLength": 10 },
+    "primary_job_to_be_done": { "type": "string", "minLength": 20 },
+    "primary_conversion": { "type": "string", "minLength": 3 },
+    "deal_value": { "type": "string", "minLength": 1 },
+    "sales_cycle": { "type": "string", "minLength": 1 },
+    "proof_available": { "type": "array", "items": { "type": "string" } },
+    "highest_buyer_risk": { "type": "string", "minLength": 10 },
+    "content_complexity": { "enum": ["low", "medium", "high"] },
+    "visual_intensity": { "enum": ["low", "medium", "high"] },
+    "privacy_or_regulatory_risk": { "enum": ["low", "medium", "high"] },
+    "candidate_scores": {
+      "type": "array", "minItems": 1, "maxItems": 8,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["archetype_id", "score", "rationale"],
+        "properties": {
+          "archetype_id": { "type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+){1,60}$" },
+          "score": { "type": "number", "minimum": 0, "maximum": 100 },
+          "rationale": { "type": "string", "minLength": 10 }
+        }
+      }
+    },
+    "recommended_archetype": { "type": ["string", "null"] },
+    "recommended_design_direction": { "enum": ["precision", "cinematic", "editorial", null] },
+    "recommended_offer_tier": { "enum": ["conversion-starter", "authority-sprint", "launch-system", null] },
+    "required_human_review": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "rationale": { "type": "string", "minLength": 10 },
+    "assessed_by": { "type": "string", "minLength": 2 },
+    "assessed_on": { "type": "string", "format": "date" },
+    "human_confirmed": { "type": "boolean" },
+    "confirmed_by": { "type": ["string", "null"] },
+    "confirmed_on": { "type": ["string", "null"], "format": "date" }
+  }
+}
