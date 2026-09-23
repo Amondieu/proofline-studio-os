@@ -57,6 +57,9 @@ domain machinery that belongs to social-media publishing.
   source admissibility, suppression, nine-condition send gates, and a
   rule→card→blocker→test quality loop merged into the existing modules rather
   than duplicated beside them.
+- Archetype quality intelligence now has its own source registry and typed
+  template evaluation; awards and galleries remain weighted inspiration, never
+  automatic proof or launch authority.
 
 ## Acceptance check
 

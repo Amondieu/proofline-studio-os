@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:archetype-template-evaluation:v1",
+  "title": "Proofline Archetype Template Evaluation v1",
+  "description": "A human-reviewed evaluation of a reusable template. Gold candidate is never an automated approval.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "evaluation_id", "archetype_id", "template_ref", "source_ids", "scores", "normative_gates_passed", "functional_gates_passed", "human_test_completed", "human_reviewed", "decision", "rationale"],
+  "properties": {
+    "schema_version": { "const": "studio.archetype-template-evaluation.v1" },
+    "evaluation_id": { "type": "string", "pattern": "^eval_[a-z0-9_-]{4,80}$" },
+    "archetype_id": { "type": "string", "minLength": 3, "maxLength": 120 },
+    "template_ref": { "type": "string", "minLength": 3, "maxLength": 240 },
+    "source_ids": { "type": "array", "minItems": 2, "maxItems": 20, "items": { "type": "string", "minLength": 3 } },
+    "scores": {
+      "type": "object", "additionalProperties": false,
+      "required": ["decision_clarity", "buyer_confidence", "action_path", "accessibility", "performance", "archetype_fit", "craft_and_distinctiveness", "maintainability"],
+      "properties": {
+        "decision_clarity": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "buyer_confidence": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "action_path": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "accessibility": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "performance": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "archetype_fit": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "craft_and_distinctiveness": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "maintainability": { "type": "integer", "minimum": 0, "maximum": 5 }
+      }
+    },
+    "normative_gates_passed": { "type": "boolean" },
+    "functional_gates_passed": { "type": "boolean" },
+    "human_test_completed": { "type": "boolean" },
+    "human_reviewed": { "type": "boolean" },
+    "decision": { "enum": ["candidate", "pilot", "gold_candidate", "revise", "reject"] },
+    "rationale": { "type": "string", "minLength": 20, "maxLength": 1200 },
+    "reviewed_by": { "type": ["string", "null"] },
+    "reviewed_on": { "type": ["string", "null"], "format": "date" }
+  }
+}

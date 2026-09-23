@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:quality-source-record:v1",
+  "title": "Proofline Quality Source Record v1",
+  "description": "A reviewed research source for archetype quality intelligence. A source is not automatically a studio rule.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "source_id", "title", "url", "source_class", "evidence_level", "applicable_archetypes", "quality_signal", "extracts", "limitations", "reuse_decision", "reviewed_by", "reviewed_on"],
+  "properties": {
+    "schema_version": { "const": "studio.quality-source-record.v1" },
+    "source_id": { "type": "string", "pattern": "^src_[a-z0-9_-]{4,80}$" },
+    "title": { "type": "string", "minLength": 3, "maxLength": 240 },
+    "url": { "type": "string", "minLength": 8, "maxLength": 1000 },
+    "source_class": { "enum": ["normative", "ux_research", "technical_research", "real_website", "practitioner_case_study", "curated_award", "community_critique", "gallery_inspiration"] },
+    "evidence_level": { "enum": ["gate", "tested_research", "practitioner", "observational", "inspiration"] },
+    "applicable_archetypes": { "type": "array", "minItems": 1, "maxItems": 8, "items": { "type": "string", "minLength": 3 } },
+    "quality_signal": { "type": "string", "minLength": 20, "maxLength": 600 },
+    "extracts": { "type": "array", "minItems": 1, "maxItems": 12, "items": { "type": "string", "minLength": 3 } },
+    "limitations": { "type": "array", "minItems": 1, "maxItems": 8, "items": { "type": "string", "minLength": 3 } },
+    "reuse_decision": { "enum": ["adopt_as_gate", "adopt_as_test", "hypothesis_only", "inspiration_only", "reject"] },
+    "reviewed_by": { "type": "string", "minLength": 2, "maxLength": 160 },
+    "reviewed_on": { "type": "string", "format": "date" }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schemaVersion": "studio.quality-source-policy.v1",
+  "status": "pilot",
+  "humanReviewRequired": true,
+  "sourceClasses": [
+    { "id": "normative", "evidenceLevel": "gate", "defaultReuse": "adopt_as_gate", "examples": ["W3C WCAG", "official browser documentation"] },
+    { "id": "ux_research", "evidenceLevel": "tested_research", "defaultReuse": "adopt_as_test", "examples": ["Baymard", "Nielsen Norman Group"] },
+    { "id": "technical_research", "evidenceLevel": "tested_research", "defaultReuse": "adopt_as_test", "examples": ["web.dev", "Chrome documentation"] },
+    { "id": "real_website", "evidenceLevel": "observational", "defaultReuse": "hypothesis_only", "examples": ["inspectable production website"] },
+    { "id": "practitioner_case_study", "evidenceLevel": "practitioner", "defaultReuse": "hypothesis_only", "examples": ["shipped redesign with method and limitations"] },
+    { "id": "curated_award", "evidenceLevel": "observational", "defaultReuse": "hypothesis_only", "examples": ["Awwwards", "CSS Design Awards", "Webby Awards"] },
+    { "id": "community_critique", "evidenceLevel": "observational", "defaultReuse": "hypothesis_only", "examples": ["public critique thread with reasons and counterpoints"] },
+    { "id": "gallery_inspiration", "evidenceLevel": "inspiration", "defaultReuse": "inspiration_only", "examples": ["Siteinspire and visual galleries"] }
+  ],
+  "goldCandidateRequirements": [
+    "normative_gates_passed",
+    "functional_gates_passed",
+    "at_least_two_independent_source_classes",
+    "archetype_fit_score_recorded",
+    "human_test_completed",
+    "human_reviewed",
+    "no_unsubstantiated_claims_or_rights_assumptions"
+  ],
+  "disallowedShortcuts": [
+    "award_score_as_conversion_proof",
+    "gallery_presence_as_accessibility_proof",
+    "agency_case_study_metric_without_method_or_permission",
+    "community_consensus_as_normative_requirement",
+    "template_copying_without_rights_and_context_review"
+  ],
+  "defaultArchetypes": [
+    "ai-automation-authority",
+    "saas-launch-demand",
+    "expert-authority",
+    "creative-portfolio-inquiry",
+    "high-trust-lead-engine"
+  ]
+}

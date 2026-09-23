@@ -70,6 +70,8 @@ network dependency and its teardown form is a local demonstration only.
   compliance, messaging, and reply learning.
 - `docs/strategy/30–31` — NewLLM-derived source policy, suppression boundary,
   send gate, and evidence-backed quality standard.
+- `docs/strategy/32-ARCHETYPE-QUALITY-INTELLIGENCE.md` — source hierarchy,
+  archetype research protocol, and master-template evaluation rules.
 - `docs/architecture/LAYA-ADVISORY-LAYER.md` — optional model routing,
   abstention, calibration, and authority boundaries.
 - `LLMarena/` — preserved deep-research bundle; see
