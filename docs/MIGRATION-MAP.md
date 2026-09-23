@@ -42,6 +42,8 @@ domain machinery that belongs to social-media publishing.
   work or performance results.
 - A dated LLMarena research archive with an explicit adoption boundary; raw
   findings do not silently become live policy.
+- A closed-loop pattern cookbook: research candidate → evidence → local proof →
+  human review → pilot/approval → QA receipt → revised or deprecated rule.
 
 ## Acceptance check
 

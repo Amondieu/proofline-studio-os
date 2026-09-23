@@ -1,35 +1,35 @@
 # Graph Report - .  (2026-09-23)
 
 ## Corpus Check
-- Corpus is ~39.686 words - fits in a single context window. You may not need a graph.
+- Corpus is ~45.437 words - fits in a single context window. You may not need a graph.
 
 ## Summary
-- 88 nodes · 148 edges · 12 communities detected
-- Extraction: 83% EXTRACTED · 17% INFERRED · 0% AMBIGUOUS · INFERRED: 25 edges (avg confidence: 0.5)
+- 108 nodes · 193 edges · 15 communities detected
+- Extraction: 79% EXTRACTED · 21% INFERRED · 0% AMBIGUOUS · INFERRED: 41 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
-- Edge kinds: contains: 48 · uses: 25 · inherits: 22 · MODIFIES: 18 · rationale_for: 15 · calls: 7 · method: 5 · imports_from: 3 · ON_BRANCH: 3 · PARENT_OF: 2
+- Edge kinds: contains: 60 · uses: 41 · inherits: 31 · MODIFIES: 18 · rationale_for: 17 · calls: 8 · method: 7 · imports_from: 4 · ON_BRANCH: 4 · PARENT_OF: 3
 
 
 ## Input Scope
 - Requested: all
 - Resolved: all (source: cli)
-- Included files: 76 · Candidates: recursive
+- Included files: 90 · Candidates: recursive
 - Excluded: 0 untracked · 0 ignored · 0 sensitive · 0 missing committed
 
 ## Graph Freshness
-- Built from Git commit: `140ed8b`
+- Built from Git commit: `80a73c6`
 - Compare this hash to `git rev-parse HEAD` before trusting freshness-sensitive graph output.
 ## God Nodes (most connected - your core abstractions)
-1. `StudioHarnessTests` - 23 edges
-2. `Contract` - 20 edges
+1. `Contract` - 31 edges
+2. `StudioHarnessTests` - 23 edges
 3. `StudioProject` - 11 edges
-4. `PortablePathError` - 6 edges
-5. `evaluate_project()` - 4 edges
-6. `AssetRecord` - 4 edges
-7. `QAReceipt` - 4 edges
-8. `record_human_gate()` - 3 edges
-9. `DiscoveryBrief` - 3 edges
-10. `MessageMap` - 3 edges
+4. `CookbookContractTests` - 8 edges
+5. `PortablePathError` - 6 edges
+6. `EvidenceLevel` - 4 edges
+7. `EvidenceRef` - 4 edges
+8. `PatternScores` - 4 edges
+9. `PatternRecord` - 4 edges
+10. `AntiPatternRecord` - 4 edges
 
 ## Surprising Connections (you probably didn't know these)
 - `Dependency-light structural checks for the focused studio repo.` --uses--> `StudioProject`  [INFERRED]
@@ -46,16 +46,16 @@
 ## Communities
 
 ### Community 0 - "Community 0"
-Cohesion: 0.17
-Nodes (6): main, 140ed8b feat: adopt research receipts and QA gate, 7bc151b chore: ignore local graphify lifecycle state, cb77a61 feat: create focused landing studio foundation, Check the focused repo for unsafe absolute project references., Proofline Studio's human-governed delivery harness.
+Cohesion: 0.15
+Nodes (18): Contract, StrEnum, AntiPatternRecord, AntiPatternSeverity, calculate_pattern_readiness(), EvidenceLevel, EvidenceRef, ExperimentRecord (+10 more)
 
 ### Community 1 - "Community 1"
-Cohesion: 0.15
-Nodes (13): _load(), Dependency-light structural checks for the focused studio repo., validate(), Operator CLI for the read-only studio harness., evaluate_project(), Read-only gate evaluation and explicit human gate recording.  The evaluator is i, Append one explicit human decision to a hash-chained local ledger., Append one explicit human decision to a hash-chained local ledger. (+5 more)
-
-### Community 2 - "Community 2"
 Cohesion: 0.25
 Nodes (13): BaseModel, AccessibilityReceipt, AIAssetDetails, BuildChecklist, Contract, DesignDirection, FormReceipt, LaunchReview (+5 more)
+
+### Community 2 - "Community 2"
+Cohesion: 0.27
+Nodes (9): evaluate_project(), Read-only gate evaluation and explicit human gate recording.  The evaluator is i, Append one explicit human decision to a hash-chained local ledger., Append one explicit human decision to a hash-chained local ledger., Return a deterministic, non-authoritative project readiness report., Return a deterministic, non-authoritative project readiness report., record_human_gate(), _result() (+1 more)
 
 ### Community 3 - "Community 3"
 Cohesion: 0.20
@@ -66,54 +66,70 @@ Cohesion: 0.25
 Nodes (5): DiscoveryBrief, LegalReceipt, PerformanceReceipt, RollbackReceipt, StudioHarnessTests
 
 ### Community 5 - "Community 5"
+Cohesion: 0.29
+Nodes (3): cb77a61 feat: create focused landing studio foundation, Operator CLI for the read-only studio harness., Proofline Studio's human-governed delivery harness.
+
+### Community 6 - "Community 6"
 Cohesion: 0.43
 Nodes (6): normalize_relative_path(), PortablePathError, Cross-platform project-relative reference rules., Raised when a contract reference is not portable or project-bounded., safe_project_path(), ValueError
 
-### Community 6 - "Community 6"
+### Community 7 - "Community 7"
+Cohesion: 0.60
+Nodes (4): main, 140ed8b feat: adopt research receipts and QA gate, 7bc151b chore: ignore local graphify lifecycle state, 80a73c6 chore: separate Graphify profile and code refresh
+
+### Community 8 - "Community 8"
 Cohesion: 0.40
 Nodes (4): manifest, manifestPath, normalized, root
 
-### Community 7 - "Community 7"
+### Community 9 - "Community 9"
 Cohesion: 0.67
-Nodes (3): StrEnum, ApprovalGate, Stage
+Nodes (3): _load(), Dependency-light structural checks for the focused studio repo., validate()
 
-### Community 8 - "Community 8"
+### Community 11 - "Community 11"
+Cohesion: 0.67
+Nodes (1): Check the focused repo for unsafe absolute project references.
+
+### Community 12 - "Community 12"
 Cohesion: 0.67
 Nodes (1): make_project()
 
-### Community 9 - "Community 9"
+### Community 13 - "Community 13"
 Cohesion: 1.00
 Nodes (2): ApprovalRecord, Detailed, append-only human approval that supplements the gate hash ledger.
 
-### Community 10 - "Community 10"
+### Community 14 - "Community 14"
 Cohesion: 1.00
 Nodes (2): AssetRecord, Traceable asset rights record; AI client material is rejected by contract.
 
-### Community 11 - "Community 11"
+### Community 15 - "Community 15"
 Cohesion: 1.00
 Nodes (2): QAReceipt, Human-authored evidence receipt; passing it never grants launch authority.
 
 ## Knowledge Gaps
 - **19 isolated node(s):** `root`, `manifestPath`, `manifest`, `normalized`, `Check the focused repo for unsafe absolute project references.` (+14 more)
   These have ≤1 connection - possible missing edges or undocumented components.
-- **Thin community `Community 8`** (1 nodes): `make_project()`
+- **Thin community `Community 11`** (1 nodes): `Check the focused repo for unsafe absolute project references.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 9`** (2 nodes): `ApprovalRecord`, `Detailed, append-only human approval that supplements the gate hash ledger.`
+- **Thin community `Community 12`** (1 nodes): `make_project()`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 10`** (2 nodes): `AssetRecord`, `Traceable asset rights record; AI client material is rejected by contract.`
+- **Thin community `Community 13`** (2 nodes): `ApprovalRecord`, `Detailed, append-only human approval that supplements the gate hash ledger.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
-- **Thin community `Community 11`** (2 nodes): `QAReceipt`, `Human-authored evidence receipt; passing it never grants launch authority.`
+- **Thin community `Community 14`** (2 nodes): `AssetRecord`, `Traceable asset rights record; AI client material is rejected by contract.`
+  Too small to be a meaningful cluster - may be noise or needs more connections extracted.
+- **Thin community `Community 15`** (2 nodes): `QAReceipt`, `Human-authored evidence receipt; passing it never grants launch authority.`
   Too small to be a meaningful cluster - may be noise or needs more connections extracted.
 
 ## Suggested Questions
 _Questions this graph is uniquely positioned to answer:_
 
-- **Why does `StudioHarnessTests` connect `Community 4` to `Community 0`, `Community 2`, `Community 10`, `Community 11`, `Community 1`, `Community 5`, `Community 8`?**
-  _High betweenness centrality (0.276) - this node is a cross-community bridge._
-- **Why does `StudioProject` connect `Community 1` to `Community 0`, `Community 2`, `Community 4`?**
-  _High betweenness centrality (0.176) - this node is a cross-community bridge._
-- **Why does `PortablePathError` connect `Community 5` to `Community 4`?**
-  _High betweenness centrality (0.079) - this node is a cross-community bridge._
+- **Why does `Contract` connect `Community 1` to `Community 0`, `Community 13`, `Community 14`, `Community 4`, `Community 15`, `Community 2`?**
+  _High betweenness centrality (0.335) - this node is a cross-community bridge._
+- **Why does `StudioHarnessTests` connect `Community 4` to `Community 2`, `Community 1`, `Community 14`, `Community 15`, `Community 6`, `Community 12`?**
+  _High betweenness centrality (0.217) - this node is a cross-community bridge._
+- **Why does `StudioProject` connect `Community 2` to `Community 9`, `Community 5`, `Community 1`, `Community 4`?**
+  _High betweenness centrality (0.180) - this node is a cross-community bridge._
+- **Are the 11 inferred relationships involving `Contract` (e.g. with `AntiPatternRecord` and `AntiPatternSeverity`) actually correct?**
+  _`Contract` has 11 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 17 inferred relationships involving `StudioHarnessTests` (e.g. with `AccessibilityReceipt` and `AIAssetDetails`) actually correct?**
   _`StudioHarnessTests` has 17 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 9 inferred relationships involving `StudioProject` (e.g. with `Dependency-light structural checks for the focused studio repo.` and `Operator CLI for the read-only studio harness.`) actually correct?**

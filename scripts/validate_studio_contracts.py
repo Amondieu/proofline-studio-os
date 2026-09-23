@@ -18,7 +18,7 @@ def _load(path: Path) -> dict:
 def validate(root: Path = ROOT) -> list[str]:
     errors: list[str] = []
     schema_dir = root / "schemas" / "studio"
-    schema_files = sorted(schema_dir.glob("*.json"))
+    schema_files = sorted(schema_dir.glob("*.json")) + sorted((root / "schemas").glob("*.json"))
     if not schema_files:
         errors.append("no studio schemas found")
     for path in schema_files:
@@ -39,6 +39,7 @@ def validate(root: Path = ROOT) -> list[str]:
         "config/studio/offer-catalog.v1.json",
         "config/studio/qa-policy.v1.json",
         "config/studio/evidence-policy.v1.json",
+        "config/studio/cookbook-policy.v1.json",
     ):
         path = root / relative
         try:
@@ -65,4 +66,5 @@ if __name__ == "__main__":
         print("STUDIO CONTRACTS: FAIL")
         print("\n".join(f"- {problem}" for problem in problems))
         sys.exit(1)
-    print(f"STUDIO CONTRACTS: PASS ({len(list((ROOT / 'schemas/studio').glob('*.json')))} schemas)")
+    count = len(list((ROOT / "schemas/studio").glob("*.json"))) + len(list((ROOT / "schemas").glob("*.json")))
+    print(f"STUDIO CONTRACTS: PASS ({count} schemas)")

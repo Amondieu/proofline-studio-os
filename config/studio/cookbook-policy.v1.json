@@ -1,0 +1,50 @@
+{
+  "schemaVersion": "studio.cookbook-policy.v1",
+  "name": "Proofline Pattern and Anti-Pattern Cookbook",
+  "statuses": ["approved", "pilot", "reference_only", "avoid"],
+  "evidenceLevels": ["authoritative", "strong_practitioner", "observational", "inference"],
+  "promotionRules": {
+    "pilotToApproved": [
+      "pattern record is complete",
+      "at least one authoritative or strong practitioner source when the claim is normative",
+      "local proof-of-concept is tested on required viewports",
+      "accessibility and performance evidence is attached",
+      "human reviewer records the decision"
+    ],
+    "observationalEvidenceCannotProveConversion": true,
+    "singlePublicExampleCannotEstablishCausality": true,
+    "clientWorkRequiresExplicitApproval": true
+  },
+  "readinessWeights": {
+    "clarityImpact": 0.18,
+    "conversionPlausibility": 0.15,
+    "trustImpact": 0.12,
+    "mobileSuitability": 0.12,
+    "accessibilitySafety": 0.12,
+    "performanceSafety": 0.1,
+    "implementationCost": 0.07,
+    "maintenanceBurden": 0.05,
+    "legalSafety": 0.05,
+    "studioFit": 0.04
+  },
+  "thresholds": {
+    "approvedDefault": 8.0,
+    "pilot": 6.5,
+    "referenceOnly": 4.0
+  },
+  "feedbackLoop": [
+    "research_candidate",
+    "evidence_log",
+    "pattern_or_anti_pattern_card",
+    "local_proof_of_concept",
+    "human_review",
+    "pilot_or_block",
+    "QA_receipt_and_outcome_data",
+    "approved_revised_or_deprecated"
+  ],
+  "launchAuthority": {
+    "cookbookMayBlock": true,
+    "cookbookMayApprove": false,
+    "humanLaunchReviewRequired": true
+  }
+}

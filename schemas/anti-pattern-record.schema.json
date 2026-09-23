@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:anti-pattern-record:v1",
+  "title": "Proofline Anti-Pattern Record v1",
+  "description": "A documented failure mode with a detection method and launch rule.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "anti_pattern_id", "name", "category", "why_it_is_tempting", "why_it_fails", "harm_type", "early_warning_signal", "detection_method", "severity", "replacement_pattern", "exception", "launch_rule", "evidence"],
+  "properties": {
+    "schema_version": { "const": "studio.anti-pattern-record.v1" },
+    "anti_pattern_id": { "type": "string", "pattern": "^[A-Z][A-Z0-9]{1,8}-AP-[0-9]{3}$" },
+    "name": { "type": "string", "minLength": 3 },
+    "category": { "type": "string", "minLength": 3 },
+    "why_it_is_tempting": { "type": "string", "minLength": 10 },
+    "why_it_fails": { "type": "string", "minLength": 10 },
+    "harm_type": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "early_warning_signal": { "type": "string", "minLength": 5 },
+    "detection_method": { "type": "string", "minLength": 10 },
+    "severity": { "enum": ["blocker", "high", "medium", "low"] },
+    "replacement_pattern": { "type": "string", "minLength": 3 },
+    "exception": { "type": "string", "minLength": 3 },
+    "launch_rule": { "enum": ["block_launch", "human_signoff_required", "allowed_with_test_evidence"] },
+    "evidence": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["source_id", "title", "url", "level", "note"],
+        "properties": {
+          "source_id": { "type": "string", "minLength": 2 },
+          "title": { "type": "string", "minLength": 2 },
+          "url": { "type": "string", "minLength": 8 },
+          "level": { "enum": ["authoritative", "strong_practitioner", "observational", "inference"] },
+          "note": { "type": "string", "minLength": 10 }
+        }
+      }
+    },
+    "reviewed_by": { "type": ["string", "null"] },
+    "reviewed_on": { "type": ["string", "null"], "format": "date" }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:qa-receipt:compat",
+  "title": "Proofline QA Receipt compatibility entry point",
+  "type": "object",
+  "description": "Compatibility entry point for the canonical versioned studio QA receipt.",
+  "$ref": "studio/qa-receipt.v1.json"
+}

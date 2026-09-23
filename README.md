@@ -53,6 +53,8 @@ network dependency and its teardown form is a local demonstration only.
   writer.
 - `schemas/studio/` — versioned JSON contracts.
 - `templates/studio/` — portable QA and asset-provenance starting templates.
+- `templates/` — pattern cards, test plans, evidence log, and launch receipt.
+- `docs/strategy/12–18` — the evidence-backed pattern and anti-pattern cookbook.
 - `LLMarena/` — preserved deep-research bundle; see
   `docs/architecture/LLMARENA-ADOPTION.md` for what is operational.
 - `config/studio/` — profile, offers, creative directions, and QA policy.
