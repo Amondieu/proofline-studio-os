@@ -44,6 +44,62 @@ decision for this studio. Confirm the exact wording and combined scope with
 the regional WKO and competent authority. See [WKO — Kommunikationsdesign](https://www.wko.at/information-consulting/werbung-marktkommunikation/kommunikationsdesign)
 and [WKO — Unternehmensgründung für Informationstechnologen](https://www.wko.at/information-consulting/unternehmensberatung-buchhaltung-informationstechnologie/it-dienstleistung/unternehmensgruendung).
 
+### Free Gewerbe is not a registration exemption
+
+The WKO describes free Gewerbe as activities for which no special
+qualification proof such as an examination is generally required. That does
+not remove the need to register the activity, meet the general personal
+requirements, or stay within the exact registered scope. See
+[WKO — Befähigungsnachweis](https://www.wko.at/gruendung/befaehigungsnachweis)
+and [WKO — Voraussetzungen für die Gewerbeberechtigung](https://www.wko.at/gruendung/voraussetzungen-erlangung-gewerbeberechtigung).
+
+For Proofline, the following are only classification questions for the WKO,
+not conclusions:
+
+| Planned activity | Investigation lead | Must be confirmed |
+|---|---|---|
+| Website/Landing-Page programming, deployment, integrations, maintenance | IT services | Whether the concrete technical scope, forms, integrations, and maintenance are covered |
+| UI/Webdesign and visual layout | Werbegrafik-Designer / communication design | Which wording covers the actual design and production scope |
+| Conversion copy, offer structure, and landing-page optimization | advertising/copy/conception or advisory boundary | Whether it is ancillary to the registered service or requires a separate wording |
+| Hosting or account operation | IT service / separate operational responsibility | Who owns accounts, credentials, data processing, and liability |
+
+Do not market the studio as “officially qualified”, “certified”, or covered by
+a particular Gewerbe until the wording has been confirmed for the actual
+service mix.
+
+### WKO clarification request
+
+Use this as a starting draft for the regional WKO Gründerservice. It is a
+questionnaire, not a legal filing and must be adapted to the actual facts:
+
+```text
+Betreff: Gewerbewortlaut für Webdesign- und Landing-Page-Studio
+
+Ich möchte in Österreich nebenberuflich als Einzelunternehmer B2B-Websites
+und Landing Pages anbieten. Mein tatsächlicher Leistungsumfang umfasst:
+
+- Konzeption und Informationsarchitektur
+- UI-/Webdesign und visuelle Gestaltung
+- technische Umsetzung und Deployment
+- Formulare sowie Kalender-, CRM- und Analytics-Integrationen
+- laufende technische Wartung
+- conversion-orientierte Copy und Optimierung bestehender Landing Pages
+
+Bitte teilen Sie mir mit, welche freien Gewerbe bzw. Gewerbewortlaute diesen
+konkreten Leistungsumfang abdecken und ob
+„Dienstleistungen in der automatischen Datenverarbeitung und
+Informationstechnik“ die technische Umsetzung, Integrationen und Wartung
+umfasst.
+
+Bitte weisen Sie auch darauf hin, ob für UI-/Webdesign oder Copy/
+Conversion-Beratung eine zusätzliche Abgrenzung oder Anmeldung erforderlich
+ist.
+```
+
+Record the written response, date, contact, exact scope discussed, and any
+limitations as evidence for `G-BIZ-001`. A general web page or AI answer is
+not a substitute for that scope-specific confirmation.
+
 For a website, Austrian information and disclosure duties depend on the
 operator, legal form, content, and medium. The official portal points to
 website information duties and the Mediengesetz/ECG context; it also warns
@@ -102,6 +158,7 @@ delivery, or public paid checkout, the following gate must be human-approved:
 |---|---|---|---|
 | WKO/authority classification of actual service mix | Founder + WKO | open | Confirm exact wording and boundaries |
 | Gewerbeanmeldung / registration record | Founder | open | Record before paid start |
+| General personal and residence/eligibility requirements | Founder + authority | open | Confirm for the actual personal situation |
 | Business identity and invoice profile | Founder + tax adviser | open | Confirm required fields and tax treatment |
 | Website information/disclosure pages | Founder + legal reviewer | draft needed | Do not publish placeholders as final |
 | Privacy notice and form data map | Founder + privacy reviewer | draft needed | Record purpose, basis, recipients, retention, deletion |

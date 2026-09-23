@@ -20,8 +20,12 @@ not legal advice and not proof that a specific activity is or is not a Gewerbe.
 - [ ] Actual service description written in plain language.
 - [ ] Exact Gewerbewortlaut and scope confirmed with the regional WKO or
       competent authority.
+- [ ] General personal, residence, and eligibility requirements confirmed for
+      the actual founder situation.
 - [ ] Registration record or documented professional exemption reviewed by a
       human; no assumption based on a price threshold.
+- [ ] Free-Gewerbe status is not being confused with an exemption from
+      registration or scope limits.
 - [ ] Business identity, contact address, and invoice profile prepared.
 - [ ] Tax, VAT, SVS, and WKO follow-up questions assigned to a qualified
       reviewer for the actual personal situation.
@@ -37,6 +41,7 @@ not legal advice and not proof that a specific activity is or is not a Gewerbe.
 - Date: `[YYYY-MM-DD]`
 - Evidence links: `[registration / written WKO answer / review record]`
 - Scope covered: `[exact services and jurisdiction]`
+- WKO contact and response date: `[record]`
 - Limitations and follow-up: `[record here]`
 
 Automated audits may keep this gate blocked when evidence is absent. They may
