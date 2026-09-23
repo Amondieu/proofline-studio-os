@@ -97,6 +97,31 @@ The current repository has completed step 1. It intentionally does not claim
 that Laya is production-calibrated or ready for autonomous outbound, legal,
 client, or launch decisions.
 
+## Preliminary local smoke test
+
+On 2026-09-23, both candidate checkpoints were tested outside the repository
+cache on an RTX A4500 with CUDA 13.2. The weights remain local runtime state and
+are not committed.
+
+- `laya-multilingual` loaded in about 24.6 seconds and answered the first
+  two-question Proofline probe on `cuda:0` in about 434 ms. In eight small,
+  hand-labelled Card/Direction cases it got 6/8 labels, but produced one
+  confidently wrong Direction (`editorial` instead of `cinematic`). It is a
+  useful language-coverage candidate, not an approval engine.
+- `laya-typed-decisions` loaded in about 24.1 seconds. It matched all eight
+  labels in the small English probe and all three German Direction labels, but
+  its reported confidence stayed below 0.24. The runtime also warned that the
+  checkpoint contains an invalid temperature value, so those probabilities
+  are explicitly treated as uncalibrated.
+
+The result is a model-routing decision, not a quality claim: keep
+`laya-multilingual` available for multilingual fallback, evaluate
+`laya-typed-decisions` as the structured-choice candidate, and keep both in
+observation-only mode until at least 100 labeled Proofline examples have been
+collected and calibration has been fitted and reviewed. The current
+`0.75` abstention threshold therefore remains in force; this smoke test does
+not justify lowering it.
+
 ## Operator usage
 
 Install the normal studio dependencies first. For a local experiment, install
