@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:send-approval:v1",
+  "title": "Proofline Send Approval v1",
+  "description": "An explicit human decision over one exact recipient and exact message hash.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "approval_id", "draft_id", "exact_recipient", "message_sha256", "decision", "checklist", "approved_by", "approved_on"],
+  "properties": {
+    "schema_version": { "const": "studio.send-approval.v1" },
+    "approval_id": { "type": "string", "pattern": "^send_[a-z0-9_-]{4,80}$" },
+    "draft_id": { "type": "string", "pattern": "^draft_[a-z0-9_-]{4,80}$" },
+    "exact_recipient": { "type": "string", "minLength": 5 },
+    "message_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "decision": { "enum": ["approved", "rejected"] },
+    "checklist": { "type": "array", "minItems": 8, "maxItems": 20, "items": { "type": "string" } },
+    "approved_by": { "type": "string", "minLength": 2 },
+    "approved_on": { "type": "string", "format": "date-time" },
+    "notes": { "type": ["string", "null"] }
+  }
+}

@@ -61,11 +61,15 @@ network dependency and its teardown form is a local demonstration only.
 - `templates/` — pattern cards, test plans, evidence log, and launch receipt.
 - `docs/strategy/12–18` — the evidence-backed pattern and anti-pattern cookbook.
 - `docs/strategy/19–22` — business archetypes, selection rubric, blueprints, and sales playbook.
+- `docs/strategy/23–29` — human-gated outbound intelligence, scoring, teardown,
+  compliance, messaging, and reply learning.
 - `LLMarena/` — preserved deep-research bundle; see
   `docs/architecture/LLMARENA-ADOPTION.md` for what is operational.
 - `config/studio/` — profile, offers, creative directions, archetypes, and QA policy.
 - `site/` — Proofline Studio master-site proof of work.
 - `skills/landing-studio/` — agent execution envelope for studio tasks.
+- `skills/` — local Proofline wrappers around selected external references;
+  wrappers preserve evidence, privacy, and human-send boundaries.
 
 ## Deliberately outside this repo
 

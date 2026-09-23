@@ -63,6 +63,30 @@ node_types:
     aliases: [archetype_fit, client_archetype, selection_assessment]
     source_backed: true
     status_policy: human_review
+  Prospect:
+    aliases: [lead, outbound_candidate, prospect_record]
+    source_backed: true
+    status_policy: evidence_required
+  Signal:
+    aliases: [trigger, buying_signal, public_signal]
+    source_backed: true
+    status_policy: evidence_required
+  Audit:
+    aliases: [teardown, prospect_audit, conversion_audit]
+    source_backed: true
+    status_policy: human_review
+  OutreachDraft:
+    aliases: [email_draft, personalized_outreach, message_draft]
+    source_backed: true
+    status_policy: human_review
+  SendApproval:
+    aliases: [send_gate, outbound_approval, exact_message_approval]
+    source_backed: true
+    status_policy: human_review
+  ReplyRecord:
+    aliases: [reply, response, suppression_event]
+    source_backed: true
+    status_policy: operational
 
 relation_types:
   has_discovery:
@@ -137,6 +161,36 @@ relation_types:
     requires_evidence: true
     assertion_basis: [EXTRACTED, INFERRED]
     derivation_methods: [reviewed_synthesis]
+  has_signal:
+    source_types: [Prospect]
+    target_types: [Signal]
+    requires_evidence: true
+    assertion_basis: [EXTRACTED]
+    derivation_methods: [source_citation]
+  has_audit:
+    source_types: [Prospect]
+    target_types: [Audit]
+    requires_evidence: true
+    assertion_basis: [EXTRACTED]
+    derivation_methods: [source_citation]
+  has_outreach_draft:
+    source_types: [Prospect]
+    target_types: [OutreachDraft]
+    requires_evidence: true
+    assertion_basis: [EXTRACTED]
+    derivation_methods: [source_citation]
+  gated_by:
+    source_types: [OutreachDraft]
+    target_types: [SendApproval]
+    requires_evidence: true
+    assertion_basis: [EXTRACTED]
+    derivation_methods: [human_action]
+  has_reply:
+    source_types: [Prospect]
+    target_types: [ReplyRecord]
+    requires_evidence: true
+    assertion_basis: [EXTRACTED]
+    derivation_methods: [source_citation]
 
 hardening:
   statuses: [candidate, proposed, needs_review, validated, reference, rejected, superseded]
@@ -151,16 +205,16 @@ inference_policy:
 evidence_policy:
   require_evidence_refs: true
   min_refs: 1
-  node_types: [StudioProject, DiscoveryBrief, MessageMap, CreativeDirection, ProofAsset, QAReview, GateDecision, Standard, Offer, Pattern, AntiPattern, Experiment, BusinessArchetype, ArchetypeAssessment]
-  relation_types: [has_discovery, freezes, uses_direction, supported_by, governed_by, reviewed_by, packages_as, tested_by, replaces, fits_archetype, assesses, recommends]
+  node_types: [StudioProject, DiscoveryBrief, MessageMap, CreativeDirection, ProofAsset, QAReview, GateDecision, Standard, Offer, Pattern, AntiPattern, Experiment, BusinessArchetype, ArchetypeAssessment, Prospect, Signal, Audit, OutreachDraft, SendApproval, ReplyRecord]
+  relation_types: [has_discovery, freezes, uses_direction, supported_by, governed_by, reviewed_by, packages_as, tested_by, replaces, fits_archetype, assesses, recommends, has_signal, has_audit, has_outreach_draft, gated_by, has_reply]
 
 outputs:
   ontology:
     enabled: true
-    canonical_node_types: [StudioProject, DiscoveryBrief, MessageMap, CreativeDirection, ProofAsset, QAReview, GateDecision, Standard, Offer, Pattern, AntiPattern, Experiment, BusinessArchetype, ArchetypeAssessment, Task]
-    source_node_types: [ProofAsset, QAReview, GateDecision, Pattern, AntiPattern, Experiment, BusinessArchetype, ArchetypeAssessment]
+    canonical_node_types: [StudioProject, DiscoveryBrief, MessageMap, CreativeDirection, ProofAsset, QAReview, GateDecision, Standard, Offer, Pattern, AntiPattern, Experiment, BusinessArchetype, ArchetypeAssessment, Prospect, Signal, Audit, OutreachDraft, SendApproval, ReplyRecord, Task]
+    source_node_types: [ProofAsset, QAReview, GateDecision, Pattern, AntiPattern, Experiment, BusinessArchetype, ArchetypeAssessment, Prospect, Signal, Audit, OutreachDraft, SendApproval, ReplyRecord]
     occurrence_node_types: []
     alias_fields: [aliases, normalized_terms]
-    relation_exports: [has_discovery, freezes, uses_direction, supported_by, governed_by, reviewed_by, packages_as, tested_by, replaces, fits_archetype, assesses, recommends]
+    relation_exports: [has_discovery, freezes, uses_direction, supported_by, governed_by, reviewed_by, packages_as, tested_by, replaces, fits_archetype, assesses, recommends, has_signal, has_audit, has_outreach_draft, gated_by, has_reply]
     wiki:
       enabled: false

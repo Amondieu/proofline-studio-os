@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:prospect-record:v1",
+  "title": "Proofline Prospect Record v1",
+  "description": "A minimal, evidence-backed prospect record for human-gated outbound research.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "prospect_id", "company_name", "website_url", "country", "industry", "archetype_fit", "data_source", "signals", "conversion_leaks", "score", "outreach"],
+  "properties": {
+    "schema_version": { "const": "studio.prospect-record.v1" },
+    "prospect_id": { "type": "string", "pattern": "^pr_[0-9]{4}_[0-9]{4,}$" },
+    "company_name": { "type": "string", "minLength": 2 },
+    "website_url": { "type": "string", "minLength": 8 },
+    "country": { "type": "string", "minLength": 2 },
+    "industry": { "type": "string", "minLength": 2 },
+    "archetype_fit": { "type": "string", "minLength": 3 },
+    "primary_contact": {
+      "type": ["object", "null"], "additionalProperties": false,
+      "required": ["role", "professional_email", "source_url"],
+      "properties": {
+        "name": { "type": ["string", "null"] },
+        "role": { "type": "string", "minLength": 2 },
+        "professional_email": { "type": "string", "minLength": 5 },
+        "source_url": { "type": "string", "minLength": 8 }
+      }
+    },
+    "data_source": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_type", "url", "collected_on", "terms_reviewed"],
+      "properties": {
+        "source_type": { "enum": ["public_company_website", "public_news", "public_company_social", "public_job_page", "permitted_directory", "official_register", "official_api", "inbound_or_referral"] },
+        "url": { "type": "string", "minLength": 8 },
+        "collected_on": { "type": "string", "format": "date" },
+        "terms_reviewed": { "type": "boolean" },
+        "notes": { "type": ["string", "null"] }
+      }
+    },
+    "signals": { "type": "array", "maxItems": 12, "items": { "$ref": "signal-record.schema.json" } },
+    "conversion_leaks": {
+      "type": "array", "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["category", "observation", "evidence_url", "confidence"],
+        "properties": {
+          "category": { "enum": ["hero_clarity", "cta", "proof", "mobile", "form", "trust", "performance", "other"] },
+          "observation": { "type": "string", "minLength": 10 },
+          "evidence_url": { "type": "string", "minLength": 8 },
+          "confidence": { "enum": ["low", "medium", "high"] }
+        }
+      }
+    },
+    "score": {
+      "type": "object", "additionalProperties": false,
+      "required": ["icp_fit", "visible_conversion_leak", "current_trigger", "offer_economics", "decision_maker", "evidence_confidence", "compliance_fit", "total"],
+      "properties": {
+        "icp_fit": { "type": "integer", "minimum": 0, "maximum": 20 },
+        "visible_conversion_leak": { "type": "integer", "minimum": 0, "maximum": 20 },
+        "current_trigger": { "type": "integer", "minimum": 0, "maximum": 15 },
+        "offer_economics": { "type": "integer", "minimum": 0, "maximum": 15 },
+        "decision_maker": { "type": "integer", "minimum": 0, "maximum": 10 },
+        "evidence_confidence": { "type": "integer", "minimum": 0, "maximum": 10 },
+        "compliance_fit": { "type": "integer", "minimum": 0, "maximum": 10 },
+        "total": { "type": "integer", "minimum": 0, "maximum": 100 }
+      }
+    },
+    "outreach": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "legal_basis", "opt_out_status"],
+      "properties": {
+        "status": { "enum": ["draft_only", "pending_human_approval", "approved", "sent", "replied", "opted_out", "suppressed", "closed"] },
+        "legal_basis": { "enum": ["not_assessed", "legitimate_interest_pending_review", "consent", "not_applicable"] },
+        "opt_out_status": { "enum": ["not_contacted", "available", "opted_out", "suppressed"] },
+        "send_approved_by": { "type": ["string", "null"] },
+        "send_approved_on": { "type": ["string", "null"], "format": "date" }
+      }
+    }
+  }
+}

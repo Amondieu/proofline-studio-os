@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:audit-record:v1",
+  "title": "Proofline Audit Record v1",
+  "description": "A human-reviewed, evidence-backed three-point teardown draft.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "audit_id", "prospect_id", "findings", "status", "human_review_required"],
+  "properties": {
+    "schema_version": { "const": "studio.audit-record.v1" },
+    "audit_id": { "type": "string", "pattern": "^audit_[a-z0-9_-]{4,80}$" },
+    "prospect_id": { "type": "string", "pattern": "^pr_[0-9]{4}_[0-9]{4,}$" },
+    "findings": {
+      "type": "array", "minItems": 1, "maxItems": 3,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["category", "observation", "recommendation", "evidence_url"],
+        "properties": {
+          "category": { "enum": ["hero_clarity", "cta", "proof", "mobile", "form", "trust", "performance", "other"] },
+          "observation": { "type": "string", "minLength": 10 },
+          "recommendation": { "type": "string", "minLength": 10 },
+          "evidence_url": { "type": "string", "minLength": 8 }
+        }
+      }
+    },
+    "suggested_hero": { "type": ["string", "null"] },
+    "suggested_conversion_architecture": { "type": ["string", "null"] },
+    "status": { "enum": ["draft_only", "human_reviewed", "delivered", "withdrawn"] },
+    "reviewed_by": { "type": ["string", "null"] },
+    "reviewed_on": { "type": ["string", "null"], "format": "date" },
+    "human_review_required": { "const": true }
+  }
+}

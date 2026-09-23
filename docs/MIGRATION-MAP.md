@@ -19,6 +19,7 @@ domain machinery that belongs to social-media publishing.
 | Business archetype thinking | `config/studio/archetypes.v1.json`, `ClientArchetypeAssessment`, docs/strategy/19–22 | Reuse observable buyer jobs and conversion blueprints without turning them into industry templates or automatic approvals. |
 | Notion operations / client portal | Planned; see `docs/architecture/NOTION-CANVA-INTEGRATION.md` | Add a human-readable status, decisions, feedback, and handover layer without moving technical authority out of Git. |
 | Canva sales / creative production | Planned; see `docs/architecture/NOTION-CANVA-INTEGRATION.md` | Package teardowns, proposals, direction boards, and simple client assets without making Canva the website source. |
+| Marketing/research skill references | `skills/` wrappers + pinned external references | Reuse useful prospecting/CRO/copy skills without importing autonomous sending or unsupported claims. |
 
 ## Exclude from the first studio slice
 
@@ -49,6 +50,9 @@ domain machinery that belongs to social-media publishing.
   human review → pilot/approval → QA receipt → revised or deprecated rule.
 - Five pilot business archetypes with two deliberately public on the master site;
   fit remains subject to Discovery and human confirmation.
+- A pilot-only outbound intelligence loop with a 70-point triage threshold,
+  evidence-backed teardowns, suppression records, and an exact-message human
+  send gate; no live prospect list or credentials are stored here.
 
 ## Acceptance check
 

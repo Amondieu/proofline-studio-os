@@ -1,0 +1,14 @@
+{
+  "schemaVersion": "studio.outbound-policy.v1",
+  "status": "pilot_only",
+  "sendAuthority": "human_only",
+  "minimumProspectScore": 70,
+  "weeklyAuditCapacity": 10,
+  "maximumSequenceMessages": 3,
+  "sequenceWindowDays": 30,
+  "suppressionDaysAfterSequence": 90,
+  "allowedSourceTypes": ["public_company_website", "public_news", "public_company_social", "public_job_page", "permitted_directory", "official_register", "official_api", "inbound_or_referral"],
+  "forbiddenActions": ["automated_google_maps_scraping", "unauthorized_platform_scraping", "email_guessing", "private_email_collection", "sensitive_data_collection", "captcha_bypass", "automated_send", "opt_out_ignoring"],
+  "requiredSendChecks": ["professional_relevance", "source_and_collection_date", "data_minimization", "legal_basis_review", "suppression_check", "sender_identity", "privacy_link", "free_opt_out", "human_exact_message_approval", "domain_authentication"],
+  "disclaimer": "This policy is an internal safety boundary, not legal advice. The concrete France/EU setup requires qualified review."
+}

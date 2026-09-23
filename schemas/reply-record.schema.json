@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:reply-record:v1",
+  "title": "Proofline Reply Record v1",
+  "description": "A minimal outcome record for replies, meetings, opt-outs, and suppression.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "reply_id", "prospect_id", "received_at", "classification", "summary", "next_action", "suppression_applied"],
+  "properties": {
+    "schema_version": { "const": "studio.reply-record.v1" },
+    "reply_id": { "type": "string", "pattern": "^reply_[a-z0-9_-]{4,80}$" },
+    "prospect_id": { "type": "string", "pattern": "^pr_[0-9]{4}_[0-9]{4,}$" },
+    "received_at": { "type": "string", "format": "date-time" },
+    "classification": { "enum": ["positive", "question", "meeting", "negative", "opt_out", "bounce", "no_response", "other"] },
+    "summary": { "type": "string", "minLength": 3 },
+    "next_action": { "type": "string", "minLength": 3 },
+    "suppression_applied": { "type": "boolean" },
+    "human_reviewed_by": { "type": ["string", "null"] }
+  }
+}
