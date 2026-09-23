@@ -10,7 +10,8 @@ selected direction, one bounded scope.
 - client discovery brief;
 - message-map sign-off;
 - selected creative direction and mobile preview review;
-- build checklist and QA evidence;
+- build checklist and a machine-readable QA receipt;
+- asset provenance records and detailed human approvals where applicable;
 - human launch review and client approval.
 
 ## Outputs

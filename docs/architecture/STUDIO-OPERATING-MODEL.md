@@ -50,11 +50,13 @@ change a client system, deploy a site, or grant legal clearance.
 
 ## Evidence rule
 
-Every high-consequence statement should have one of three labels:
+Every high-consequence statement should have one of four evidence types:
 
-- **supplied** — provided by the client and traceable to an asset or source;
-- **assumption** — useful for a draft but awaiting confirmation;
-- **concept** — intentionally fictional or exploratory and marked as such.
+- **demonstrated method** — the studio shows the method or artefact itself;
+- **stated standard** — a documented standard with a corresponding receipt;
+- **permissioned quote** — verbatim client feedback with permission recorded;
+- **labelled concept work** — fictional or exploratory work marked as such.
 
-The studio must never turn an assumption or concept into a testimonial,
-customer logo, metric, legal claim, or case-study result.
+Unresolved assumptions remain in the project brief and are not evidence. The
+studio must never turn an assumption or concept into a testimonial, customer
+logo, metric, legal claim, or case-study result.

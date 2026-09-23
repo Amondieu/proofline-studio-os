@@ -12,7 +12,9 @@ DRIVE = re.compile(r"(?<![A-Za-z0-9_-])[A-Za-z]:[\\/]")
 
 def audit(root: Path = ROOT) -> list[str]:
     errors: list[str] = []
-    ignored = {".git", "node_modules", ".graphify", "__pycache__"}
+    # LLMarena is a preserved research archive. Its report intentionally uses
+    # URL-like route examples and is not an operational project manifest.
+    ignored = {".git", "node_modules", ".graphify", "__pycache__", "LLMarena"}
     for path in root.rglob("*"):
         if not path.is_file() or any(part in ignored for part in path.parts) or "tests" in path.parts:
             continue

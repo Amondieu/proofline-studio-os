@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:approval-record:v1",
+  "title": "Proofline Human Approval Record v1",
+  "description": "Detailed append-only human approval. It supplements the hash-chained gate ledger and never delegates authority to automation.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "approval_id", "gate", "subject", "decision", "approver", "date", "evidence"],
+  "properties": {
+    "schema_version": { "const": "studio.approval-record.v1" },
+    "approval_id": { "type": "string", "pattern": "^AP-[0-9]{4,}$" },
+    "gate": { "enum": ["licence", "message", "direction", "accessibility", "performance", "asset_provenance", "ai_asset", "ownership", "qa", "launch", "client_permission", "testimonial_permission", "dpa_vendor"] },
+    "subject": { "type": "string", "minLength": 2 },
+    "decision": { "enum": ["approved", "rejected", "approved_with_conditions"] },
+    "conditions": { "type": "array", "items": { "type": "string" } },
+    "approver": { "type": "string", "minLength": 2, "description": "A human name; never a tool or agent identifier." },
+    "date": { "type": "string", "format": "date" },
+    "evidence": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "expires_on": { "type": ["string", "null"], "format": "date" },
+    "supersedes": { "type": ["string", "null"] },
+    "notes": { "type": ["string", "null"] }
+  }
+}

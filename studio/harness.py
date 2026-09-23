@@ -33,6 +33,25 @@ REQUIRED_BUILD_CHECKS = (
     "backup_export_supplied",
 )
 
+REQUIRED_QA_CHECKS = (
+    ("accessibility.keyboard_sweep", "keyboard sweep"),
+    ("accessibility.focus_not_obscured", "focus visibility review"),
+    ("accessibility.contrast_verified", "contrast review"),
+    ("accessibility.target_size_verified", "target-size review"),
+    ("accessibility.reduced_motion_verified", "reduced-motion review"),
+    ("forms.e2e_test", "form end-to-end test"),
+    ("forms.error_path_test", "form error-path test"),
+    ("forms.spam_test", "form spam test"),
+    ("forms.notification_verified", "form notification test"),
+    ("legal.mentions_legales", "legal notice review"),
+    ("legal.privacy_notice", "privacy notice review"),
+    ("legal.accessibility_statement", "accessibility statement review"),
+    ("legal.concept_labels", "concept-label review"),
+    ("ownership.client_verified_access", "client ownership review"),
+    ("rollback.rehearsed", "rollback rehearsal"),
+    ("rollback.restore_proven", "restore proof"),
+)
+
 
 def _result(gate_id: str, passed: bool, reasons: list[str] | None = None) -> dict[str, Any]:
     return {"gateId": gate_id, "passed": passed, "reasons": reasons or []}
@@ -80,6 +99,33 @@ def evaluate_project(project: StudioProject) -> dict[str, Any]:
                 build_reasons.append(f"build check is incomplete: {field}")
     build = _result("build", not build_reasons, build_reasons)
 
+    qa_reasons: list[str] = []
+    receipt = project.qa_receipt
+    if receipt is None:
+        qa_reasons.append("QA receipt is missing")
+    else:
+        if receipt.accessibility.axe_critical != 0:
+            qa_reasons.append("axe critical findings remain")
+        if receipt.accessibility.axe_serious != 0:
+            qa_reasons.append("axe serious findings remain")
+        for path, label in REQUIRED_QA_CHECKS:
+            value: Any = receipt
+            for part in path.split("."):
+                value = getattr(value, part)
+            if not value:
+                qa_reasons.append(f"{label} is incomplete")
+        if receipt.performance.lcp_lab_s > 2.5:
+            qa_reasons.append("LCP lab budget exceeds 2.5 seconds")
+        if receipt.performance.inp_ms is not None and receipt.performance.inp_ms > 200:
+            qa_reasons.append("INP budget exceeds 200 milliseconds")
+        if receipt.performance.cls > 0.1:
+            qa_reasons.append("CLS budget exceeds 0.1")
+        if receipt.performance.js_kb > 60:
+            qa_reasons.append("JavaScript budget exceeds 60 KB")
+        if receipt.performance.third_party_scripts > 1:
+            qa_reasons.append("third-party script budget exceeds one script")
+    qa = _result("qa", not qa_reasons, qa_reasons)
+
     launch_reasons: list[str] = []
     review = project.launch_review
     if review is None:
@@ -99,7 +145,7 @@ def evaluate_project(project: StudioProject) -> dict[str, Any]:
             launch_reasons.append("client launch approval is missing")
     launch = _result("launch", not launch_reasons, launch_reasons)
 
-    gates = [discovery, message, direction, build, launch]
+    gates = [discovery, message, direction, build, qa, launch]
     blocked = [gate["gateId"] for gate in gates if not gate["passed"]]
     return {
         "schemaVersion": "studio.harness-report.v1",

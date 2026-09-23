@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proofline.studio/schemas/qa-receipt.schema.json",
+  "title": "Proofline QA / Launch Receipt",
+  "type": "object",
+  "required": ["project", "release", "date", "accessibility", "performance", "forms", "legal", "ownership", "rollback", "sign_off"],
+  "properties": {
+    "project": { "type": "string" }, "release": { "type": "string" }, "url": { "type": "string" },
+    "commit": { "type": "string" }, "date": { "type": "string", "format": "date" },
+    "tester": { "type": "string" }, "tool_versions": { "type": "object" },
+    "accessibility": {
+      "type": "object",
+      "required": ["axe_critical", "axe_serious", "keyboard_sweep", "contrast_verified", "target_size_verified", "reduced_motion_verified"],
+      "properties": {
+        "axe_critical": { "const": 0 }, "axe_serious": { "const": 0 },
+        "keyboard_sweep": { "const": true }, "focus_not_obscured": { "type": "boolean" },
+        "contrast_verified": { "const": true }, "target_size_verified": { "const": true },
+        "reduced_motion_verified": { "const": true }, "screen_reader_spot_check": { "type": "boolean" }
+      }
+    },
+    "performance": {
+      "type": "object",
+      "required": ["lcp_lab_s", "cls", "js_kb", "third_party_scripts"],
+      "properties": {
+        "lcp_lab_s": { "type": "number" }, "inp_ms": { "type": ["number", "null"] },
+        "cls": { "type": "number" }, "js_kb": { "type": "number" }, "css_kb": { "type": "number" },
+        "third_party_scripts": { "type": "integer", "maximum": 1 },
+        "field_data_available": { "type": "boolean" }
+      }
+    },
+    "forms": { "type": "object", "required": ["e2e_test", "error_path_test", "spam_test", "notification_verified"], "properties": { "e2e_test": { "const": true }, "error_path_test": { "const": true }, "spam_test": { "const": true }, "notification_verified": { "const": true } } },
+    "legal": { "type": "object", "required": ["mentions_legales", "privacy_notice", "accessibility_statement", "concept_labels"], "properties": { "mentions_legales": { "const": true }, "privacy_notice": { "const": true }, "accessibility_statement": { "const": true }, "concept_labels": { "const": true }, "counsel_reviewed": { "type": "boolean" } } },
+    "ownership": { "type": "object", "required": ["client_verified_access"], "properties": { "client_verified_access": { "const": true }, "accounts": { "type": "array", "items": { "type": "string" } } } },
+    "rollback": { "type": "object", "required": ["rehearsed", "minutes"], "properties": { "rehearsed": { "const": true }, "minutes": { "type": "number", "maximum": 15 }, "restore_proven": { "type": "boolean" } } },
+    "waivers": { "type": "array", "items": { "type": "object", "required": ["item", "reason", "fix_date", "approved_by"], "properties": { "item": { "type": "string" }, "reason": { "type": "string" }, "fix_date": { "type": "string", "format": "date" }, "approved_by": { "type": "string" } } } },
+    "sign_off": { "type": "object", "required": ["founder", "date"], "properties": { "founder": { "type": "string" }, "date": { "type": "string", "format": "date" } } }
+  }
+}

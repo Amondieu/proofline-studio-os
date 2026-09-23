@@ -1,0 +1,54 @@
+{
+  "schemaVersion": "studio.evidence-policy.v1",
+  "evidenceTypes": [
+    {
+      "id": "demonstrated_method",
+      "label": "Demonstrated method",
+      "use": "A method or artefact visible in the studio process itself."
+    },
+    {
+      "id": "stated_standard",
+      "label": "Stated standard",
+      "use": "A documented standard with a corresponding QA receipt or review."
+    },
+    {
+      "id": "permissioned_quote",
+      "label": "Permissioned quote",
+      "use": "Verbatim client feedback with permission and provenance recorded."
+    },
+    {
+      "id": "labelled_concept_work",
+      "label": "Labelled concept work",
+      "use": "Independent demonstration that is visibly not client work or a result claim."
+    }
+  ],
+  "prohibitedClaims": [
+    "conversion guaranteed",
+    "results guaranteed",
+    "rankings guaranteed",
+    "GDPR compliant guaranteed",
+    "fully accessible",
+    "trusted by an unsupported number of companies",
+    "exclusive AI asset"
+  ],
+  "assetRules": {
+    "unknownLicence": "block_until_confirmed",
+    "clientMaterialInGenerativeTools": false,
+    "syntheticPeopleAsProof": false,
+    "fontDelivery": "self_hosted_only",
+    "conceptWorkLabelRequired": true
+  },
+  "authority": {
+    "automationMayRecommend": true,
+    "automationMayBlock": true,
+    "automationMayApprove": false,
+    "automationMayPublish": false,
+    "humanApprovalRequiredFor": [
+      "client_claims",
+      "asset_rights",
+      "legal_text",
+      "external_account_changes",
+      "launch"
+    ]
+  }
+}

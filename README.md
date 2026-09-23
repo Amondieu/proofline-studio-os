@@ -14,6 +14,10 @@ The evaluator can block and explain missing work. It cannot approve, publish,
 deploy, or assert that a legal or factual claim is true. A human owns every
 meaningful sign-off.
 
+The six-gate pipeline now includes a machine-readable QA receipt between Build
+and Launch. Asset provenance and detailed human approvals are separate,
+versioned records; they supplement the append-only gate ledger.
+
 ## What this repo is for
 
 - productized landing-page delivery for B2B AI/automation, micro-SaaS, and
@@ -45,8 +49,12 @@ network dependency and its teardown form is a local demonstration only.
 - `docs/architecture/` — authority model and harness design.
 - `docs/operations/` — reusable briefs and checklists for client work.
 - `studio/` — typed project contracts, deterministic gate evaluator, portable
-  path helpers, and explicit human-gate ledger writer.
+  path helpers, QA receipt, provenance records, and explicit human-gate ledger
+  writer.
 - `schemas/studio/` — versioned JSON contracts.
+- `templates/studio/` — portable QA and asset-provenance starting templates.
+- `LLMarena/` — preserved deep-research bundle; see
+  `docs/architecture/LLMARENA-ADOPTION.md` for what is operational.
 - `config/studio/` — profile, offers, creative directions, and QA policy.
 - `site/` — Proofline Studio master-site proof of work.
 - `skills/landing-studio/` — agent execution envelope for studio tasks.

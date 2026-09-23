@@ -1,7 +1,7 @@
 import json
 import tempfile
 import unittest
-from datetime import UTC, datetime
+from datetime import UTC, date, datetime
 from pathlib import Path
 
 from studio.harness import evaluate_project, record_human_gate
@@ -9,8 +9,18 @@ from studio.models import (
     BuildChecklist,
     DesignDirection,
     DiscoveryBrief,
+    AccessibilityReceipt,
+    AssetRecord,
+    AIAssetDetails,
+    FormReceipt,
+    LegalReceipt,
     LaunchReview,
     MessageMap,
+    OwnershipReceipt,
+    PerformanceReceipt,
+    QAReceipt,
+    QASignOff,
+    RollbackReceipt,
     StudioProject,
 )
 from studio.portability import PortablePathError, normalize_relative_path
@@ -80,6 +90,19 @@ def make_project() -> StudioProject:
             client_admin_access_ready=True,
             backup_export_supplied=True,
         ),
+        qa_receipt=QAReceipt(
+            project_id="studio_test_ready",
+            release="v1.0.0",
+            date=date(2026, 9, 23),
+            tester="studio-operator",
+            accessibility=AccessibilityReceipt(screen_reader_spot_check=True),
+            performance=PerformanceReceipt(lcp_lab_s=1.8, inp_ms=120, cls=0.03, js_kb=42, third_party_scripts=1),
+            forms=FormReceipt(),
+            legal=LegalReceipt(),
+            ownership=OwnershipReceipt(accounts=["repo", "hosting", "domain", "analytics"]),
+            rollback=RollbackReceipt(minutes=8),
+            sign_off=QASignOff(founder="studio-operator", date=date(2026, 9, 23)),
+        ),
         launch_review=LaunchReview(
             mobile_conversion_pass=True,
             technical_pass=True,
@@ -123,6 +146,32 @@ class StudioHarnessTests(unittest.TestCase):
             with self.subTest(value=value):
                 with self.assertRaises(PortablePathError):
                     normalize_relative_path(value)
+
+    def test_qa_receipt_is_a_real_gate_and_ai_client_material_is_rejected(self):
+        project = make_project()
+        project.qa_receipt = None
+        report = evaluate_project(project)
+        self.assertIn("qa", report["blockedGates"])
+        with self.assertRaises(ValueError):
+            AssetRecord(
+                asset_id="A-0001",
+                project_id="studio_test_ready",
+                source_type="ai_generated",
+                licence="vendor terms",
+                date=date(2026, 9, 23),
+                creator_or_vendor="Example AI",
+                human_reviewer="studio-operator",
+                allowed_uses=["internal concept"],
+                ai=AIAssetDetails(
+                    tool="Example AI",
+                    model="example-v1",
+                    inputs_description="Abstract texture exploration.",
+                    client_material_used=True,
+                    real_likeness_used=False,
+                    disclosure_required=False,
+                    vendor_training_on_inputs=True,
+                ),
+            )
 
 
 if __name__ == "__main__":

@@ -15,7 +15,10 @@
     "message_map": { "$ref": "#/$defs/message_map" },
     "design_direction": { "$ref": "#/$defs/design_direction" },
     "build": { "$ref": "#/$defs/build" },
-    "launch_review": { "$ref": "#/$defs/launch_review" }
+    "qa_receipt": { "$ref": "qa-receipt.v1.json" },
+    "launch_review": { "$ref": "#/$defs/launch_review" },
+    "asset_records": { "type": "array", "items": { "$ref": "asset-record.v1.json" } },
+    "approvals": { "type": "array", "items": { "$ref": "approval-record.v1.json" } }
   },
   "$defs": {
     "discovery": {

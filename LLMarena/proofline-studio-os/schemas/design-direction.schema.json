@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proofline.studio/schemas/design-direction.schema.json",
+  "title": "Proofline Design Direction Tokens",
+  "type": "object",
+  "required": ["direction", "tokens", "motion", "accessibility_check", "references", "do_not_imitate"],
+  "properties": {
+    "direction": { "enum": ["precision", "cinematic", "editorial"] },
+    "tokens": {
+      "type": "object",
+      "required": ["bg_base", "bg_elevated", "ink_strong", "ink_muted", "accent", "border_color", "radius", "font_display", "font_body", "scale_ratio", "grid_gutter", "container_max"],
+      "properties": {
+        "bg_base": { "type": "string" }, "bg_elevated": { "type": "string" },
+        "ink_strong": { "type": "string" }, "ink_muted": { "type": "string" },
+        "accent": { "type": "string" }, "accent_signal": { "type": "string" },
+        "border_color": { "type": "string" }, "border_width": { "type": "string" },
+        "radius": { "type": "string" }, "shadow": { "type": "string" },
+        "font_display": { "type": "string", "description": "OFL/Apache font only, self-hosted, licence file shipped" },
+        "font_body": { "type": "string" }, "font_mono": { "type": ["string", "null"] },
+        "scale_ratio": { "type": "number" }, "leading_tight": { "type": "number" },
+        "leading_body": { "type": "number" }, "tracking_display": { "type": "string" },
+        "grid_gutter": { "type": "string" }, "container_max": { "type": "string" },
+        "section_padding_block": { "type": "string" }, "image_treatment": { "type": "string" }
+      }
+    },
+    "motion": {
+      "type": "object",
+      "required": ["ladder_rung_max", "durations_ms", "reduced_motion_path_default"],
+      "properties": {
+        "ladder_rung_max": { "type": "integer", "minimum": 0, "maximum": 5 },
+        "durations_ms": { "type": "array", "items": { "type": "integer" } },
+        "reduced_motion_path_default": { "const": true },
+        "js_budget_kb": { "type": "integer" }
+      }
+    },
+    "accessibility_check": {
+      "type": "object",
+      "required": ["body_contrast_min", "large_text_contrast_min", "ui_contrast_min", "min_target_px", "verified_date"],
+      "properties": {
+        "body_contrast_min": { "const": 4.5 },
+        "large_text_contrast_min": { "const": 3.0 },
+        "ui_contrast_min": { "const": 3.0 },
+        "min_target_px": { "const": 24 },
+        "verified_date": { "type": "string", "format": "date" }
+      }
+    },
+    "references": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["url", "date", "tag", "take", "do_not_take"],
+        "properties": {
+          "url": { "type": "string", "format": "uri" },
+          "date": { "type": "string", "format": "date" },
+          "tag": { "enum": ["layout", "typography", "hero", "proof", "cta", "motion", "forms", "pricing", "navigation", "footer", "mobile", "accessibility"] },
+          "take": { "type": "string" },
+          "do_not_take": { "type": "string" }
+        }
+      }
+    },
+    "do_not_imitate": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "signed_off_by": { "type": "string" }, "signed_off_date": { "type": "string", "format": "date" }
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:qa-receipt:v1",
+  "title": "Proofline QA Receipt v1",
+  "description": "Human-authored QA evidence. A valid receipt can prepare a project for human launch review; it cannot launch anything.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "release", "date", "tester", "accessibility", "performance", "forms", "legal", "ownership", "rollback", "sign_off"],
+  "properties": {
+    "schema_version": { "const": "studio.qa-receipt.v1" },
+    "project_id": { "type": "string", "pattern": "^studio_[a-z0-9_-]{4,80}$" },
+    "release": { "type": "string", "minLength": 1 },
+    "url": { "type": ["string", "null"] },
+    "commit": { "type": ["string", "null"] },
+    "date": { "type": "string", "format": "date" },
+    "tester": { "type": "string", "minLength": 2 },
+    "tool_versions": { "type": "object", "additionalProperties": { "type": "string" } },
+    "accessibility": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["axe_critical", "axe_serious", "keyboard_sweep", "focus_not_obscured", "contrast_verified", "target_size_verified", "reduced_motion_verified"],
+      "properties": {
+        "axe_critical": { "const": 0 },
+        "axe_serious": { "const": 0 },
+        "keyboard_sweep": { "const": true },
+        "focus_not_obscured": { "const": true },
+        "contrast_verified": { "const": true },
+        "target_size_verified": { "const": true },
+        "reduced_motion_verified": { "const": true },
+        "screen_reader_spot_check": { "type": "boolean" }
+      }
+    },
+    "performance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lcp_lab_s", "cls", "js_kb", "third_party_scripts"],
+      "properties": {
+        "lcp_lab_s": { "type": "number", "minimum": 0, "maximum": 2.5 },
+        "inp_ms": { "type": ["number", "null"], "minimum": 0, "maximum": 200 },
+        "cls": { "type": "number", "minimum": 0, "maximum": 0.1 },
+        "js_kb": { "type": "number", "minimum": 0, "maximum": 60 },
+        "css_kb": { "type": ["number", "null"], "minimum": 0 },
+        "third_party_scripts": { "type": "integer", "minimum": 0, "maximum": 1 },
+        "field_data_available": { "type": "boolean" }
+      }
+    },
+    "forms": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["e2e_test", "error_path_test", "spam_test", "notification_verified"],
+      "properties": {
+        "e2e_test": { "const": true },
+        "error_path_test": { "const": true },
+        "spam_test": { "const": true },
+        "notification_verified": { "const": true }
+      }
+    },
+    "legal": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mentions_legales", "privacy_notice", "accessibility_statement", "concept_labels"],
+      "properties": {
+        "mentions_legales": { "const": true },
+        "privacy_notice": { "const": true },
+        "accessibility_statement": { "const": true },
+        "concept_labels": { "const": true },
+        "counsel_reviewed": { "type": "boolean" }
+      }
+    },
+    "ownership": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["client_verified_access"],
+      "properties": {
+        "client_verified_access": { "const": true },
+        "accounts": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "rollback": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["rehearsed", "minutes", "restore_proven"],
+      "properties": {
+        "rehearsed": { "const": true },
+        "minutes": { "type": "number", "minimum": 0, "maximum": 15 },
+        "restore_proven": { "const": true }
+      }
+    },
+    "waivers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["item", "reason", "fix_date", "approved_by"],
+        "properties": {
+          "item": { "type": "string", "minLength": 2 },
+          "reason": { "type": "string", "minLength": 10 },
+          "fix_date": { "type": "string", "format": "date" },
+          "approved_by": { "type": "string", "minLength": 2 }
+        }
+      }
+    },
+    "sign_off": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["founder", "date"],
+      "properties": {
+        "founder": { "type": "string", "minLength": 2 },
+        "date": { "type": "string", "format": "date" }
+      }
+    }
+  }
+}

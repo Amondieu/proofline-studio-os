@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from datetime import datetime
+from datetime import date, datetime
 from enum import StrEnum
 from typing import Literal
 
@@ -96,6 +96,152 @@ class BuildChecklist(Contract):
     backup_export_supplied: bool = False
 
 
+class AIAssetDetails(Contract):
+    tool: str = Field(min_length=2, max_length=160)
+    model: str = Field(min_length=1, max_length=160)
+    inputs_description: str = Field(min_length=10, max_length=1000)
+    client_material_used: Literal[False] = False
+    real_likeness_used: Literal[False] = False
+    prompt_hash: str | None = None
+    approval_record_id: str | None = None
+    disclosure_required: bool
+    vendor_training_on_inputs: bool
+
+
+class AssetRecord(Contract):
+    """Traceable asset rights record; AI client material is rejected by contract."""
+
+    schema_version: Literal["studio.asset-record.v1"] = "studio.asset-record.v1"
+    asset_id: str = Field(pattern=r"^A-[0-9]{4,}$")
+    project_id: str = Field(pattern=r"^studio_[a-z0-9_-]{4,80}$")
+    filename: str | None = None
+    source_type: Literal["own", "client", "stock_free", "stock_paid", "ai_generated", "commissioned"]
+    source_url: str | None = None
+    licence: str = Field(min_length=2, max_length=240)
+    licence_file_path: str | None = None
+    date: date
+    creator_or_vendor: str = Field(min_length=2, max_length=240)
+    model_release: bool | None = None
+    ai: AIAssetDetails | None = None
+    human_reviewer: str = Field(min_length=2, max_length=160)
+    allowed_uses: list[str] = Field(min_length=1, max_length=20)
+    restrictions: list[str] = Field(default_factory=list, max_length=20)
+    removed_on: date | None = None
+
+
+class ApprovalGate(StrEnum):
+    licence = "licence"
+    message = "message"
+    direction = "direction"
+    accessibility = "accessibility"
+    performance = "performance"
+    asset_provenance = "asset_provenance"
+    ai_asset = "ai_asset"
+    ownership = "ownership"
+    qa = "qa"
+    launch = "launch"
+    client_permission = "client_permission"
+    testimonial_permission = "testimonial_permission"
+    dpa_vendor = "dpa_vendor"
+
+
+class ApprovalRecord(Contract):
+    """Detailed, append-only human approval that supplements the gate hash ledger."""
+
+    schema_version: Literal["studio.approval-record.v1"] = "studio.approval-record.v1"
+    approval_id: str = Field(pattern=r"^AP-[0-9]{4,}$")
+    gate: ApprovalGate
+    subject: str = Field(min_length=2, max_length=500)
+    decision: Literal["approved", "rejected", "approved_with_conditions"]
+    conditions: list[str] = Field(default_factory=list, max_length=20)
+    approver: str = Field(min_length=2, max_length=160)
+    date: date
+    evidence: list[str] = Field(min_length=1, max_length=30)
+    expires_on: date | None = None
+    supersedes: str | None = None
+    notes: str | None = None
+
+
+class AccessibilityReceipt(Contract):
+    axe_critical: Literal[0] = 0
+    axe_serious: Literal[0] = 0
+    keyboard_sweep: Literal[True] = True
+    focus_not_obscured: Literal[True] = True
+    contrast_verified: Literal[True] = True
+    target_size_verified: Literal[True] = True
+    reduced_motion_verified: Literal[True] = True
+    screen_reader_spot_check: bool = False
+
+
+class PerformanceReceipt(Contract):
+    lcp_lab_s: float = Field(ge=0, le=2.5)
+    inp_ms: float | None = Field(default=None, ge=0, le=200)
+    cls: float = Field(ge=0, le=0.1)
+    js_kb: float = Field(ge=0, le=60)
+    css_kb: float | None = Field(default=None, ge=0)
+    third_party_scripts: int = Field(ge=0, le=1)
+    field_data_available: bool = False
+
+
+class FormReceipt(Contract):
+    e2e_test: Literal[True] = True
+    error_path_test: Literal[True] = True
+    spam_test: Literal[True] = True
+    notification_verified: Literal[True] = True
+
+
+class LegalReceipt(Contract):
+    mentions_legales: Literal[True] = True
+    privacy_notice: Literal[True] = True
+    accessibility_statement: Literal[True] = True
+    concept_labels: Literal[True] = True
+    counsel_reviewed: bool = False
+
+
+class OwnershipReceipt(Contract):
+    client_verified_access: Literal[True] = True
+    accounts: list[str] = Field(default_factory=list, max_length=20)
+
+
+class RollbackReceipt(Contract):
+    rehearsed: Literal[True] = True
+    minutes: float = Field(ge=0, le=15)
+    restore_proven: Literal[True] = True
+
+
+class QAWaiver(Contract):
+    item: str = Field(min_length=2, max_length=240)
+    reason: str = Field(min_length=10, max_length=1000)
+    fix_date: date
+    approved_by: str = Field(min_length=2, max_length=160)
+
+
+class QASignOff(Contract):
+    founder: str = Field(min_length=2, max_length=160)
+    date: date
+
+
+class QAReceipt(Contract):
+    """Human-authored evidence receipt; passing it never grants launch authority."""
+
+    schema_version: Literal["studio.qa-receipt.v1"] = "studio.qa-receipt.v1"
+    project_id: str = Field(pattern=r"^studio_[a-z0-9_-]{4,80}$")
+    release: str = Field(min_length=1, max_length=120)
+    url: str | None = None
+    commit: str | None = None
+    date: date
+    tester: str = Field(min_length=2, max_length=160)
+    tool_versions: dict[str, str] = Field(default_factory=dict, max_length=30)
+    accessibility: AccessibilityReceipt
+    performance: PerformanceReceipt
+    forms: FormReceipt
+    legal: LegalReceipt
+    ownership: OwnershipReceipt
+    rollback: RollbackReceipt
+    waivers: list[QAWaiver] = Field(default_factory=list, max_length=30)
+    sign_off: QASignOff
+
+
 class LaunchReview(Contract):
     mobile_conversion_pass: bool = False
     technical_pass: bool = False
@@ -116,4 +262,7 @@ class StudioProject(Contract):
     message_map: MessageMap | None = None
     design_direction: DesignDirection | None = None
     build: BuildChecklist | None = None
+    qa_receipt: QAReceipt | None = None
     launch_review: LaunchReview | None = None
+    asset_records: list[AssetRecord] = Field(default_factory=list, max_length=500)
+    approvals: list[ApprovalRecord] = Field(default_factory=list, max_length=200)

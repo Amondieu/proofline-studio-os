@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proofline.studio/schemas/asset-record.schema.json",
+  "title": "Proofline Asset Provenance Record",
+  "type": "object",
+  "required": ["asset_id", "project", "source_type", "licence", "date", "human_reviewer", "allowed_uses"],
+  "properties": {
+    "asset_id": { "type": "string", "pattern": "^A-[0-9]{4,}$" },
+    "project": { "type": "string" },
+    "filename": { "type": "string" },
+    "source_type": { "enum": ["own", "client", "stock_free", "stock_paid", "ai_generated", "commissioned"] },
+    "source_url": { "type": ["string", "null"] },
+    "licence": { "type": "string" },
+    "licence_file_path": { "type": ["string", "null"], "description": "Required for fonts and any file-based licence" },
+    "date": { "type": "string", "format": "date" },
+    "creator_or_vendor": { "type": "string" },
+    "model_release": { "type": ["boolean", "null"], "description": "Required true when identifiable people are shown in a commercial claim" },
+    "ai": {
+      "type": ["object", "null"],
+      "properties": {
+        "tool": { "type": "string" }, "model": { "type": "string" },
+        "inputs_description": { "type": "string" },
+        "client_material_used": { "const": false },
+        "real_likeness_used": { "const": false },
+        "prompt_hash": { "type": "string" },
+        "approval_record_id": { "type": ["string", "null"] },
+        "disclosure_required": { "type": "boolean" },
+        "vendor_training_on_inputs": { "type": "boolean" }
+      }
+    },
+    "human_reviewer": { "type": "string" },
+    "allowed_uses": { "type": "array", "items": { "type": "string" } },
+    "restrictions": { "type": "array", "items": { "type": "string" } },
+    "removed_on": { "type": ["string", "null"], "format": "date" }
+  }
+}

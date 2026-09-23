@@ -12,7 +12,7 @@
     "readOnly": { "const": true },
     "authoritative": { "const": false },
     "launchAuthority": { "const": false },
-    "gates": { "type": "array", "minItems": 5 },
+    "gates": { "type": "array", "minItems": 6 },
     "blockedGates": { "type": "array", "items": { "type": "string" } },
     "readyForHumanLaunchReview": { "type": "boolean" },
     "readyToLaunch": { "const": false },

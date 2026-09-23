@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proofline.studio/schemas/approval-record.schema.json",
+  "title": "Proofline Human Approval Record",
+  "type": "object",
+  "description": "One record per gate decision. Append-only: never edit a signed record; supersede it with a new one.",
+  "required": ["approval_id", "gate", "subject", "decision", "approver", "date", "evidence"],
+  "properties": {
+    "approval_id": { "type": "string", "pattern": "^AP-[0-9]{4,}$" },
+    "gate": { "enum": ["licence", "message", "direction", "accessibility", "performance", "asset_provenance", "ai_asset", "ownership", "launch", "client_permission", "testimonial_permission", "dpa_vendor"] },
+    "subject": { "type": "string", "description": "What exactly is being approved (dependency@version, asset id, page, vendor, quote)" },
+    "decision": { "enum": ["approved", "rejected", "approved_with_conditions"] },
+    "conditions": { "type": "array", "items": { "type": "string" } },
+    "approver": { "type": "string", "description": "Human name. Never a tool or an agent." },
+    "date": { "type": "string", "format": "date" },
+    "evidence": { "type": "array", "items": { "type": "string" }, "minItems": 1, "description": "URLs, file paths, command outputs, screenshots that justify the decision" },
+    "expires_on": { "type": ["string", "null"], "format": "date", "description": "e.g. licence reviews expire after 90 days" },
+    "supersedes": { "type": ["string", "null"] },
+    "notes": { "type": "string" }
+  }
+}

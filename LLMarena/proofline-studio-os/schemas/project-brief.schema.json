@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proofline.studio/schemas/project-brief.schema.json",
+  "title": "Proofline Project Brief",
+  "type": "object",
+  "required": ["project_id", "client_legal_entity", "tier", "primary_action", "pages", "copy_source", "assets", "ownership"],
+  "properties": {
+    "project_id": { "type": "string" },
+    "client_legal_entity": { "type": "string", "description": "Required for mentions légales (LCEN art. 1-1)" },
+    "client_country": { "type": "string" },
+    "tier": { "enum": ["starter", "authority", "launch_system"] },
+    "price_eur": { "type": "number", "minimum": 0 },
+    "delivery_days": { "type": "integer", "enum": [5, 10, 14] },
+    "primary_action": { "type": "string" },
+    "secondary_action": { "type": "string" },
+    "pages": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "direction": { "enum": ["precision", "cinematic", "editorial"] },
+    "copy_source": { "enum": ["client_provided_edited", "written_from_scratch", "client_final"] },
+    "assets": {
+      "type": "object",
+      "properties": {
+        "source": { "enum": ["client", "ours", "stock", "ai_generated", "mixed"] },
+        "identifiable_people": { "type": "boolean" },
+        "releases_on_file": { "type": "boolean" }
+      },
+      "required": ["source"]
+    },
+    "integrations": { "type": "array", "items": { "enum": ["form_worker", "tally", "cal_com", "plausible", "umami", "keystatic", "payload"] } },
+    "regulated_sector": { "type": "boolean", "default": false },
+    "counsel_review_required": { "type": "boolean", "default": false },
+    "ownership": {
+      "type": "object",
+      "required": ["repo", "hosting", "domain", "analytics"],
+      "properties": {
+        "repo": { "enum": ["client", "pending_transfer"] },
+        "hosting": { "enum": ["client", "pending_transfer"] },
+        "domain": { "enum": ["client", "pending_transfer"] },
+        "analytics": { "enum": ["client", "pending_transfer", "none"] }
+      }
+    },
+    "revision_rounds": { "type": "integer", "minimum": 1, "maximum": 3 },
+    "content_freeze_date": { "type": "string", "format": "date" },
+    "human_approvals": { "type": "array", "items": { "type": "string" }, "description": "Gate names signed off so far" }
+  }
+}

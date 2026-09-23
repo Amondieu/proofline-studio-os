@@ -2,6 +2,13 @@
   "directed": false,
   "multigraph": false,
   "graph": {
+    "provenance": {
+      "source_owner": "git",
+      "source_id": "repo:local/proofline-studio@880078ed",
+      "observed_at": "2026-09-23T14:16:09.277Z",
+      "source_hash": "7bc151b5a86e610564312c0a3360ec2e6ec9b7d6",
+      "adapter_version": "graphify-git/1"
+    },
     "community_labels": {
       "0": "Community 0",
       "1": "Community 1",
@@ -13,19 +20,59 @@
       "7": "Community 7",
       "8": "Community 8",
       "9": "Community 9",
-      "10": "Community 10"
-    }
+      "10": "Community 10",
+      "11": "Community 11",
+      "12": "Community 12",
+      "13": "Community 13"
+    },
+    "built_from_commit": "7bc151b5a86e610564312c0a3360ec2e6ec9b7d6"
   },
-  "topology_signature": "n=61;e=78;basemodel,scripts_normalize_graphify_manifest,scripts_normalize_graphify_manifest_manifest,scripts_normalize_graphify_manifest_manifestpath,scripts_normalize_graphify_manifest_normalized,scripts_normalize_graphify_manifest_root,scripts_portable_audit,scripts_portable_audit_audit,scripts_portable_audit_rationale_1,scripts_validate_studio_contracts,scripts_validate_studio_contracts_load,scripts_validate_studio_contracts_rationale_1,scripts_validate_studio_contracts_validate,site_app,site_app_artdirection,site_app_buttons,site_app_directioncta,site_app_directiondata,site_app_previewbody,site_app_previeweyebrow,site_app_previewtitle,site_app_setdirection,site_app_stagelabel,strenum,studio_cli,studio_cli_main,studio_cli_rationale_1,studio_harness,studio_harness_evaluate_project,studio_harness_rationale_1,studio_harness_rationale_132,studio_harness_rationale_42,studio_harness_record_human_gate,studio_harness_result,studio_init,studio_init_rationale_1,studio_main,studio_models,studio_models_buildchecklist,studio_models_contract,studio_models_designdirection,studio_models_discoverybrief,studio_models_launchreview,studio_models_messagemap,studio_models_rationale_1,studio_models_stage,studio_models_studioproject,studio_portability,studio_portability_normalize_relative_path,studio_portability_portablepatherror,studio_portability_rationale_1,studio_portability_rationale_13,studio_portability_safe_project_path,tests_test_studio_harness,tests_test_studio_harness_make_project,tests_test_studio_harness_studioharnesstests,tests_test_studio_harness_studioharnesstests_test_blocked_manifest_explains_missing_proof_and_unresolved_assumptions,tests_test_studio_harness_studioharnesstests_test_complete_manifest_is_ready_for_human_review_but_never_authorized,tests_test_studio_harness_studioharnesstests_test_human_gate_ledger_is_hash_chained_and_append_only,tests_test_studio_harness_studioharnesstests_test_portable_references_reject_machine_paths,valueerror|basemodel\tstudio_models_contract\tinherits;scripts_normalize_graphify_manifest\tscripts_normalize_graphify_manifest_manifest\tcontains;scripts_normalize_graphify_manifest\tscripts_normalize_graphify_manifest_manifestpath\tcontains;scripts_normalize_graphify_manifest\tscripts_normalize_graphify_manifest_normalized\tcontains;scripts_normalize_graphify_manifest\tscripts_normalize_graphify_manifest_root\tcontains;scripts_portable_audit\tscripts_portable_audit_audit\tcontains;scripts_portable_audit\tscripts_portable_audit_rationale_1\trationale_for;scripts_validate_studio_contracts\tscripts_validate_studio_contracts_load\tcontains;scripts_validate_studio_contracts\tscripts_validate_studio_contracts_rationale_1\trationale_for;scripts_validate_studio_contracts\tscripts_validate_studio_contracts_validate\tcontains;scripts_validate_studio_contracts_load\tscripts_validate_studio_contracts_validate\tcalls;scripts_validate_studio_contracts_rationale_1\tstudio_models_studioproject\tuses;site_app\tsite_app_artdirection\tcontains;site_app\tsite_app_buttons\tcontains;site_app\tsite_app_directioncta\tcontains;site_app\tsite_app_directiondata\tcontains;site_app\tsite_app_previewbody\tcontains;site_app\tsite_app_previeweyebrow\tcontains;site_app\tsite_app_previewtitle\tcontains;site_app\tsite_app_setdirection\tcontains;site_app\tsite_app_stagelabel\tcontains;strenum\tstudio_models_stage\tinherits;studio_cli\tstudio_cli_main\tcontains;studio_cli\tstudio_cli_rationale_1\trationale_for;studio_cli_rationale_1\tstudio_models_studioproject\tuses;studio_harness\tstudio_harness_evaluate_project\tcontains;studio_harness\tstudio_harness_rationale_1\trationale_for;studio_harness\tstudio_harness_record_human_gate\tcontains;studio_harness\tstudio_harness_result\tcontains;studio_harness\ttests_test_studio_harness\timports_from;studio_harness_evaluate_project\tstudio_harness_rationale_42\trationale_for;studio_harness_evaluate_project\tstudio_harness_result\tcalls;studio_harness_rationale_1\tstudio_models_studioproject\tuses;studio_harness_rationale_132\tstudio_harness_record_human_gate\trationale_for;studio_harness_rationale_132\tstudio_models_studioproject\tuses;studio_harness_rationale_42\tstudio_models_studioproject\tuses;studio_init\tstudio_init_rationale_1\trationale_for;studio_init_rationale_1\tstudio_models_studioproject\tuses;studio_models\tstudio_models_buildchecklist\tcontains;studio_models\tstudio_models_contract\tcontains;studio_models\tstudio_models_designdirection\tcontains;studio_models\tstudio_models_discoverybrief\tcontains;studio_models\tstudio_models_launchreview\tcontains;studio_models\tstudio_models_messagemap\tcontains;studio_models\tstudio_models_rationale_1\trationale_for;studio_models\tstudio_models_stage\tcontains;studio_models\tstudio_models_studioproject\tcontains;studio_models\ttests_test_studio_harness\timports_from;studio_models_buildchecklist\tstudio_models_contract\tinherits;studio_models_buildchecklist\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_contract\tstudio_models_designdirection\tinherits;studio_models_contract\tstudio_models_discoverybrief\tinherits;studio_models_contract\tstudio_models_launchreview\tinherits;studio_models_contract\tstudio_models_messagemap\tinherits;studio_models_contract\tstudio_models_studioproject\tinherits;studio_models_designdirection\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_discoverybrief\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_launchreview\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_messagemap\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_studioproject\ttests_test_studio_harness_studioharnesstests\tuses;studio_portability\tstudio_portability_normalize_relative_path\tcontains;studio_portability\tstudio_portability_portablepatherror\tcontains;studio_portability\tstudio_portability_rationale_1\trationale_for;studio_portability\tstudio_portability_safe_project_path\tcontains;studio_portability\ttests_test_studio_harness\timports_from;studio_portability_normalize_relative_path\tstudio_portability_portablepatherror\tcalls;studio_portability_normalize_relative_path\tstudio_portability_safe_project_path\tcalls;studio_portability_portablepatherror\tstudio_portability_rationale_13\trationale_for;studio_portability_portablepatherror\tstudio_portability_safe_project_path\tcalls;studio_portability_portablepatherror\ttests_test_studio_harness_studioharnesstests\tuses;studio_portability_portablepatherror\tvalueerror\tinherits;tests_test_studio_harness\ttests_test_studio_harness_make_project\tcontains;tests_test_studio_harness\ttests_test_studio_harness_studioharnesstests\tcontains;tests_test_studio_harness_make_project\ttests_test_studio_harness_studioharnesstests_test_complete_manifest_is_ready_for_human_review_but_never_authorized\tcalls;tests_test_studio_harness_studioharnesstests\ttests_test_studio_harness_studioharnesstests_test_blocked_manifest_explains_missing_proof_and_unresolved_assumptions\tmethod;tests_test_studio_harness_studioharnesstests\ttests_test_studio_harness_studioharnesstests_test_complete_manifest_is_ready_for_human_review_but_never_authorized\tmethod;tests_test_studio_harness_studioharnesstests\ttests_test_studio_harness_studioharnesstests_test_human_gate_ledger_is_hash_chained_and_append_only\tmethod;tests_test_studio_harness_studioharnesstests\ttests_test_studio_harness_studioharnesstests_test_portable_references_reject_machine_paths\tmethod",
+  "topology_signature": "n=87;e=139;basemodel,branch:repo:local/proofline-studio@880078ed#main,commit:repo:local/proofline-studio@880078ed@7bc151b5a86e610564312c0a3360ec2e6ec9b7d6,commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc,research_gh_audit,research_score_resources,research_score_resources_band,research_score_resources_srs,scripts_normalize_graphify_manifest,scripts_normalize_graphify_manifest_manifest,scripts_normalize_graphify_manifest_manifestpath,scripts_normalize_graphify_manifest_normalized,scripts_normalize_graphify_manifest_root,scripts_portable_audit,scripts_portable_audit_audit,scripts_portable_audit_rationale_1,scripts_validate_studio_contracts,scripts_validate_studio_contracts_load,scripts_validate_studio_contracts_rationale_1,scripts_validate_studio_contracts_validate,site_app,site_app_artdirection,site_app_buttons,site_app_directioncta,site_app_directiondata,site_app_previewbody,site_app_previeweyebrow,site_app_previewtitle,site_app_setdirection,site_app_stagelabel,strenum,studio_cli,studio_cli_main,studio_cli_rationale_1,studio_harness,studio_harness_evaluate_project,studio_harness_rationale_1,studio_harness_rationale_132,studio_harness_rationale_178,studio_harness_rationale_42,studio_harness_rationale_61,studio_harness_record_human_gate,studio_harness_result,studio_init,studio_init_rationale_1,studio_main,studio_models,studio_models_accessibilityreceipt,studio_models_aiassetdetails,studio_models_approvalgate,studio_models_approvalrecord,studio_models_assetrecord,studio_models_buildchecklist,studio_models_contract,studio_models_designdirection,studio_models_discoverybrief,studio_models_formreceipt,studio_models_launchreview,studio_models_legalreceipt,studio_models_messagemap,studio_models_ownershipreceipt,studio_models_performancereceipt,studio_models_qareceipt,studio_models_qasignoff,studio_models_qawaiver,studio_models_rationale_1,studio_models_rationale_112,studio_models_rationale_149,studio_models_rationale_225,studio_models_rollbackreceipt,studio_models_stage,studio_models_studioproject,studio_portability,studio_portability_normalize_relative_path,studio_portability_portablepatherror,studio_portability_rationale_1,studio_portability_rationale_13,studio_portability_safe_project_path,tests_test_studio_harness,tests_test_studio_harness_make_project,tests_test_studio_harness_studioharnesstests,tests_test_studio_harness_studioharnesstests_test_blocked_manifest_explains_missing_proof_and_unresolved_assumptions,tests_test_studio_harness_studioharnesstests_test_complete_manifest_is_ready_for_human_review_but_never_authorized,tests_test_studio_harness_studioharnesstests_test_human_gate_ledger_is_hash_chained_and_append_only,tests_test_studio_harness_studioharnesstests_test_portable_references_reject_machine_paths,tests_test_studio_harness_studioharnesstests_test_qa_receipt_is_a_real_gate_and_ai_client_material_is_rejected,valueerror|basemodel\tstudio_models_contract\tinherits;branch:repo:local/proofline-studio@880078ed#main\tcommit:repo:local/proofline-studio@880078ed@7bc151b5a86e610564312c0a3360ec2e6ec9b7d6\tON_BRANCH;branch:repo:local/proofline-studio@880078ed#main\tcommit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\tON_BRANCH;commit:repo:local/proofline-studio@880078ed@7bc151b5a86e610564312c0a3360ec2e6ec9b7d6\tcommit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\tPARENT_OF;commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\tscripts_normalize_graphify_manifest\tMODIFIES;commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\tscripts_portable_audit\tMODIFIES;commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\tscripts_validate_studio_contracts\tMODIFIES;commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\tsite_app\tMODIFIES;commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\tstudio_cli\tMODIFIES;commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\tstudio_harness\tMODIFIES;commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\tstudio_init\tMODIFIES;commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\tstudio_main\tMODIFIES;commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\tstudio_models\tMODIFIES;commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\tstudio_portability\tMODIFIES;commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc\ttests_test_studio_harness\tMODIFIES;research_score_resources\tresearch_score_resources_band\tcontains;research_score_resources\tresearch_score_resources_srs\tcontains;scripts_normalize_graphify_manifest\tscripts_normalize_graphify_manifest_manifest\tcontains;scripts_normalize_graphify_manifest\tscripts_normalize_graphify_manifest_manifestpath\tcontains;scripts_normalize_graphify_manifest\tscripts_normalize_graphify_manifest_normalized\tcontains;scripts_normalize_graphify_manifest\tscripts_normalize_graphify_manifest_root\tcontains;scripts_portable_audit\tscripts_portable_audit_audit\tcontains;scripts_portable_audit\tscripts_portable_audit_rationale_1\trationale_for;scripts_validate_studio_contracts\tscripts_validate_studio_contracts_load\tcontains;scripts_validate_studio_contracts\tscripts_validate_studio_contracts_rationale_1\trationale_for;scripts_validate_studio_contracts\tscripts_validate_studio_contracts_validate\tcontains;scripts_validate_studio_contracts_load\tscripts_validate_studio_contracts_validate\tcalls;scripts_validate_studio_contracts_rationale_1\tstudio_models_studioproject\tuses;site_app\tsite_app_artdirection\tcontains;site_app\tsite_app_buttons\tcontains;site_app\tsite_app_directioncta\tcontains;site_app\tsite_app_directiondata\tcontains;site_app\tsite_app_previewbody\tcontains;site_app\tsite_app_previeweyebrow\tcontains;site_app\tsite_app_previewtitle\tcontains;site_app\tsite_app_setdirection\tcontains;site_app\tsite_app_stagelabel\tcontains;strenum\tstudio_models_approvalgate\tinherits;strenum\tstudio_models_stage\tinherits;studio_cli\tstudio_cli_main\tcontains;studio_cli\tstudio_cli_rationale_1\trationale_for;studio_cli_rationale_1\tstudio_models_studioproject\tuses;studio_harness\tstudio_harness_evaluate_project\tcontains;studio_harness\tstudio_harness_rationale_1\trationale_for;studio_harness\tstudio_harness_record_human_gate\tcontains;studio_harness\tstudio_harness_result\tcontains;studio_harness\ttests_test_studio_harness\timports_from;studio_harness_evaluate_project\tstudio_harness_rationale_42\trationale_for;studio_harness_evaluate_project\tstudio_harness_rationale_61\trationale_for;studio_harness_evaluate_project\tstudio_harness_result\tcalls;studio_harness_rationale_1\tstudio_models_studioproject\tuses;studio_harness_rationale_132\tstudio_harness_record_human_gate\trationale_for;studio_harness_rationale_132\tstudio_models_studioproject\tuses;studio_harness_rationale_178\tstudio_harness_record_human_gate\trationale_for;studio_harness_rationale_178\tstudio_models_studioproject\tuses;studio_harness_rationale_42\tstudio_models_studioproject\tuses;studio_harness_rationale_61\tstudio_models_studioproject\tuses;studio_init\tstudio_init_rationale_1\trationale_for;studio_init_rationale_1\tstudio_models_studioproject\tuses;studio_models\tstudio_models_accessibilityreceipt\tcontains;studio_models\tstudio_models_aiassetdetails\tcontains;studio_models\tstudio_models_approvalgate\tcontains;studio_models\tstudio_models_approvalrecord\tcontains;studio_models\tstudio_models_assetrecord\tcontains;studio_models\tstudio_models_buildchecklist\tcontains;studio_models\tstudio_models_contract\tcontains;studio_models\tstudio_models_designdirection\tcontains;studio_models\tstudio_models_discoverybrief\tcontains;studio_models\tstudio_models_formreceipt\tcontains;studio_models\tstudio_models_launchreview\tcontains;studio_models\tstudio_models_legalreceipt\tcontains;studio_models\tstudio_models_messagemap\tcontains;studio_models\tstudio_models_ownershipreceipt\tcontains;studio_models\tstudio_models_performancereceipt\tcontains;studio_models\tstudio_models_qareceipt\tcontains;studio_models\tstudio_models_qasignoff\tcontains;studio_models\tstudio_models_qawaiver\tcontains;studio_models\tstudio_models_rationale_1\trationale_for;studio_models\tstudio_models_rollbackreceipt\tcontains;studio_models\tstudio_models_stage\tcontains;studio_models\tstudio_models_studioproject\tcontains;studio_models\ttests_test_studio_harness\timports_from;studio_models_accessibilityreceipt\tstudio_models_contract\tinherits;studio_models_accessibilityreceipt\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_aiassetdetails\tstudio_models_contract\tinherits;studio_models_aiassetdetails\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_approvalrecord\tstudio_models_contract\tinherits;studio_models_approvalrecord\tstudio_models_rationale_149\trationale_for;studio_models_assetrecord\tstudio_models_contract\tinherits;studio_models_assetrecord\tstudio_models_rationale_112\trationale_for;studio_models_assetrecord\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_buildchecklist\tstudio_models_contract\tinherits;studio_models_buildchecklist\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_contract\tstudio_models_designdirection\tinherits;studio_models_contract\tstudio_models_discoverybrief\tinherits;studio_models_contract\tstudio_models_formreceipt\tinherits;studio_models_contract\tstudio_models_launchreview\tinherits;studio_models_contract\tstudio_models_legalreceipt\tinherits;studio_models_contract\tstudio_models_messagemap\tinherits;studio_models_contract\tstudio_models_ownershipreceipt\tinherits;studio_models_contract\tstudio_models_performancereceipt\tinherits;studio_models_contract\tstudio_models_qareceipt\tinherits;studio_models_contract\tstudio_models_qasignoff\tinherits;studio_models_contract\tstudio_models_qawaiver\tinherits;studio_models_contract\tstudio_models_rollbackreceipt\tinherits;studio_models_contract\tstudio_models_studioproject\tinherits;studio_models_designdirection\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_discoverybrief\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_formreceipt\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_launchreview\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_legalreceipt\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_messagemap\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_ownershipreceipt\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_performancereceipt\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_qareceipt\tstudio_models_rationale_225\trationale_for;studio_models_qareceipt\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_qasignoff\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_rollbackreceipt\ttests_test_studio_harness_studioharnesstests\tuses;studio_models_studioproject\ttests_test_studio_harness_studioharnesstests\tuses;studio_portability\tstudio_portability_normalize_relative_path\tcontains;studio_portability\tstudio_portability_portablepatherror\tcontains;studio_portability\tstudio_portability_rationale_1\trationale_for;studio_portability\tstudio_portability_safe_project_path\tcontains;studio_portability\ttests_test_studio_harness\timports_from;studio_portability_normalize_relative_path\tstudio_portability_portablepatherror\tcalls;studio_portability_normalize_relative_path\tstudio_portability_safe_project_path\tcalls;studio_portability_portablepatherror\tstudio_portability_rationale_13\trationale_for;studio_portability_portablepatherror\tstudio_portability_safe_project_path\tcalls;studio_portability_portablepatherror\ttests_test_studio_harness_studioharnesstests\tuses;studio_portability_portablepatherror\tvalueerror\tinherits;tests_test_studio_harness\ttests_test_studio_harness_make_project\tcontains;tests_test_studio_harness\ttests_test_studio_harness_studioharnesstests\tcontains;tests_test_studio_harness_make_project\ttests_test_studio_harness_studioharnesstests_test_complete_manifest_is_ready_for_human_review_but_never_authorized\tcalls;tests_test_studio_harness_make_project\ttests_test_studio_harness_studioharnesstests_test_qa_receipt_is_a_real_gate_and_ai_client_material_is_rejected\tcalls;tests_test_studio_harness_studioharnesstests\ttests_test_studio_harness_studioharnesstests_test_blocked_manifest_explains_missing_proof_and_unresolved_assumptions\tmethod;tests_test_studio_harness_studioharnesstests\ttests_test_studio_harness_studioharnesstests_test_complete_manifest_is_ready_for_human_review_but_never_authorized\tmethod;tests_test_studio_harness_studioharnesstests\ttests_test_studio_harness_studioharnesstests_test_human_gate_ledger_is_hash_chained_and_append_only\tmethod;tests_test_studio_harness_studioharnesstests\ttests_test_studio_harness_studioharnesstests_test_portable_references_reject_machine_paths\tmethod;tests_test_studio_harness_studioharnesstests\ttests_test_studio_harness_studioharnesstests_test_qa_receipt_is_a_real_gate_and_ai_client_material_is_rejected\tmethod",
   "nodes": [
+    {
+      "id": "research_gh_audit",
+      "label": "gh_audit.py",
+      "file_type": "code",
+      "source_file": "LLMarena/proofline-studio-os/research/gh_audit.py",
+      "source_location": "L1",
+      "community": 13,
+      "community_name": "Community 13"
+    },
+    {
+      "id": "research_score_resources",
+      "label": "score_resources.py",
+      "file_type": "code",
+      "source_file": "LLMarena/proofline-studio-os/research/score_resources.py",
+      "source_location": "L1",
+      "community": 8,
+      "community_name": "Community 8"
+    },
+    {
+      "id": "research_score_resources_srs",
+      "label": "srs()",
+      "file_type": "code",
+      "source_file": "LLMarena/proofline-studio-os/research/score_resources.py",
+      "source_location": "L509",
+      "community": 8,
+      "community_name": "Community 8"
+    },
+    {
+      "id": "research_score_resources_band",
+      "label": "band()",
+      "file_type": "code",
+      "source_file": "LLMarena/proofline-studio-os/research/score_resources.py",
+      "source_location": "L513",
+      "community": 8,
+      "community_name": "Community 8"
+    },
     {
       "id": "scripts_normalize_graphify_manifest",
       "label": "normalize_graphify_manifest.mjs",
       "file_type": "code",
       "source_file": "scripts/normalize_graphify_manifest.mjs",
       "source_location": "L1",
-      "community": 5,
-      "community_name": "Community 5"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "scripts_normalize_graphify_manifest_root",
@@ -33,8 +80,8 @@
       "file_type": "code",
       "source_file": "scripts/normalize_graphify_manifest.mjs",
       "source_location": "L4",
-      "community": 5,
-      "community_name": "Community 5"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "scripts_normalize_graphify_manifest_manifestpath",
@@ -42,8 +89,8 @@
       "file_type": "code",
       "source_file": "scripts/normalize_graphify_manifest.mjs",
       "source_location": "L5",
-      "community": 5,
-      "community_name": "Community 5"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "scripts_normalize_graphify_manifest_manifest",
@@ -51,8 +98,8 @@
       "file_type": "code",
       "source_file": "scripts/normalize_graphify_manifest.mjs",
       "source_location": "L12",
-      "community": 5,
-      "community_name": "Community 5"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "scripts_normalize_graphify_manifest_normalized",
@@ -60,8 +107,8 @@
       "file_type": "code",
       "source_file": "scripts/normalize_graphify_manifest.mjs",
       "source_location": "L13",
-      "community": 5,
-      "community_name": "Community 5"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "scripts_portable_audit",
@@ -69,8 +116,8 @@
       "file_type": "code",
       "source_file": "scripts/portable_audit.py",
       "source_location": "L1",
-      "community": 7,
-      "community_name": "Community 7"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "scripts_portable_audit_audit",
@@ -78,8 +125,8 @@
       "file_type": "code",
       "source_file": "scripts/portable_audit.py",
       "source_location": "L13",
-      "community": 7,
-      "community_name": "Community 7"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "scripts_portable_audit_rationale_1",
@@ -87,8 +134,8 @@
       "file_type": "rationale",
       "source_file": "scripts/portable_audit.py",
       "source_location": "L1",
-      "community": 7,
-      "community_name": "Community 7"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "scripts_validate_studio_contracts",
@@ -132,8 +179,8 @@
       "file_type": "code",
       "source_file": "site/app.js",
       "source_location": "L1",
-      "community": 0,
-      "community_name": "Community 0"
+      "community": 2,
+      "community_name": "Community 2"
     },
     {
       "id": "site_app_directiondata",
@@ -141,8 +188,8 @@
       "file_type": "code",
       "source_file": "site/app.js",
       "source_location": "L1",
-      "community": 0,
-      "community_name": "Community 0"
+      "community": 2,
+      "community_name": "Community 2"
     },
     {
       "id": "site_app_buttons",
@@ -150,8 +197,8 @@
       "file_type": "code",
       "source_file": "site/app.js",
       "source_location": "L8",
-      "community": 0,
-      "community_name": "Community 0"
+      "community": 2,
+      "community_name": "Community 2"
     },
     {
       "id": "site_app_stagelabel",
@@ -159,8 +206,8 @@
       "file_type": "code",
       "source_file": "site/app.js",
       "source_location": "L9",
-      "community": 0,
-      "community_name": "Community 0"
+      "community": 2,
+      "community_name": "Community 2"
     },
     {
       "id": "site_app_previeweyebrow",
@@ -168,8 +215,8 @@
       "file_type": "code",
       "source_file": "site/app.js",
       "source_location": "L10",
-      "community": 0,
-      "community_name": "Community 0"
+      "community": 2,
+      "community_name": "Community 2"
     },
     {
       "id": "site_app_previewtitle",
@@ -177,8 +224,8 @@
       "file_type": "code",
       "source_file": "site/app.js",
       "source_location": "L11",
-      "community": 0,
-      "community_name": "Community 0"
+      "community": 2,
+      "community_name": "Community 2"
     },
     {
       "id": "site_app_previewbody",
@@ -186,8 +233,8 @@
       "file_type": "code",
       "source_file": "site/app.js",
       "source_location": "L12",
-      "community": 0,
-      "community_name": "Community 0"
+      "community": 2,
+      "community_name": "Community 2"
     },
     {
       "id": "site_app_directioncta",
@@ -195,8 +242,8 @@
       "file_type": "code",
       "source_file": "site/app.js",
       "source_location": "L13",
-      "community": 0,
-      "community_name": "Community 0"
+      "community": 2,
+      "community_name": "Community 2"
     },
     {
       "id": "site_app_artdirection",
@@ -204,8 +251,8 @@
       "file_type": "code",
       "source_file": "site/app.js",
       "source_location": "L14",
-      "community": 0,
-      "community_name": "Community 0"
+      "community": 2,
+      "community_name": "Community 2"
     },
     {
       "id": "site_app_setdirection",
@@ -213,8 +260,8 @@
       "file_type": "code",
       "source_file": "site/app.js",
       "source_location": "L16",
-      "community": 0,
-      "community_name": "Community 0"
+      "community": 2,
+      "community_name": "Community 2"
     },
     {
       "id": "studio_init",
@@ -222,8 +269,8 @@
       "file_type": "code",
       "source_file": "studio/__init__.py",
       "source_location": "L1",
-      "community": 1,
-      "community_name": "Community 1"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "studio_init_rationale_1",
@@ -231,8 +278,8 @@
       "file_type": "rationale",
       "source_file": "studio/__init__.py",
       "source_location": "L1",
-      "community": 1,
-      "community_name": "Community 1"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "studio_main",
@@ -240,8 +287,8 @@
       "file_type": "code",
       "source_file": "studio/__main__.py",
       "source_location": "L1",
-      "community": 10,
-      "community_name": "Community 10"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "studio_cli",
@@ -249,8 +296,8 @@
       "file_type": "code",
       "source_file": "studio/cli.py",
       "source_location": "L1",
-      "community": 8,
-      "community_name": "Community 8"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "studio_cli_main",
@@ -258,8 +305,8 @@
       "file_type": "code",
       "source_file": "studio/cli.py",
       "source_location": "L13",
-      "community": 8,
-      "community_name": "Community 8"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "studio_cli_rationale_1",
@@ -267,8 +314,8 @@
       "file_type": "rationale",
       "source_file": "studio/cli.py",
       "source_location": "L1",
-      "community": 8,
-      "community_name": "Community 8"
+      "community": 0,
+      "community_name": "Community 0"
     },
     {
       "id": "studio_harness",
@@ -276,35 +323,35 @@
       "file_type": "code",
       "source_file": "studio/harness.py",
       "source_location": "L1",
-      "community": 1,
-      "community_name": "Community 1"
+      "community": 3,
+      "community_name": "Community 3"
     },
     {
       "id": "studio_harness_result",
       "label": "_result()",
       "file_type": "code",
       "source_file": "studio/harness.py",
-      "source_location": "L37",
-      "community": 1,
-      "community_name": "Community 1"
+      "source_location": "L56",
+      "community": 3,
+      "community_name": "Community 3"
     },
     {
       "id": "studio_harness_evaluate_project",
       "label": "evaluate_project()",
       "file_type": "code",
       "source_file": "studio/harness.py",
-      "source_location": "L41",
-      "community": 1,
-      "community_name": "Community 1"
+      "source_location": "L60",
+      "community": 3,
+      "community_name": "Community 3"
     },
     {
       "id": "studio_harness_record_human_gate",
       "label": "record_human_gate()",
       "file_type": "code",
       "source_file": "studio/harness.py",
-      "source_location": "L122",
-      "community": 1,
-      "community_name": "Community 1"
+      "source_location": "L168",
+      "community": 3,
+      "community_name": "Community 3"
     },
     {
       "id": "studio_harness_rationale_1",
@@ -312,26 +359,26 @@
       "file_type": "rationale",
       "source_file": "studio/harness.py",
       "source_location": "L1",
-      "community": 1,
-      "community_name": "Community 1"
+      "community": 3,
+      "community_name": "Community 3"
     },
     {
-      "id": "studio_harness_rationale_42",
+      "id": "studio_harness_rationale_61",
       "label": "Return a deterministic, non-authoritative project readiness report.",
       "file_type": "rationale",
       "source_file": "studio/harness.py",
-      "source_location": "L42",
-      "community": 1,
-      "community_name": "Community 1"
+      "source_location": "L61",
+      "community": 3,
+      "community_name": "Community 3"
     },
     {
-      "id": "studio_harness_rationale_132",
+      "id": "studio_harness_rationale_178",
       "label": "Append one explicit human decision to a hash-chained local ledger.",
       "file_type": "rationale",
       "source_file": "studio/harness.py",
-      "source_location": "L132",
-      "community": 1,
-      "community_name": "Community 1"
+      "source_location": "L178",
+      "community": 3,
+      "community_name": "Community 3"
     },
     {
       "id": "studio_models",
@@ -339,8 +386,8 @@
       "file_type": "code",
       "source_file": "studio/models.py",
       "source_location": "L1",
-      "community": 2,
-      "community_name": "Community 2"
+      "community": 1,
+      "community_name": "Community 1"
     },
     {
       "id": "studio_models_contract",
@@ -348,8 +395,8 @@
       "file_type": "code",
       "source_file": "studio/models.py",
       "source_location": "L12",
-      "community": 2,
-      "community_name": "Community 2"
+      "community": 1,
+      "community_name": "Community 1"
     },
     {
       "id": "basemodel",
@@ -357,8 +404,8 @@
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "community": 2,
-      "community_name": "Community 2"
+      "community": 1,
+      "community_name": "Community 1"
     },
     {
       "id": "studio_models_stage",
@@ -384,8 +431,8 @@
       "file_type": "code",
       "source_file": "studio/models.py",
       "source_location": "L25",
-      "community": 2,
-      "community_name": "Community 2"
+      "community": 4,
+      "community_name": "Community 4"
     },
     {
       "id": "studio_models_messagemap",
@@ -393,8 +440,8 @@
       "file_type": "code",
       "source_file": "studio/models.py",
       "source_location": "L48",
-      "community": 2,
-      "community_name": "Community 2"
+      "community": 1,
+      "community_name": "Community 1"
     },
     {
       "id": "studio_models_designdirection",
@@ -402,8 +449,8 @@
       "file_type": "code",
       "source_file": "studio/models.py",
       "source_location": "L65",
-      "community": 2,
-      "community_name": "Community 2"
+      "community": 1,
+      "community_name": "Community 1"
     },
     {
       "id": "studio_models_buildchecklist",
@@ -411,26 +458,143 @@
       "file_type": "code",
       "source_file": "studio/models.py",
       "source_location": "L81",
-      "community": 2,
-      "community_name": "Community 2"
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "studio_models_aiassetdetails",
+      "label": "AIAssetDetails",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L99",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "studio_models_assetrecord",
+      "label": "AssetRecord",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L111",
+      "community": 11,
+      "community_name": "Community 11"
+    },
+    {
+      "id": "studio_models_approvalgate",
+      "label": "ApprovalGate",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L132",
+      "community": 9,
+      "community_name": "Community 9"
+    },
+    {
+      "id": "studio_models_approvalrecord",
+      "label": "ApprovalRecord",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L148",
+      "community": 10,
+      "community_name": "Community 10"
+    },
+    {
+      "id": "studio_models_accessibilityreceipt",
+      "label": "AccessibilityReceipt",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L165",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "studio_models_performancereceipt",
+      "label": "PerformanceReceipt",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L176",
+      "community": 4,
+      "community_name": "Community 4"
+    },
+    {
+      "id": "studio_models_formreceipt",
+      "label": "FormReceipt",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L186",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "studio_models_legalreceipt",
+      "label": "LegalReceipt",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L193",
+      "community": 4,
+      "community_name": "Community 4"
+    },
+    {
+      "id": "studio_models_ownershipreceipt",
+      "label": "OwnershipReceipt",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L201",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "studio_models_rollbackreceipt",
+      "label": "RollbackReceipt",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L206",
+      "community": 4,
+      "community_name": "Community 4"
+    },
+    {
+      "id": "studio_models_qawaiver",
+      "label": "QAWaiver",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L212",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "studio_models_qasignoff",
+      "label": "QASignOff",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L219",
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "studio_models_qareceipt",
+      "label": "QAReceipt",
+      "file_type": "code",
+      "source_file": "studio/models.py",
+      "source_location": "L224",
+      "community": 12,
+      "community_name": "Community 12"
     },
     {
       "id": "studio_models_launchreview",
       "label": "LaunchReview",
       "file_type": "code",
       "source_file": "studio/models.py",
-      "source_location": "L99",
-      "community": 2,
-      "community_name": "Community 2"
+      "source_location": "L245",
+      "community": 1,
+      "community_name": "Community 1"
     },
     {
       "id": "studio_models_studioproject",
       "label": "StudioProject",
       "file_type": "code",
       "source_file": "studio/models.py",
-      "source_location": "L110",
-      "community": 1,
-      "community_name": "Community 1"
+      "source_location": "L256",
+      "community": 3,
+      "community_name": "Community 3"
     },
     {
       "id": "studio_models_rationale_1",
@@ -438,8 +602,35 @@
       "file_type": "rationale",
       "source_file": "studio/models.py",
       "source_location": "L1",
-      "community": 2,
-      "community_name": "Community 2"
+      "community": 1,
+      "community_name": "Community 1"
+    },
+    {
+      "id": "studio_models_rationale_112",
+      "label": "Traceable asset rights record; AI client material is rejected by contract.",
+      "file_type": "rationale",
+      "source_file": "studio/models.py",
+      "source_location": "L112",
+      "community": 11,
+      "community_name": "Community 11"
+    },
+    {
+      "id": "studio_models_rationale_149",
+      "label": "Detailed, append-only human approval that supplements the gate hash ledger.",
+      "file_type": "rationale",
+      "source_file": "studio/models.py",
+      "source_location": "L149",
+      "community": 10,
+      "community_name": "Community 10"
+    },
+    {
+      "id": "studio_models_rationale_225",
+      "label": "Human-authored evidence receipt; passing it never grants launch authority.",
+      "file_type": "rationale",
+      "source_file": "studio/models.py",
+      "source_location": "L225",
+      "community": 12,
+      "community_name": "Community 12"
     },
     {
       "id": "studio_portability",
@@ -447,8 +638,8 @@
       "file_type": "code",
       "source_file": "studio/portability.py",
       "source_location": "L1",
-      "community": 3,
-      "community_name": "Community 3"
+      "community": 5,
+      "community_name": "Community 5"
     },
     {
       "id": "studio_portability_portablepatherror",
@@ -456,8 +647,8 @@
       "file_type": "code",
       "source_file": "studio/portability.py",
       "source_location": "L12",
-      "community": 3,
-      "community_name": "Community 3"
+      "community": 5,
+      "community_name": "Community 5"
     },
     {
       "id": "valueerror",
@@ -465,8 +656,8 @@
       "file_type": "code",
       "source_file": "",
       "source_location": "",
-      "community": 3,
-      "community_name": "Community 3"
+      "community": 5,
+      "community_name": "Community 5"
     },
     {
       "id": "studio_portability_normalize_relative_path",
@@ -474,8 +665,8 @@
       "file_type": "code",
       "source_file": "studio/portability.py",
       "source_location": "L16",
-      "community": 3,
-      "community_name": "Community 3"
+      "community": 5,
+      "community_name": "Community 5"
     },
     {
       "id": "studio_portability_safe_project_path",
@@ -483,8 +674,8 @@
       "file_type": "code",
       "source_file": "studio/portability.py",
       "source_location": "L29",
-      "community": 3,
-      "community_name": "Community 3"
+      "community": 5,
+      "community_name": "Community 5"
     },
     {
       "id": "studio_portability_rationale_1",
@@ -492,8 +683,8 @@
       "file_type": "rationale",
       "source_file": "studio/portability.py",
       "source_location": "L1",
-      "community": 3,
-      "community_name": "Community 3"
+      "community": 5,
+      "community_name": "Community 5"
     },
     {
       "id": "studio_portability_rationale_13",
@@ -501,8 +692,8 @@
       "file_type": "rationale",
       "source_file": "studio/portability.py",
       "source_location": "L13",
-      "community": 3,
-      "community_name": "Community 3"
+      "community": 5,
+      "community_name": "Community 5"
     },
     {
       "id": "tests_test_studio_harness",
@@ -510,24 +701,24 @@
       "file_type": "code",
       "source_file": "tests/test_studio_harness.py",
       "source_location": "L1",
-      "community": 4,
-      "community_name": "Community 4"
+      "community": 7,
+      "community_name": "Community 7"
     },
     {
       "id": "tests_test_studio_harness_make_project",
       "label": "make_project()",
       "file_type": "code",
       "source_file": "tests/test_studio_harness.py",
-      "source_location": "L19",
-      "community": 4,
-      "community_name": "Community 4"
+      "source_location": "L29",
+      "community": 7,
+      "community_name": "Community 7"
     },
     {
       "id": "tests_test_studio_harness_studioharnesstests",
       "label": "StudioHarnessTests",
       "file_type": "code",
       "source_file": "tests/test_studio_harness.py",
-      "source_location": "L95",
+      "source_location": "L118",
       "community": 4,
       "community_name": "Community 4"
     },
@@ -536,7 +727,7 @@
       "label": ".test_blocked_manifest_explains_missing_proof_and_unresolved_assumptions()",
       "file_type": "code",
       "source_file": "tests/test_studio_harness.py",
-      "source_location": "L96",
+      "source_location": "L119",
       "community": 4,
       "community_name": "Community 4"
     },
@@ -545,16 +736,16 @@
       "label": ".test_complete_manifest_is_ready_for_human_review_but_never_authorized()",
       "file_type": "code",
       "source_file": "tests/test_studio_harness.py",
-      "source_location": "L105",
-      "community": 4,
-      "community_name": "Community 4"
+      "source_location": "L128",
+      "community": 7,
+      "community_name": "Community 7"
     },
     {
       "id": "tests_test_studio_harness_studioharnesstests_test_human_gate_ledger_is_hash_chained_and_append_only",
       "label": ".test_human_gate_ledger_is_hash_chained_and_append_only()",
       "file_type": "code",
       "source_file": "tests/test_studio_harness.py",
-      "source_location": "L112",
+      "source_location": "L135",
       "community": 4,
       "community_name": "Community 4"
     },
@@ -563,12 +754,282 @@
       "label": ".test_portable_references_reject_machine_paths()",
       "file_type": "code",
       "source_file": "tests/test_studio_harness.py",
-      "source_location": "L120",
+      "source_location": "L143",
       "community": 4,
       "community_name": "Community 4"
+    },
+    {
+      "id": "tests_test_studio_harness_studioharnesstests_test_qa_receipt_is_a_real_gate_and_ai_client_material_is_rejected",
+      "label": ".test_qa_receipt_is_a_real_gate_and_ai_client_material_is_rejected()",
+      "file_type": "code",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L150",
+      "community": 7,
+      "community_name": "Community 7"
+    },
+    {
+      "id": "commit:repo:local/proofline-studio@880078ed@7bc151b5a86e610564312c0a3360ec2e6ec9b7d6",
+      "label": "7bc151b chore: ignore local graphify lifecycle state",
+      "file_type": "concept",
+      "source_file": "git",
+      "node_type": "Commit",
+      "repo": "repo:local/proofline-studio@880078ed",
+      "sha": "7bc151b5a86e610564312c0a3360ec2e6ec9b7d6",
+      "author": "Amondieu <256162839+Amondieu@users.noreply.github.com>",
+      "authoredAt": "2026-09-23T15:54:59+02:00",
+      "message_summary": "chore: ignore local graphify lifecycle state",
+      "message_length": 44,
+      "parents": [
+        "cb77a610981feee09b9f35115e4fb998a83d6fbc"
+      ],
+      "community": 0,
+      "community_name": "Community 0"
+    },
+    {
+      "id": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "label": "cb77a61 feat: create focused landing studio foundation",
+      "file_type": "concept",
+      "source_file": "git",
+      "node_type": "Commit",
+      "repo": "repo:local/proofline-studio@880078ed",
+      "sha": "cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "author": "Amondieu <256162839+Amondieu@users.noreply.github.com>",
+      "authoredAt": "2026-09-23T15:54:13+02:00",
+      "message_summary": "feat: create focused landing studio foundation",
+      "message_length": 46,
+      "parents": [],
+      "community": 0,
+      "community_name": "Community 0"
+    },
+    {
+      "id": "branch:repo:local/proofline-studio@880078ed#main",
+      "label": "main",
+      "file_type": "concept",
+      "source_file": "git",
+      "node_type": "Branch",
+      "repo": "repo:local/proofline-studio@880078ed",
+      "branch_name": "main",
+      "head_sha": "7bc151b5a86e610564312c0a3360ec2e6ec9b7d6",
+      "community": 0,
+      "community_name": "Community 0"
+    },
+    {
+      "id": "studio_harness_rationale_42",
+      "label": "Return a deterministic, non-authoritative project readiness report.",
+      "file_type": "rationale",
+      "source_file": "studio/harness.py",
+      "source_location": "L42",
+      "community": 3,
+      "community_name": "Community 3"
+    },
+    {
+      "id": "studio_harness_rationale_132",
+      "label": "Append one explicit human decision to a hash-chained local ledger.",
+      "file_type": "rationale",
+      "source_file": "studio/harness.py",
+      "source_location": "L132",
+      "community": 3,
+      "community_name": "Community 3"
     }
   ],
   "links": [
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@7bc151b5a86e610564312c0a3360ec2e6ec9b7d6",
+      "target": "branch:repo:local/proofline-studio@880078ed#main",
+      "relation": "ON_BRANCH",
+      "confidence": "EXTRACTED",
+      "source_file": "git",
+      "_src": "commit:repo:local/proofline-studio@880078ed@7bc151b5a86e610564312c0a3360ec2e6ec9b7d6",
+      "_tgt": "branch:repo:local/proofline-studio@880078ed#main",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "branch:repo:local/proofline-studio@880078ed#main",
+      "relation": "ON_BRANCH",
+      "confidence": "EXTRACTED",
+      "source_file": "git",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "branch:repo:local/proofline-studio@880078ed#main",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "commit:repo:local/proofline-studio@880078ed@7bc151b5a86e610564312c0a3360ec2e6ec9b7d6",
+      "relation": "PARENT_OF",
+      "confidence": "EXTRACTED",
+      "source_file": "git",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "commit:repo:local/proofline-studio@880078ed@7bc151b5a86e610564312c0a3360ec2e6ec9b7d6",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "scripts_normalize_graphify_manifest",
+      "relation": "MODIFIES",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/normalize_graphify_manifest.mjs",
+      "added": 25,
+      "deleted": 0,
+      "file_path": "scripts/normalize_graphify_manifest.mjs",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "scripts_normalize_graphify_manifest",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "scripts_portable_audit",
+      "relation": "MODIFIES",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/portable_audit.py",
+      "added": 35,
+      "deleted": 0,
+      "file_path": "scripts/portable_audit.py",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "scripts_portable_audit",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "scripts_validate_studio_contracts",
+      "relation": "MODIFIES",
+      "confidence": "EXTRACTED",
+      "source_file": "scripts/validate_studio_contracts.py",
+      "added": 67,
+      "deleted": 0,
+      "file_path": "scripts/validate_studio_contracts.py",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "scripts_validate_studio_contracts",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "site_app",
+      "relation": "MODIFIES",
+      "confidence": "EXTRACTED",
+      "source_file": "site/app.js",
+      "added": 44,
+      "deleted": 0,
+      "file_path": "site/app.js",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "site_app",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "studio_cli",
+      "relation": "MODIFIES",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/cli.py",
+      "added": 21,
+      "deleted": 0,
+      "file_path": "studio/cli.py",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "studio_cli",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "studio_harness",
+      "relation": "MODIFIES",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/harness.py",
+      "added": 162,
+      "deleted": 0,
+      "file_path": "studio/harness.py",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "studio_harness",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "studio_init",
+      "relation": "MODIFIES",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/__init__.py",
+      "added": 6,
+      "deleted": 0,
+      "file_path": "studio/__init__.py",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "studio_init",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "studio_main",
+      "relation": "MODIFIES",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/__main__.py",
+      "added": 5,
+      "deleted": 0,
+      "file_path": "studio/__main__.py",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "studio_main",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "studio_models",
+      "relation": "MODIFIES",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "added": 119,
+      "deleted": 0,
+      "file_path": "studio/models.py",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "studio_models",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "studio_portability",
+      "relation": "MODIFIES",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/portability.py",
+      "added": 37,
+      "deleted": 0,
+      "file_path": "studio/portability.py",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "studio_portability",
+      "confidence_score": 1
+    },
+    {
+      "source": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "target": "tests_test_studio_harness",
+      "relation": "MODIFIES",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_studio_harness.py",
+      "added": 129,
+      "deleted": 0,
+      "file_path": "tests/test_studio_harness.py",
+      "_src": "commit:repo:local/proofline-studio@880078ed@cb77a610981feee09b9f35115e4fb998a83d6fbc",
+      "_tgt": "tests_test_studio_harness",
+      "confidence_score": 1
+    },
+    {
+      "source": "research_score_resources",
+      "target": "research_score_resources_band",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "LLMarena/proofline-studio-os/research/score_resources.py",
+      "source_location": "L513",
+      "weight": 1,
+      "_src": "research_score_resources",
+      "_tgt": "research_score_resources_band",
+      "confidence_score": 1
+    },
+    {
+      "source": "research_score_resources",
+      "target": "research_score_resources_srs",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "LLMarena/proofline-studio-os/research/score_resources.py",
+      "source_location": "L509",
+      "weight": 1,
+      "_src": "research_score_resources",
+      "_tgt": "research_score_resources_srs",
+      "confidence_score": 1
+    },
     {
       "source": "scripts_normalize_graphify_manifest",
       "target": "scripts_normalize_graphify_manifest_manifest",
@@ -918,50 +1379,50 @@
       "confidence_score": 0.5
     },
     {
-      "source": "studio_harness_rationale_132",
+      "source": "studio_harness_rationale_178",
       "target": "studio_harness_record_human_gate",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "studio/harness.py",
-      "source_location": "L132",
+      "source_location": "L178",
       "weight": 1,
-      "_src": "studio_harness_rationale_132",
+      "_src": "studio_harness_rationale_178",
       "_tgt": "studio_harness_record_human_gate",
       "confidence_score": 1
     },
     {
-      "source": "studio_harness_rationale_132",
+      "source": "studio_harness_rationale_178",
       "target": "studio_models_studioproject",
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "studio/harness.py",
       "source_location": "L15",
       "weight": 0.8,
-      "_src": "studio_harness_rationale_132",
+      "_src": "studio_harness_rationale_178",
       "_tgt": "studio_models_studioproject",
       "confidence_score": 0.5
     },
     {
-      "source": "studio_harness_rationale_42",
+      "source": "studio_harness_rationale_61",
       "target": "studio_harness_evaluate_project",
       "relation": "rationale_for",
       "confidence": "EXTRACTED",
       "source_file": "studio/harness.py",
-      "source_location": "L42",
+      "source_location": "L61",
       "weight": 1,
-      "_src": "studio_harness_rationale_42",
+      "_src": "studio_harness_rationale_61",
       "_tgt": "studio_harness_evaluate_project",
       "confidence_score": 1
     },
     {
-      "source": "studio_harness_rationale_42",
+      "source": "studio_harness_rationale_61",
       "target": "studio_models_studioproject",
       "relation": "uses",
       "confidence": "INFERRED",
       "source_file": "studio/harness.py",
       "source_location": "L15",
       "weight": 0.8,
-      "_src": "studio_harness_rationale_42",
+      "_src": "studio_harness_rationale_61",
       "_tgt": "studio_models_studioproject",
       "confidence_score": 0.5
     },
@@ -988,6 +1449,66 @@
       "_src": "studio_init_rationale_1",
       "_tgt": "studio_models_studioproject",
       "confidence_score": 0.5
+    },
+    {
+      "source": "studio_models",
+      "target": "studio_models_accessibilityreceipt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L165",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_accessibilityreceipt",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models",
+      "target": "studio_models_aiassetdetails",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L99",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_aiassetdetails",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models",
+      "target": "studio_models_approvalgate",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L132",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_approvalgate",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models",
+      "target": "studio_models_approvalrecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L148",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_approvalrecord",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models",
+      "target": "studio_models_assetrecord",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L111",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_assetrecord",
+      "confidence_score": 1
     },
     {
       "source": "studio_models",
@@ -1039,6 +1560,18 @@
     },
     {
       "source": "studio_models",
+      "target": "studio_models_formreceipt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L186",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_formreceipt",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models",
       "target": "studio_models_launchreview",
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -1051,6 +1584,18 @@
     },
     {
       "source": "studio_models",
+      "target": "studio_models_legalreceipt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L193",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_legalreceipt",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models",
       "target": "studio_models_messagemap",
       "relation": "contains",
       "confidence": "EXTRACTED",
@@ -1059,6 +1604,78 @@
       "weight": 1,
       "_src": "studio_models",
       "_tgt": "studio_models_messagemap",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models",
+      "target": "studio_models_ownershipreceipt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L201",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_ownershipreceipt",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models",
+      "target": "studio_models_performancereceipt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L176",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_performancereceipt",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models",
+      "target": "studio_models_qareceipt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L224",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_qareceipt",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models",
+      "target": "studio_models_qasignoff",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L219",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_qasignoff",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models",
+      "target": "studio_models_qawaiver",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L212",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_qawaiver",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models",
+      "target": "studio_models_rollbackreceipt",
+      "relation": "contains",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L206",
+      "weight": 1,
+      "_src": "studio_models",
+      "_tgt": "studio_models_rollbackreceipt",
       "confidence_score": 1
     },
     {
@@ -1083,6 +1700,66 @@
       "weight": 1,
       "_src": "studio_models",
       "_tgt": "studio_models_studioproject",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_accessibilityreceipt",
+      "target": "studio_models_contract",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L165",
+      "weight": 1,
+      "_src": "studio_models_accessibilityreceipt",
+      "_tgt": "studio_models_contract",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_aiassetdetails",
+      "target": "studio_models_contract",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L99",
+      "weight": 1,
+      "_src": "studio_models_aiassetdetails",
+      "_tgt": "studio_models_contract",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_approvalgate",
+      "target": "strenum",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L132",
+      "weight": 1,
+      "_src": "studio_models_approvalgate",
+      "_tgt": "strenum",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_approvalrecord",
+      "target": "studio_models_contract",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L148",
+      "weight": 1,
+      "_src": "studio_models_approvalrecord",
+      "_tgt": "studio_models_contract",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_assetrecord",
+      "target": "studio_models_contract",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L111",
+      "weight": 1,
+      "_src": "studio_models_assetrecord",
+      "_tgt": "studio_models_contract",
       "confidence_score": 1
     },
     {
@@ -1134,6 +1811,18 @@
       "confidence_score": 1
     },
     {
+      "source": "studio_models_formreceipt",
+      "target": "studio_models_contract",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L186",
+      "weight": 1,
+      "_src": "studio_models_formreceipt",
+      "_tgt": "studio_models_contract",
+      "confidence_score": 1
+    },
+    {
       "source": "studio_models_launchreview",
       "target": "studio_models_contract",
       "relation": "inherits",
@@ -1142,6 +1831,18 @@
       "source_location": "L99",
       "weight": 1,
       "_src": "studio_models_launchreview",
+      "_tgt": "studio_models_contract",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_legalreceipt",
+      "target": "studio_models_contract",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L193",
+      "weight": 1,
+      "_src": "studio_models_legalreceipt",
       "_tgt": "studio_models_contract",
       "confidence_score": 1
     },
@@ -1158,6 +1859,66 @@
       "confidence_score": 1
     },
     {
+      "source": "studio_models_ownershipreceipt",
+      "target": "studio_models_contract",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L201",
+      "weight": 1,
+      "_src": "studio_models_ownershipreceipt",
+      "_tgt": "studio_models_contract",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_performancereceipt",
+      "target": "studio_models_contract",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L176",
+      "weight": 1,
+      "_src": "studio_models_performancereceipt",
+      "_tgt": "studio_models_contract",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_qareceipt",
+      "target": "studio_models_contract",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L224",
+      "weight": 1,
+      "_src": "studio_models_qareceipt",
+      "_tgt": "studio_models_contract",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_qasignoff",
+      "target": "studio_models_contract",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L219",
+      "weight": 1,
+      "_src": "studio_models_qasignoff",
+      "_tgt": "studio_models_contract",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_qawaiver",
+      "target": "studio_models_contract",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L212",
+      "weight": 1,
+      "_src": "studio_models_qawaiver",
+      "_tgt": "studio_models_contract",
+      "confidence_score": 1
+    },
+    {
       "source": "studio_models_rationale_1",
       "target": "studio_models",
       "relation": "rationale_for",
@@ -1167,6 +1928,54 @@
       "weight": 1,
       "_src": "studio_models_rationale_1",
       "_tgt": "studio_models",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_rationale_112",
+      "target": "studio_models_assetrecord",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L112",
+      "weight": 1,
+      "_src": "studio_models_rationale_112",
+      "_tgt": "studio_models_assetrecord",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_rationale_149",
+      "target": "studio_models_approvalrecord",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L149",
+      "weight": 1,
+      "_src": "studio_models_rationale_149",
+      "_tgt": "studio_models_approvalrecord",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_rationale_225",
+      "target": "studio_models_qareceipt",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L225",
+      "weight": 1,
+      "_src": "studio_models_rationale_225",
+      "_tgt": "studio_models_qareceipt",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_models_rollbackreceipt",
+      "target": "studio_models_contract",
+      "relation": "inherits",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/models.py",
+      "source_location": "L206",
+      "weight": 1,
+      "_src": "studio_models_rollbackreceipt",
+      "_tgt": "studio_models_contract",
       "confidence_score": 1
     },
     {
@@ -1363,6 +2172,42 @@
     },
     {
       "source": "tests_test_studio_harness_studioharnesstests",
+      "target": "studio_models_accessibilityreceipt",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "_src": "tests_test_studio_harness_studioharnesstests",
+      "_tgt": "studio_models_accessibilityreceipt",
+      "confidence_score": 0.5
+    },
+    {
+      "source": "tests_test_studio_harness_studioharnesstests",
+      "target": "studio_models_aiassetdetails",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "_src": "tests_test_studio_harness_studioharnesstests",
+      "_tgt": "studio_models_aiassetdetails",
+      "confidence_score": 0.5
+    },
+    {
+      "source": "tests_test_studio_harness_studioharnesstests",
+      "target": "studio_models_assetrecord",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "_src": "tests_test_studio_harness_studioharnesstests",
+      "_tgt": "studio_models_assetrecord",
+      "confidence_score": 0.5
+    },
+    {
+      "source": "tests_test_studio_harness_studioharnesstests",
       "target": "studio_models_buildchecklist",
       "relation": "uses",
       "confidence": "INFERRED",
@@ -1399,6 +2244,18 @@
     },
     {
       "source": "tests_test_studio_harness_studioharnesstests",
+      "target": "studio_models_formreceipt",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "_src": "tests_test_studio_harness_studioharnesstests",
+      "_tgt": "studio_models_formreceipt",
+      "confidence_score": 0.5
+    },
+    {
+      "source": "tests_test_studio_harness_studioharnesstests",
       "target": "studio_models_launchreview",
       "relation": "uses",
       "confidence": "INFERRED",
@@ -1411,6 +2268,18 @@
     },
     {
       "source": "tests_test_studio_harness_studioharnesstests",
+      "target": "studio_models_legalreceipt",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "_src": "tests_test_studio_harness_studioharnesstests",
+      "_tgt": "studio_models_legalreceipt",
+      "confidence_score": 0.5
+    },
+    {
+      "source": "tests_test_studio_harness_studioharnesstests",
       "target": "studio_models_messagemap",
       "relation": "uses",
       "confidence": "INFERRED",
@@ -1419,6 +2288,66 @@
       "weight": 0.8,
       "_src": "tests_test_studio_harness_studioharnesstests",
       "_tgt": "studio_models_messagemap",
+      "confidence_score": 0.5
+    },
+    {
+      "source": "tests_test_studio_harness_studioharnesstests",
+      "target": "studio_models_ownershipreceipt",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "_src": "tests_test_studio_harness_studioharnesstests",
+      "_tgt": "studio_models_ownershipreceipt",
+      "confidence_score": 0.5
+    },
+    {
+      "source": "tests_test_studio_harness_studioharnesstests",
+      "target": "studio_models_performancereceipt",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "_src": "tests_test_studio_harness_studioharnesstests",
+      "_tgt": "studio_models_performancereceipt",
+      "confidence_score": 0.5
+    },
+    {
+      "source": "tests_test_studio_harness_studioharnesstests",
+      "target": "studio_models_qareceipt",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "_src": "tests_test_studio_harness_studioharnesstests",
+      "_tgt": "studio_models_qareceipt",
+      "confidence_score": 0.5
+    },
+    {
+      "source": "tests_test_studio_harness_studioharnesstests",
+      "target": "studio_models_qasignoff",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "_src": "tests_test_studio_harness_studioharnesstests",
+      "_tgt": "studio_models_qasignoff",
+      "confidence_score": 0.5
+    },
+    {
+      "source": "tests_test_studio_harness_studioharnesstests",
+      "target": "studio_models_rollbackreceipt",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L8",
+      "weight": 0.8,
+      "_src": "tests_test_studio_harness_studioharnesstests",
+      "_tgt": "studio_models_rollbackreceipt",
       "confidence_score": 0.5
     },
     {
@@ -1494,6 +2423,18 @@
       "confidence_score": 1
     },
     {
+      "source": "tests_test_studio_harness_studioharnesstests",
+      "target": "tests_test_studio_harness_studioharnesstests_test_qa_receipt_is_a_real_gate_and_ai_client_material_is_rejected",
+      "relation": "method",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L150",
+      "weight": 1,
+      "_src": "tests_test_studio_harness_studioharnesstests",
+      "_tgt": "tests_test_studio_harness_studioharnesstests_test_qa_receipt_is_a_real_gate_and_ai_client_material_is_rejected",
+      "confidence_score": 1
+    },
+    {
       "source": "tests_test_studio_harness_studioharnesstests_test_complete_manifest_is_ready_for_human_review_but_never_authorized",
       "target": "tests_test_studio_harness_make_project",
       "relation": "calls",
@@ -1504,6 +2445,66 @@
       "_src": "tests_test_studio_harness_studioharnesstests_test_complete_manifest_is_ready_for_human_review_but_never_authorized",
       "_tgt": "tests_test_studio_harness_make_project",
       "confidence_score": 1
+    },
+    {
+      "source": "tests_test_studio_harness_studioharnesstests_test_qa_receipt_is_a_real_gate_and_ai_client_material_is_rejected",
+      "target": "tests_test_studio_harness_make_project",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "source_file": "tests/test_studio_harness.py",
+      "source_location": "L151",
+      "weight": 1,
+      "_src": "tests_test_studio_harness_studioharnesstests_test_qa_receipt_is_a_real_gate_and_ai_client_material_is_rejected",
+      "_tgt": "tests_test_studio_harness_make_project",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_harness_rationale_132",
+      "target": "studio_harness_record_human_gate",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/harness.py",
+      "source_location": "L132",
+      "weight": 1,
+      "_src": "studio_harness_rationale_132",
+      "_tgt": "studio_harness_record_human_gate",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_harness_rationale_132",
+      "target": "studio_models_studioproject",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "studio/harness.py",
+      "source_location": "L15",
+      "weight": 0.8,
+      "_src": "studio_harness_rationale_132",
+      "_tgt": "studio_models_studioproject",
+      "confidence_score": 0.5
+    },
+    {
+      "source": "studio_harness_rationale_42",
+      "target": "studio_harness_evaluate_project",
+      "relation": "rationale_for",
+      "confidence": "EXTRACTED",
+      "source_file": "studio/harness.py",
+      "source_location": "L42",
+      "weight": 1,
+      "_src": "studio_harness_rationale_42",
+      "_tgt": "studio_harness_evaluate_project",
+      "confidence_score": 1
+    },
+    {
+      "source": "studio_harness_rationale_42",
+      "target": "studio_models_studioproject",
+      "relation": "uses",
+      "confidence": "INFERRED",
+      "source_file": "studio/harness.py",
+      "source_location": "L15",
+      "weight": 0.8,
+      "_src": "studio_harness_rationale_42",
+      "_tgt": "studio_models_studioproject",
+      "confidence_score": 0.5
     }
   ],
   "hyperedges": []

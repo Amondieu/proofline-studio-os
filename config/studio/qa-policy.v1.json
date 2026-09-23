@@ -3,6 +3,18 @@
   "requiredViewportWidths": [360, 390, 768, 1024, 1440],
   "launchReviews": ["mobile_conversion", "technical", "trust", "legal"],
   "accessibilityBaseline": "WCAG 2.2 AA target; human review required",
+  "performanceBudget": {
+    "lcpLabSecondsMax": 2.5,
+    "inpMillisecondsMax": 200,
+    "clsMax": 0.1,
+    "javascriptKilobytesMax": 60,
+    "thirdPartyScriptsMax": 1
+  },
+  "motionBudget": {
+    "reducedMotionPathIsDefault": true,
+    "layoutAffectingAnimationAllowed": false,
+    "maximumEscalationRung": 3
+  },
   "requiredEvidence": [
     "client-owned-or-authorized-hosting",
     "form-delivery-test",
@@ -14,7 +26,10 @@
     "asset-rights-confirmation",
     "privacy-and-legal-link-review",
     "analytics-consent-review",
-    "backup-or-export"
+    "backup-or-export",
+    "qa-receipt",
+    "rollback-rehearsal",
+    "restore-proof"
   ],
   "prohibitedClaims": ["conversion guaranteed", "GDPR compliant guaranteed", "exclusive AI asset", "results guaranteed"],
   "authority": {

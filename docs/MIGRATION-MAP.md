@@ -14,7 +14,8 @@ domain machinery that belongs to social-media publishing.
 | Evidence/provenance thinking | project fields, asset-rights checks, gate ledger | Claims, assets, decisions, and sign-offs need traceability. |
 | Append-only hash chain | `record_human_gate()` | Corrections remain visible instead of rewriting history. |
 | Graphify-ready source corpus | `graphify.yaml` + studio ontology | Strategy and standards remain retrievable and reviewable. |
-| Human review / compliance gates | Discovery, message, build, and launch gates | Quality is a process and ownership boundary, not a visual style. |
+| Human review / compliance gates | Discovery, message, direction, build, QA, and launch gates | Quality is a process and ownership boundary, not a visual style. |
+| Research-backed receipts and rights records | `schemas/studio/qa-receipt.v1.json`, `asset-record.v1.json`, `approval-record.v1.json` | QA, provenance, and human approvals remain portable instead of living in chat history. |
 
 ## Exclude from the first studio slice
 
@@ -39,6 +40,8 @@ domain machinery that belongs to social-media publishing.
 - Fixed-scope offers and a teardown-led funnel.
 - A local master site that demonstrates the method without inventing client
   work or performance results.
+- A dated LLMarena research archive with an explicit adoption boundary; raw
+  findings do not silently become live policy.
 
 ## Acceptance check
 

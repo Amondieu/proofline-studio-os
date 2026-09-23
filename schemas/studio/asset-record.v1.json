@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:asset-record:v1",
+  "title": "Proofline Asset Provenance Record v1",
+  "description": "Rights and usage evidence for one asset. Client material is never permitted as input to a generative tool.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "asset_id", "project_id", "source_type", "licence", "date", "creator_or_vendor", "human_reviewer", "allowed_uses"],
+  "properties": {
+    "schema_version": { "const": "studio.asset-record.v1" },
+    "asset_id": { "type": "string", "pattern": "^A-[0-9]{4,}$" },
+    "project_id": { "type": "string", "pattern": "^studio_[a-z0-9_-]{4,80}$" },
+    "filename": { "type": ["string", "null"] },
+    "source_type": { "enum": ["own", "client", "stock_free", "stock_paid", "ai_generated", "commissioned"] },
+    "source_url": { "type": ["string", "null"] },
+    "licence": { "type": "string", "minLength": 2 },
+    "licence_file_path": { "type": ["string", "null"] },
+    "date": { "type": "string", "format": "date" },
+    "creator_or_vendor": { "type": "string", "minLength": 2 },
+    "model_release": { "type": ["boolean", "null"] },
+    "ai": {
+      "type": ["object", "null"],
+      "additionalProperties": false,
+      "required": ["tool", "model", "inputs_description", "client_material_used", "real_likeness_used", "disclosure_required", "vendor_training_on_inputs"],
+      "properties": {
+        "tool": { "type": "string", "minLength": 2 },
+        "model": { "type": "string", "minLength": 1 },
+        "inputs_description": { "type": "string", "minLength": 10 },
+        "client_material_used": { "const": false },
+        "real_likeness_used": { "const": false },
+        "prompt_hash": { "type": ["string", "null"] },
+        "approval_record_id": { "type": ["string", "null"] },
+        "disclosure_required": { "type": "boolean" },
+        "vendor_training_on_inputs": { "type": "boolean" }
+      }
+    },
+    "human_reviewer": { "type": "string", "minLength": 2 },
+    "allowed_uses": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "restrictions": { "type": "array", "items": { "type": "string" } },
+    "removed_on": { "type": ["string", "null"], "format": "date" }
+  }
+}

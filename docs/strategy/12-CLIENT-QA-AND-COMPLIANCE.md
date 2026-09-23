@@ -30,5 +30,7 @@ into creative tools.
 
 ## Launch test
 
-Do not hand off the launch review until mobile conversion, technical behavior,
-trust/proof, legal links, rights, consent, and backup/export are documented.
+Do not hand off the launch review until a versioned QA receipt documents mobile
+conversion, technical behavior, trust/proof, legal links, rights, consent,
+client access, and backup/restore evidence. The receipt prepares a project for
+human review; it never certifies compliance or grants launch authority.
