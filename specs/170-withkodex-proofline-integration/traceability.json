@@ -1,0 +1,61 @@
+{
+  "schemaVersion": "studio.withkodex-proofline-traceability.v1",
+  "specId": "170-withkodex-proofline-integration",
+  "status": "proposed",
+  "requirements": [
+    {
+      "id": "AC-001",
+      "source": "spec.md#proposed-brand-architecture",
+      "evidence": ["acceptance.md", "external route map", "human owner record"],
+      "status": "blocked"
+    },
+    {
+      "id": "AC-002",
+      "source": "spec.md#proofline-route-content-contract",
+      "evidence": ["external /proofline mobile capture", "message approval"],
+      "status": "blocked"
+    },
+    {
+      "id": "AC-003",
+      "source": "spec.md#acceptance-criteria",
+      "evidence": ["CTA inventory", "route QA"],
+      "status": "blocked"
+    },
+    {
+      "id": "AC-004",
+      "source": "spec.md#non-negotiables",
+      "evidence": ["portfolio content review", "rights/proof register"],
+      "status": "blocked"
+    },
+    {
+      "id": "AC-005",
+      "source": "spec.md#acceptance-criteria",
+      "evidence": ["keyboard sweep", "mobile QA receipt"],
+      "status": "blocked"
+    },
+    {
+      "id": "AC-006",
+      "source": "spec.md#non-negotiables",
+      "evidence": ["privacy/data map", "form-state test", "G-BIZ-001"],
+      "status": "blocked"
+    },
+    {
+      "id": "AC-007",
+      "source": "spec.md#open-decisions",
+      "evidence": ["parent source register", "human approval"],
+      "status": "blocked"
+    },
+    {
+      "id": "AC-008",
+      "source": "spec.md#non-negotiables",
+      "evidence": ["Proofline contracts", "launch review"],
+      "status": "partial"
+    },
+    {
+      "id": "AC-009",
+      "source": "spec.md#non-negotiables",
+      "evidence": ["legal/BUSINESS-REGISTRATION-GATE.v1.md"],
+      "status": "partial"
+    }
+  ]
+}

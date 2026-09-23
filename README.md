@@ -74,6 +74,9 @@ network dependency and its teardown form is a local demonstration only.
   archetype research protocol, and master-template evaluation rules.
 - `.specify/` and `specs/` — lightweight project-local specification workflow,
   constitution, plan, tasks, and convergence evidence.
+- `specs/170-withkodex-proofline-integration/` — proposed parent-brand route
+  integration for WITHKODEX; it is a handoff specification and does not modify
+  the external WITHKODEX site.
 - `templates/archetypes/` and `research/archetype-template-evaluations/` — five
   direction-neutral master templates and their deliberately human-gated
   candidate evaluations.
