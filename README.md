@@ -50,6 +50,9 @@ network dependency and its teardown form is a local demonstration only.
 - `docs/architecture/NOTION-CANVA-INTEGRATION.md` — deferred Notion/Canva roles,
   ownership boundaries, and adapter backlog.
 - `docs/operations/` — reusable briefs and checklists for client work.
+- `docs/operations/NOTION-CLIENT-PORTAL-V1.md` and
+  `CANVA-SALES-TEMPLATES-V1.md` — later-build specifications for the client
+  portal and the five sales/delivery templates.
 - `studio/` — typed project contracts, deterministic gate evaluator, portable
   path helpers, QA receipt, provenance records, and explicit human-gate ledger
   writer.

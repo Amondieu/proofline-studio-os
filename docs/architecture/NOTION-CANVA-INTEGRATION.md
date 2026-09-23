@@ -140,7 +140,9 @@ relevant handoff rather than silently creating a copy.
 
 ### Phase 1 — Notion client portal pilot
 
-- Build the five database templates and one client portal template.
+- Build the four V1 client databases (`Clients`, `Projects`, `Decisions &
+  Approvals`, `Assets & Deliverables`) and one client portal template. The
+  internal `Prospects` and `Pattern Library` views remain Studio HQ concerns.
 - Run it against the Proofline master site as a dummy client.
 - Test phase/status mapping, one-next-action discipline, feedback rounds, and
   handover links.
@@ -149,8 +151,8 @@ relevant handoff rather than silently creating a copy.
 ### Phase 2 — Canva sales/creative pilot
 
 - Create the Proofline Brand Kit with the three directions.
-- Build and test the teardown deck.
-- Build the direction board with explicit approval choices.
+- Build and test `01-3-Point-Landing-Page-Teardown`.
+- Build `03-Creative-Direction-Board` with explicit approval choices.
 - Add a rights review field to every client-editable asset package.
 
 ### Phase 3 — reviewed adapters
@@ -160,6 +162,11 @@ relevant handoff rather than silently creating a copy.
 - Add export/link receipts and failure handling.
 - Require human review before any status or approval is written back.
 - Pilot with one internal project before a real client.
+
+The executable specifications are:
+
+- `docs/operations/NOTION-CLIENT-PORTAL-V1.md`
+- `docs/operations/CANVA-SALES-TEMPLATES-V1.md`
 
 ## Acceptance gates before any connector
 
