@@ -27,3 +27,8 @@ The prompt record structure is
 [`schemas/prompt-record.schema.json`](schemas/prompt-record.schema.json).
 Provider-specific asset decisions use
 [`schemas/studio/higgsfield-asset-record.v1.json`](../schemas/studio/higgsfield-asset-record.v1.json).
+
+Prompy is an inspiration-only research source. Apply
+[`PROMPY-REF-001`](../docs/architecture/PROMPY-REFERENCE-RULE.md): abstract
+observations into original prompts, record provenance, and never copy or
+redistribute Prompy prompt material.

@@ -37,6 +37,14 @@ class VerticalSliceSpecTests(unittest.TestCase):
         ):
             self.assertTrue((ROOT / "prompts/higgsfield" / prompt).is_file())
 
+    def test_prompy_is_registered_as_inspiration_only(self) -> None:
+        rule = (ROOT / "docs/architecture/PROMPY-REFERENCE-RULE.md").read_text(encoding="utf-8")
+        register = (ROOT / "research/archetype-source-register.csv").read_text(encoding="utf-8")
+        self.assertIn("PROMPY-REF-001", rule)
+        self.assertIn("src_prompy_visual_gallery", register)
+        self.assertIn("inspiration_only", register)
+        self.assertIn("copying prompy prompt text", rule.lower())
+
 
 if __name__ == "__main__":
     unittest.main()
