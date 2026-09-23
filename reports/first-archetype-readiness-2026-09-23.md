@@ -2,7 +2,7 @@
 
 **Target:** `ai-automation-authority` — AI / Automation Authority System
 
-## Current position: 66% basis completeness
+## Current position: 65% basis completeness
 
 This is a deterministic repository audit for the first focused archetype website that also serves as Proofline Studio portfolio work. It is not a launch approval. The recommended first target is AI / Automation Authority because the current master site already leads with that system and its assessment CTA.
 
@@ -13,7 +13,7 @@ This is a deterministic repository audit for the first focused archetype website
 | Portfolio proof & evidence honesty | 15% | 72% | 10.8 |
 | Design system & build basis | 15% | 92% | 13.8 |
 | QA, accessibility & performance evidence | 15% | 72% | 10.8 |
-| Operations, trust & legal production basis | 10% | 35% | 3.5 |
+| Operations, trust & legal production basis | 10% | 30% | 3.0 |
 | Human decisions & launch gates | 10% | 15% | 1.5 |
 
 ## Interpretation
@@ -29,6 +29,7 @@ This is a deterministic repository audit for the first focused archetype website
 - **Message has human/client sign-off** — Record the human message decision in the first project gate log.
 - **A permissioned, outcome-backed case study exists** — Add one permissioned case with role, scope, evidence, and limitations; do not invent results.
 - **Page-specific performance receipt exists** — Measure the focused page on constrained mobile conditions and attach the result.
+- **Austria business-registration gate is cleared** — Confirm the actual service mix and Gewerbewortlaut with the responsible Austrian contact before paid work.
 - **Privacy, legal notice, and accessibility routes are real** — Add reviewed, jurisdiction-appropriate routes before any public production launch.
 - **Analytics and consent behavior is configured** — Add a separately reviewed adapter and consent record; do not add tracking by default.
 - **Hosting, domain, and account ownership are recorded** — Record an approved hosting/ownership handoff for the eventual portfolio deployment.

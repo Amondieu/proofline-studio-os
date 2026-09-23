@@ -5,7 +5,7 @@
   "targetArchetypeId": "ai-automation-authority",
   "targetArchetypeName": "AI / Automation Authority System",
   "portfolioMode": true,
-  "overallBasisCompletenessPercent": 66,
+  "overallBasisCompletenessPercent": 65,
   "categoryScores": [
     {
       "id": "strategy_archetype",
@@ -281,13 +281,22 @@
       "id": "operations_trust_legal",
       "label": "Operations, trust & legal production basis",
       "weight": 10,
-      "score": 35,
-      "weightedPoints": 3.5,
+      "score": 30,
+      "weightedPoints": 3.0,
       "checks": [
+        {
+          "id": "business_registration",
+          "label": "Austria business-registration gate is cleared",
+          "weight": 20,
+          "status": "blocked",
+          "evidence": "legal/BUSINESS-REGISTRATION-GATE.v1.md is documented but remains explicitly blocked until human confirmation.",
+          "gap": "Confirm the actual service mix and Gewerbewortlaut with the responsible Austrian contact before paid work.",
+          "points": 0.0
+        },
         {
           "id": "legal_routes",
           "label": "Privacy, legal notice, and accessibility routes are real",
-          "weight": 25,
+          "weight": 20,
           "status": "blocked",
           "evidence": "Footer currently displays non-linked placeholder labels.",
           "gap": "Add reviewed, jurisdiction-appropriate routes before any public production launch.",
@@ -296,7 +305,7 @@
         {
           "id": "analytics_consent",
           "label": "Analytics and consent behavior is configured",
-          "weight": 20,
+          "weight": 15,
           "status": "blocked",
           "evidence": "No analytics provider or consent implementation is part of this foundation slice.",
           "gap": "Add a separately reviewed adapter and consent record; do not add tracking by default.",
@@ -305,7 +314,7 @@
         {
           "id": "hosting_ownership",
           "label": "Hosting, domain, and account ownership are recorded",
-          "weight": 20,
+          "weight": 15,
           "status": "blocked",
           "evidence": "Repository intentionally keeps hosting, DNS, and credentials outside the foundation slice.",
           "gap": "Record an approved hosting/ownership handoff for the eventual portfolio deployment.",
@@ -314,11 +323,11 @@
         {
           "id": "asset_policy",
           "label": "Asset, AI, and claim boundaries are documented",
-          "weight": 20,
+          "weight": 15,
           "status": "pass",
           "evidence": "trust/proof standards and asset provenance template",
           "gap": "Fill the register for every actual image, font, icon, and claim used.",
-          "points": 20.0
+          "points": 15.0
         },
         {
           "id": "handover_basis",
@@ -416,6 +425,12 @@
       "category": "qa_evidence",
       "label": "Page-specific performance receipt exists",
       "gap": "Measure the focused page on constrained mobile conditions and attach the result."
+    },
+    {
+      "checkId": "business_registration",
+      "category": "operations_trust_legal",
+      "label": "Austria business-registration gate is cleared",
+      "gap": "Confirm the actual service mix and Gewerbewortlaut with the responsible Austrian contact before paid work."
     },
     {
       "checkId": "legal_routes",

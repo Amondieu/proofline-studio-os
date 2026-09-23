@@ -334,9 +334,17 @@ def build_audit(root: Path = ROOT, archetype_id: str = RECOMMENDED_ARCHETYPE) ->
             10,
             (
                 Check(
+                    "business_registration",
+                    "Austria business-registration gate is cleared",
+                    20,
+                    "blocked",
+                    "legal/BUSINESS-REGISTRATION-GATE.v1.md is documented but remains explicitly blocked until human confirmation.",
+                    "Confirm the actual service mix and Gewerbewortlaut with the responsible Austrian contact before paid work.",
+                ),
+                Check(
                     "legal_routes",
                     "Privacy, legal notice, and accessibility routes are real",
-                    25,
+                    20,
                     "blocked" if "Privacy · Legal · Cookie settings" in site else "partial",
                     "Footer currently displays non-linked placeholder labels.",
                     "Add reviewed, jurisdiction-appropriate routes before any public production launch.",
@@ -344,7 +352,7 @@ def build_audit(root: Path = ROOT, archetype_id: str = RECOMMENDED_ARCHETYPE) ->
                 Check(
                     "analytics_consent",
                     "Analytics and consent behavior is configured",
-                    20,
+                    15,
                     "blocked",
                     "No analytics provider or consent implementation is part of this foundation slice.",
                     "Add a separately reviewed adapter and consent record; do not add tracking by default.",
@@ -352,7 +360,7 @@ def build_audit(root: Path = ROOT, archetype_id: str = RECOMMENDED_ARCHETYPE) ->
                 Check(
                     "hosting_ownership",
                     "Hosting, domain, and account ownership are recorded",
-                    20,
+                    15,
                     "blocked",
                     "Repository intentionally keeps hosting, DNS, and credentials outside the foundation slice.",
                     "Record an approved hosting/ownership handoff for the eventual portfolio deployment.",
@@ -360,7 +368,7 @@ def build_audit(root: Path = ROOT, archetype_id: str = RECOMMENDED_ARCHETYPE) ->
                 Check(
                     "asset_policy",
                     "Asset, AI, and claim boundaries are documented",
-                    20,
+                    15,
                     "pass" if _exists(root, "docs/strategy/18-TRUST-AND-PROOF-STANDARDS.md") and _exists(root, "templates/studio/asset-provenance-log.csv") else "partial",
                     "trust/proof standards and asset provenance template",
                     "Fill the register for every actual image, font, icon, and claim used.",

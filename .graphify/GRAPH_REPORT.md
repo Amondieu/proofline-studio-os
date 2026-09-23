@@ -1,24 +1,24 @@
 # Graph Report - .  (2026-09-23)
 
 ## Corpus Check
-- 178 files · ~128.218 words
+- 181 files · ~129.658 words
 - Verdict: corpus is large enough that graph structure adds value.
 
 ## Summary
-- 268 nodes · 554 edges · 13 communities detected
+- 269 nodes · 558 edges · 13 communities detected
 - Extraction: 78% EXTRACTED · 22% INFERRED · 0% AMBIGUOUS · INFERRED: 121 edges (avg confidence: 0.5)
 - Token cost: 0 input · 0 output
-- Edge kinds: contains: 128 · uses: 121 · MODIFIES: 65 · inherits: 61 · calls: 48 · method: 44 · rationale_for: 41 · ON_BRANCH: 19 · PARENT_OF: 17 · imports_from: 10
+- Edge kinds: contains: 128 · uses: 121 · MODIFIES: 67 · inherits: 61 · calls: 48 · method: 44 · rationale_for: 41 · ON_BRANCH: 20 · PARENT_OF: 18 · imports_from: 10
 
 
 ## Input Scope
 - Requested: all
 - Resolved: all (source: cli)
-- Included files: 178 · Candidates: recursive
+- Included files: 181 · Candidates: recursive
 - Excluded: 0 untracked · 0 ignored · 0 sensitive · 0 missing committed
 
 ## Graph Freshness
-- Built from Git commit: `5e1626a`
+- Built from Git commit: `30d83c1`
 - Compare this hash to `git rev-parse HEAD` before trusting freshness-sensitive graph output.
 ## God Nodes (most connected - your core abstractions)
 1. `Contract` - 80 edges
@@ -64,7 +64,7 @@ Nodes (19): Contract, AuditFinding, AuditRecord, calculate_prospect_score(), Con
 
 ### Community 4 - "Community 4"
 Cohesion: 0.16
-Nodes (17): main, 0ecf304 feat: integrate NewLLM prospecting and quality loop, 13df31c feat: add human-gated outbound intelligence module, 142dc46 docs: specify Notion portal and Canva templates, 57970cd feat: add business archetype systems, 5e1626a feat: formalize spec-driven archetype evaluation, 7bf1318 docs: define Notion and Canva integration boundary, 80a73c6 chore: separate Graphify profile and code refresh (+9 more)
+Nodes (18): main, 0ecf304 feat: integrate NewLLM prospecting and quality loop, 13df31c feat: add human-gated outbound intelligence module, 142dc46 docs: specify Notion portal and Canva templates, 30d83c1 feat: add first archetype readiness audit, 57970cd feat: add business archetype systems, 5e1626a feat: formalize spec-driven archetype evaluation, 7bf1318 docs: define Notion and Canva integration boundary (+10 more)
 
 ### Community 5 - "Community 5"
 Cohesion: 0.13
@@ -106,11 +106,11 @@ Nodes (3): Protocol, LayaAdapter, Return the upstream Laya result without granti
 _Questions this graph is uniquely positioned to answer:_
 
 - **Why does `Contract` connect `Community 2` to `Community 5`, `Community 0`, `Community 12`, `Community 1`, `Community 3`, `Community 6`?**
-  _High betweenness centrality (0.477) - this node is a cross-community bridge._
+  _High betweenness centrality (0.483) - this node is a cross-community bridge._
 - **Why does `StudioProject` connect `Community 1` to `Community 4`, `Community 0`, `Community 2`?**
-  _High betweenness centrality (0.079) - this node is a cross-community bridge._
+  _High betweenness centrality (0.081) - this node is a cross-community bridge._
 - **Why does `StudioHarnessTests` connect `Community 2` to `Community 1`?**
-  _High betweenness centrality (0.068) - this node is a cross-community bridge._
+  _High betweenness centrality (0.070) - this node is a cross-community bridge._
 - **Are the 57 inferred relationships involving `Contract` (e.g. with `AntiPatternRecord` and `AntiPatternSeverity`) actually correct?**
   _`Contract` has 57 INFERRED edges - model-reasoned connections that need verification._
 - **Are the 17 inferred relationships involving `StudioHarnessTests` (e.g. with `AccessibilityReceipt` and `AIAssetDetails`) actually correct?**

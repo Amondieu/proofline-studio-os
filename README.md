@@ -80,6 +80,8 @@ network dependency and its teardown form is a local demonstration only.
 - `tools/readiness_audit.py` and `reports/` — reproducible percentage audit for
   the first focused archetype portfolio site; it measures repository basis and
   reports production blockers without granting launch authority.
+- `legal/` — jurisdiction-specific research notes and blocking business/legal
+  gates; currently Austria is the working jurisdiction assumption.
 - `docs/architecture/LAYA-ADVISORY-LAYER.md` — optional model routing,
   abstention, calibration, and authority boundaries.
 - `LLMarena/` — preserved deep-research bundle; see

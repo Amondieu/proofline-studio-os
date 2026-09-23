@@ -20,6 +20,7 @@ class ReadinessAuditTests(unittest.TestCase):
         self.assertNotEqual("ready_to_launch", audit["productionStatus"])
         blocker_ids = {item["checkId"] for item in audit["hardBlockers"]}
         self.assertIn("form_delivery", blocker_ids)
+        self.assertIn("business_registration", blocker_ids)
         self.assertIn("launch_review", blocker_ids)
 
 
