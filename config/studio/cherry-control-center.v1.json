@@ -1,0 +1,185 @@
+{
+  "schemaVersion": "studio.cherry-control-center.v1",
+  "status": "advisory_pilot",
+  "enabledByDefault": false,
+  "frontend": "cherry-studio",
+  "mode": "internal_desktop_control_plane",
+  "authority": "proofline",
+  "pipeline": ["discovery", "message", "direction", "build", "qa", "launch"],
+  "profiles": {
+    "research": {
+      "purpose": "stage public-source research and local derived context",
+      "allowedActions": [
+        "agent_reach.search_public",
+        "screenpipe.read_derived_local_context",
+        "source_register.stage_candidate",
+        "prompt_vault.retrieve"
+      ],
+      "forbiddenActions": ["send_outreach", "export_raw_capture", "approve_source", "deploy"]
+    },
+    "creative": {
+      "purpose": "stage prompt and abstract asset candidates for human review",
+      "allowedActions": [
+        "prompt_vault.retrieve",
+        "prompt_router.propose_route",
+        "lykos.stage_generation",
+        "higgsfield.stage_prompt_pack",
+        "asset_register.stage_record"
+      ],
+      "forbiddenActions": ["approve_rights", "approve_asset", "publish_asset", "deploy"]
+    },
+    "build": {
+      "purpose": "inspect the workspace and run bounded local build checks",
+      "allowedActions": [
+        "proofline.read_contracts",
+        "codex.read_workspace",
+        "codex.stage_workspace_change",
+        "proofline.run_tests",
+        "proofline.write_review_artifact"
+      ],
+      "forbiddenActions": ["export_credentials", "production_deploy", "approve_launch", "override_gate"]
+    },
+    "qa": {
+      "purpose": "run deterministic audits and stage QA evidence",
+      "allowedActions": [
+        "proofline.run_harness",
+        "proofline.run_readiness_audit",
+        "proofline.run_contrast_check",
+        "proofline.run_portable_audit",
+        "proofline.run_graphify",
+        "proofline.write_qa_receipt"
+      ],
+      "forbiddenActions": ["approve_launch", "approve_legal", "approve_rights", "deploy"]
+    },
+    "launch_readonly": {
+      "purpose": "inspect launch evidence without changing state",
+      "allowedActions": ["proofline.read_launch_report", "proofline.read_gate_ledger"],
+      "forbiddenActions": [
+        "write",
+        "send",
+        "approve_discovery",
+        "approve_message",
+        "approve_direction",
+        "approve_legal",
+        "approve_rights",
+        "approve_client",
+        "approve_launch",
+        "publish",
+        "deploy"
+      ]
+    }
+  },
+  "modules": [
+    {
+      "id": "proofline_harness",
+      "role": "canonical_contract_and_audit_authority",
+      "transport": "local",
+      "status": "available",
+      "allowedOperations": ["validate", "audit", "read_reports", "stage_receipts"],
+      "forbiddenOperations": ["approve", "publish", "deploy"]
+    },
+    {
+      "id": "agent_reach",
+      "role": "public_research_sidecar",
+      "transport": "adapter_required",
+      "status": "optional",
+      "allowedOperations": ["search_public", "stage_citations"],
+      "forbiddenOperations": ["send_outreach", "export_private_sessions", "approve_sources"]
+    },
+    {
+      "id": "screenpipe",
+      "role": "local_context_capture",
+      "transport": "adapter_required",
+      "status": "optional",
+      "allowedOperations": ["read_derived_local_context"],
+      "forbiddenOperations": ["export_raw_capture", "capture_without_local_consent", "publish"]
+    },
+    {
+      "id": "lykos_comfyui",
+      "role": "local_creative_staging",
+      "transport": "adapter_required",
+      "status": "optional",
+      "allowedOperations": ["stage_generation", "read_staging_result"],
+      "forbiddenOperations": ["approve_rights", "publish_asset", "deploy"]
+    },
+    {
+      "id": "prompt_vault_router",
+      "role": "versioned_prompt_retrieval_and_routing",
+      "transport": "local",
+      "status": "available",
+      "allowedOperations": ["retrieve", "propose_route", "stage_revision"],
+      "forbiddenOperations": ["send_sensitive_context", "approve_prompt", "publish"]
+    },
+    {
+      "id": "higgsfield_prompt_pack",
+      "role": "remote_creative_prompt_packaging",
+      "transport": "adapter_required",
+      "status": "optional",
+      "allowedOperations": ["stage_prompt_pack"],
+      "forbiddenOperations": ["approve_rights", "approve_production_usage", "publish"]
+    },
+    {
+      "id": "codex",
+      "role": "bounded_workspace_coding_assistant",
+      "transport": "adapter_required",
+      "status": "adapter_required",
+      "allowedOperations": ["read_workspace", "stage_workspace_change", "run_tests"],
+      "forbiddenOperations": ["export_credentials", "production_deploy", "override_gate"]
+    },
+    {
+      "id": "hermes",
+      "role": "optional_agent_runtime",
+      "transport": "adapter_required",
+      "status": "adapter_required",
+      "allowedOperations": ["stage_bounded_task", "read_task_result"],
+      "forbiddenOperations": ["send", "approve", "publish", "deploy", "override_gate"]
+    }
+  ],
+  "humanGates": {
+    "requiredFor": ["discovery", "message", "direction", "legal", "rights", "client", "launch"],
+    "prooflineLedger": "studio/human_gate.py",
+    "automatedChecksMay": "block_or_explain_only"
+  },
+  "forbiddenOperations": [
+    "launch_approval",
+    "legal_approval",
+    "rights_approval",
+    "client_approval",
+    "production_deploy",
+    "credentials_export",
+    "raw_screenpipe_export",
+    "autonomous_outreach",
+    "gate_override"
+  ],
+  "security": {
+    "requireHumanReview": true,
+    "actionAuthorized": false,
+    "workspaceWrites": "staging_or_reviewed_worktree_only",
+    "externalWrites": "disabled_by_default",
+    "credentials": "external_secret_store_only",
+    "sensitiveFieldsRedacted": [
+      "password",
+      "token",
+      "auth_token",
+      "secret",
+      "api_key",
+      "access_token",
+      "refresh_token",
+      "authorization",
+      "session_id",
+      "email",
+      "phone",
+      "client_secret"
+    ]
+  },
+  "externalRuntimeStatus": {
+    "cherry": "external_desktop",
+    "codex": "adapter_required",
+    "hermes": "adapter_required",
+    "laya": "advisory_only",
+    "agent_reach": "adapter_required",
+    "screenpipe": "adapter_required",
+    "lykos": "adapter_required"
+  },
+  "note": "Cherry may surface and route bounded work. Proofline contracts and named humans retain authority; this manifest does not authorize installation, credentials, approval, publication, or deployment."
+}

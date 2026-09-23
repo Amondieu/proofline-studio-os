@@ -1,0 +1,97 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:cherry-control-center:v1",
+  "title": "Proofline Cherry Studio Control Center v1",
+  "description": "Internal-only capability manifest for using Cherry Studio as a bounded Proofline control plane.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "status",
+    "enabledByDefault",
+    "frontend",
+    "mode",
+    "authority",
+    "pipeline",
+    "profiles",
+    "modules",
+    "humanGates",
+    "forbiddenOperations",
+    "security",
+    "externalRuntimeStatus",
+    "note"
+  ],
+  "properties": {
+    "schemaVersion": { "const": "studio.cherry-control-center.v1" },
+    "status": { "enum": ["advisory_pilot", "reviewed_pilot", "disabled"] },
+    "enabledByDefault": { "const": false },
+    "frontend": { "const": "cherry-studio" },
+    "mode": { "const": "internal_desktop_control_plane" },
+    "authority": { "const": "proofline" },
+    "pipeline": {
+      "type": "array",
+      "const": ["discovery", "message", "direction", "build", "qa", "launch"]
+    },
+    "profiles": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["purpose", "allowedActions", "forbiddenActions"],
+        "properties": {
+          "purpose": { "type": "string", "minLength": 1 },
+          "allowedActions": { "type": "array", "items": { "type": "string" } },
+          "forbiddenActions": { "type": "array", "items": { "type": "string" } }
+        }
+      },
+      "minProperties": 5
+    },
+    "modules": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "role", "transport", "status", "allowedOperations", "forbiddenOperations"],
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9_]+$" },
+          "role": { "type": "string", "minLength": 1 },
+          "transport": { "enum": ["local", "MCP", "adapter_required"] },
+          "status": { "type": "string", "minLength": 1 },
+          "allowedOperations": { "type": "array", "items": { "type": "string" } },
+          "forbiddenOperations": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "humanGates": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requiredFor", "prooflineLedger", "automatedChecksMay"],
+      "properties": {
+        "requiredFor": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "prooflineLedger": { "type": "string", "minLength": 1 },
+        "automatedChecksMay": { "const": "block_or_explain_only" }
+      }
+    },
+    "forbiddenOperations": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+    "security": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["requireHumanReview", "actionAuthorized", "workspaceWrites", "externalWrites", "credentials", "sensitiveFieldsRedacted"],
+      "properties": {
+        "requireHumanReview": { "const": true },
+        "actionAuthorized": { "const": false },
+        "workspaceWrites": { "type": "string", "minLength": 1 },
+        "externalWrites": { "type": "string", "minLength": 1 },
+        "credentials": { "type": "string", "minLength": 1 },
+        "sensitiveFieldsRedacted": { "type": "array", "minItems": 1, "items": { "type": "string" } }
+      }
+    },
+    "externalRuntimeStatus": {
+      "type": "object",
+      "additionalProperties": { "type": "string", "minLength": 1 },
+      "minProperties": 1
+    },
+    "note": { "type": "string", "minLength": 1 }
+  }
+}

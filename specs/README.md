@@ -20,4 +20,8 @@ features, add clarification, checklist, and cross-artifact analysis gates where
 the human review needs them. The repository Constitution remains the authority
 for human gates and launch safety.
 
+`specs/140-cherry-control-center-v1/` defines the internal Cherry Studio
+control-plane contract, least-privilege profiles, and adapter-required runtime
+boundaries. It does not install or activate Cherry.
+
 Reference: [GitHub Spec Kit](https://github.com/github/spec-kit).

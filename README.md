@@ -98,6 +98,11 @@ network dependency and its teardown form is a local demonstration only.
   and human-gated asset provenance boundaries.
 - `docs/architecture/LAYA-ADVISORY-LAYER.md` — optional model routing,
   abstention, calibration, and authority boundaries.
+- `docs/architecture/CHERRY-STUDIO-CONTROL-CENTER.md` — internal Cherry
+  control-plane boundary, adapter map, and activation sequence.
+- `config/studio/cherry-control-center.v1.json` and
+  `specs/140-cherry-control-center-v1/` — versioned capabilities and tests for
+  a future Cherry integration; runtime activation is not included.
 - `LLMarena/` — preserved deep-research bundle; see
   `docs/architecture/LLMARENA-ADOPTION.md` for what is operational.
 - `config/studio/` — profile, offers, creative directions, archetypes, and QA policy.
