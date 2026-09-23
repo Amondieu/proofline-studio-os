@@ -39,6 +39,11 @@ python -m studio validate tests/fixtures/studio/blocked-project.v1.json
 python scripts/portable_audit.py
 ```
 
+Laya is an optional advisory layer, disabled by default. Its contracts and
+offline boundary tests are included; install `requirements-laya.txt` only for
+a local, human-reviewed inference experiment. See
+[`docs/architecture/LAYA-ADVISORY-LAYER.md`](docs/architecture/LAYA-ADVISORY-LAYER.md).
+
 Open `site/index.html` directly for the local proof-of-work site. It has no
 network dependency and its teardown form is a local demonstration only.
 
@@ -54,8 +59,8 @@ network dependency and its teardown form is a local demonstration only.
   `CANVA-SALES-TEMPLATES-V1.md` — later-build specifications for the client
   portal and the five sales/delivery templates.
 - `studio/` — typed project contracts, deterministic gate evaluator, portable
-  path helpers, QA receipt, provenance records, and explicit human-gate ledger
-  writer.
+  path helpers, QA receipt, provenance records, explicit human-gate ledger
+  writer, and the optional Laya advisory adapter.
 - `schemas/studio/` — versioned JSON contracts.
 - `templates/studio/` — portable QA and asset-provenance starting templates.
 - `templates/` — pattern cards, test plans, evidence log, and launch receipt.
@@ -63,6 +68,8 @@ network dependency and its teardown form is a local demonstration only.
 - `docs/strategy/19–22` — business archetypes, selection rubric, blueprints, and sales playbook.
 - `docs/strategy/23–29` — human-gated outbound intelligence, scoring, teardown,
   compliance, messaging, and reply learning.
+- `docs/architecture/LAYA-ADVISORY-LAYER.md` — optional model routing,
+  abstention, calibration, and authority boundaries.
 - `LLMarena/` — preserved deep-research bundle; see
   `docs/architecture/LLMARENA-ADOPTION.md` for what is operational.
 - `config/studio/` — profile, offers, creative directions, archetypes, and QA policy.
@@ -75,7 +82,9 @@ network dependency and its teardown form is a local demonstration only.
 
 There is no social publishing, content persona engine, viral cookbook, Ruflo
 swarm, live provider credential, scheduler authority, or autonomous client
-deployment. Those were part of the source project's AI-media scope and would
-make this studio's responsibilities less clear.
+deployment. Laya is present only as an optional, non-authoritative advisory
+adapter; its weights and runtime state are outside the repository. Those other
+capabilities were part of the source project's AI-media scope and would make
+this studio's responsibilities less clear.
 
 See [MIGRATION-MAP.md](docs/MIGRATION-MAP.md) for the full adoption decision.

@@ -28,7 +28,7 @@ domain machinery that belongs to social-media publishing.
 | Mamie/social content pipeline | Exclude | Wrong delivery object; a landing-page project is not a post package. |
 | Viral-idea cookbook and persona arena | Exclude | Useful for creator research, not required for client web delivery. |
 | Ruflo editorial swarm | Exclude | No autonomous content swarm is needed to run the studio method. |
-| Laya calibration and model routing | Exclude | No decision model should silently shape client claims or approvals. |
+| Laya advisory routing | Adopt advisory pilot | `studio/laya.py` provides typed triage, sanitization, abstention, and evaluation records; it cannot approve, send, launch, or override a human gate. |
 | Social scheduler, Postiz, n8n, platform adapters | Exclude | Live integrations need separate security, account, and contract reviews. |
 | Higgsfield/provider credentials | Exclude | Tools may be used externally as a creative layer; this repo stores no secrets. |
 | RTK/SuperCompress | Exclude | Terminal/context optimization is not part of the studio client contract yet. |

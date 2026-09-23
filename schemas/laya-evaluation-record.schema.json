@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:laya-evaluation-record:v1",
+  "title": "Proofline Laya Evaluation Record v1",
+  "description": "A human label used to measure agreement and calibration of advisory decisions.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "evaluation_id", "decision_id", "human_option", "agrees_with_model", "reviewer", "reviewed_at", "calibration_bucket"],
+  "properties": {
+    "schema_version": { "const": "studio.laya-evaluation-record.v1" },
+    "evaluation_id": { "type": "string", "pattern": "^laya_eval_[a-z0-9_-]{4,80}$" },
+    "decision_id": { "type": "string", "pattern": "^laya_dec_[a-z0-9_-]{4,80}$" },
+    "human_option": { "type": "string", "minLength": 1 },
+    "agrees_with_model": { "type": "boolean" },
+    "reviewer": { "type": "string", "minLength": 2 },
+    "reviewed_at": { "type": "string", "format": "date-time" },
+    "calibration_bucket": { "type": "string", "minLength": 2 },
+    "notes": { "type": ["string", "null"] }
+  }
+}

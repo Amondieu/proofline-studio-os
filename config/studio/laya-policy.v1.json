@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "studio.laya-policy.v1",
+  "status": "advisory_pilot",
+  "enabledByDefault": false,
+  "implementation": "studio/laya.py",
+  "evaluationRecord": "schemas/laya-evaluation-record.schema.json",
+  "allowedTasks": ["prospect_triage", "archetype_fit", "reply_triage", "skill_route", "qa_review_priority"],
+  "forbiddenTasks": ["send_approval", "launch_approval", "legal_approval", "client_approval", "asset_rights_approval"],
+  "abstainBelowConfidence": 0.75,
+  "requireHumanReview": true,
+  "actionAuthorized": false,
+  "evaluationRequiredBeforeCalibration": true,
+  "sensitiveFieldsRedacted": ["password", "token", "auth_token", "secret", "api_key", "access_token", "refresh_token", "professional_email", "contact_email", "email_address", "email", "phone", "phone_number", "contact_phone", "telephone", "authorization", "session_id"],
+  "models": {
+    "english": { "useFor": ["English advisory inputs"], "calibration": "unknown" },
+    "multilingual": { "useFor": ["German, French, and mixed-language advisory inputs"], "calibration": "unknown" },
+    "typed-decisions": { "useFor": ["explicit typed choice workflows only"], "calibration": "unknown" }
+  },
+  "note": "Laya output is a recommendation. It cannot send, launch, approve, publish, or override a deterministic gate."
+}

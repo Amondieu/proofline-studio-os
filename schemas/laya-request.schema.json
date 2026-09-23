@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:laya-request:v1",
+  "title": "Proofline Laya Advisory Request v1",
+  "description": "A sanitized, typed request for an optional advisory model; it contains no action permission.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "request_id", "task", "question_id", "state", "questions", "evidence_refs", "contains_sensitive_data"],
+  "properties": {
+    "schema_version": { "const": "studio.laya-request.v1" },
+    "request_id": { "type": "string", "pattern": "^laya_req_[a-z0-9_-]{4,80}$" },
+    "task": { "enum": ["prospect_triage", "archetype_fit", "reply_triage", "skill_route", "qa_review_priority"] },
+    "question_id": { "type": "string", "pattern": "^[a-z][a-z0-9_-]{1,80}$" },
+    "state": { "type": "object" },
+    "questions": { "type": "object", "minProperties": 1, "maxProperties": 32, "additionalProperties": { "type": "object" } },
+    "language": { "type": ["string", "null"], "minLength": 2, "maxLength": 20 },
+    "requested_model": { "enum": ["english", "multilingual", "typed-decisions", null] },
+    "evidence_refs": { "type": "array", "minItems": 1, "maxItems": 30, "items": { "type": "string" } },
+    "contains_sensitive_data": { "const": false }
+  }
+}

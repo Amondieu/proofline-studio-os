@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:laya-decision:v1",
+  "title": "Proofline Laya Advisory Decision v1",
+  "description": "A calibrated or uncalibrated recommendation that never authorizes an action.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "decision_id", "request_id", "task", "model", "provider", "input_sha256", "probabilities", "confidence", "abstained", "calibration_status", "routing_reason", "needs_human_review", "action_authorized", "created_at"],
+  "properties": {
+    "schema_version": { "const": "studio.laya-decision.v1" },
+    "decision_id": { "type": "string", "pattern": "^laya_dec_[a-z0-9_-]{4,80}$" },
+    "request_id": { "type": "string", "pattern": "^laya_req_[a-z0-9_-]{4,80}$" },
+    "task": { "enum": ["prospect_triage", "archetype_fit", "reply_triage", "skill_route", "qa_review_priority"] },
+    "model": { "enum": ["english", "multilingual", "typed-decisions"] },
+    "provider": { "type": "string", "minLength": 2 },
+    "input_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "selected_option": { "type": ["string", "null"] },
+    "probabilities": { "type": "object", "maxProperties": 32, "additionalProperties": { "type": "number", "minimum": 0, "maximum": 1 } },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "abstained": { "type": "boolean" },
+    "abstention_reason": { "type": ["string", "null"] },
+    "calibration_status": { "enum": ["unknown", "uncalibrated", "calibrated"] },
+    "routing_reason": { "type": "string", "minLength": 3 },
+    "evidence_refs": { "type": "array", "minItems": 1, "maxItems": 30, "items": { "type": "string" } },
+    "needs_human_review": { "const": true },
+    "action_authorized": { "const": false },
+    "created_at": { "type": "string", "format": "date-time" }
+  }
+}

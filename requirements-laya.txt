@@ -1,0 +1,3 @@
+# Optional, pinned adapter dependency. Install only when running local Laya inference.
+# Model checkpoints are downloaded separately by Laya and are never committed here.
+laya @ git+https://github.com/NandhaKishorM/laya.git@2c6c16baf3ea3149948777937d5005a7c7fba425

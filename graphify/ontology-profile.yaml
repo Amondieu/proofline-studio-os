@@ -87,6 +87,18 @@ node_types:
     aliases: [reply, response, suppression_event]
     source_backed: true
     status_policy: operational
+  LayaRequest:
+    aliases: [advisory_request, model_request, routing_request]
+    source_backed: true
+    status_policy: operational
+  LayaDecision:
+    aliases: [advisory_decision, model_recommendation, triage_recommendation]
+    source_backed: true
+    status_policy: human_review
+  LayaEvaluation:
+    aliases: [model_evaluation, calibration_label, human_label]
+    source_backed: true
+    status_policy: human_review
 
 relation_types:
   has_discovery:
@@ -191,6 +203,24 @@ relation_types:
     requires_evidence: true
     assertion_basis: [EXTRACTED]
     derivation_methods: [source_citation]
+  produces_advisory:
+    source_types: [LayaRequest]
+    target_types: [LayaDecision]
+    requires_evidence: true
+    assertion_basis: [EXTRACTED]
+    derivation_methods: [source_citation]
+  evaluated_by:
+    source_types: [LayaDecision]
+    target_types: [LayaEvaluation]
+    requires_evidence: true
+    assertion_basis: [EXTRACTED]
+    derivation_methods: [human_action]
+  advises:
+    source_types: [LayaDecision]
+    target_types: [Prospect, ArchetypeAssessment, ReplyRecord, QAReview, Task]
+    requires_evidence: true
+    assertion_basis: [EXTRACTED]
+    derivation_methods: [reviewed_synthesis]
 
 hardening:
   statuses: [candidate, proposed, needs_review, validated, reference, rejected, superseded]
@@ -205,16 +235,16 @@ inference_policy:
 evidence_policy:
   require_evidence_refs: true
   min_refs: 1
-  node_types: [StudioProject, DiscoveryBrief, MessageMap, CreativeDirection, ProofAsset, QAReview, GateDecision, Standard, Offer, Pattern, AntiPattern, Experiment, BusinessArchetype, ArchetypeAssessment, Prospect, Signal, Audit, OutreachDraft, SendApproval, ReplyRecord]
-  relation_types: [has_discovery, freezes, uses_direction, supported_by, governed_by, reviewed_by, packages_as, tested_by, replaces, fits_archetype, assesses, recommends, has_signal, has_audit, has_outreach_draft, gated_by, has_reply]
+  node_types: [StudioProject, DiscoveryBrief, MessageMap, CreativeDirection, ProofAsset, QAReview, GateDecision, Standard, Offer, Pattern, AntiPattern, Experiment, BusinessArchetype, ArchetypeAssessment, Prospect, Signal, Audit, OutreachDraft, SendApproval, ReplyRecord, LayaRequest, LayaDecision, LayaEvaluation]
+  relation_types: [has_discovery, freezes, uses_direction, supported_by, governed_by, reviewed_by, packages_as, tested_by, replaces, fits_archetype, assesses, recommends, has_signal, has_audit, has_outreach_draft, gated_by, has_reply, produces_advisory, evaluated_by, advises]
 
 outputs:
   ontology:
     enabled: true
-    canonical_node_types: [StudioProject, DiscoveryBrief, MessageMap, CreativeDirection, ProofAsset, QAReview, GateDecision, Standard, Offer, Pattern, AntiPattern, Experiment, BusinessArchetype, ArchetypeAssessment, Prospect, Signal, Audit, OutreachDraft, SendApproval, ReplyRecord, Task]
-    source_node_types: [ProofAsset, QAReview, GateDecision, Pattern, AntiPattern, Experiment, BusinessArchetype, ArchetypeAssessment, Prospect, Signal, Audit, OutreachDraft, SendApproval, ReplyRecord]
+    canonical_node_types: [StudioProject, DiscoveryBrief, MessageMap, CreativeDirection, ProofAsset, QAReview, GateDecision, Standard, Offer, Pattern, AntiPattern, Experiment, BusinessArchetype, ArchetypeAssessment, Prospect, Signal, Audit, OutreachDraft, SendApproval, ReplyRecord, LayaRequest, LayaDecision, LayaEvaluation, Task]
+    source_node_types: [ProofAsset, QAReview, GateDecision, Pattern, AntiPattern, Experiment, BusinessArchetype, ArchetypeAssessment, Prospect, Signal, Audit, OutreachDraft, SendApproval, ReplyRecord, LayaRequest, LayaDecision, LayaEvaluation]
     occurrence_node_types: []
     alias_fields: [aliases, normalized_terms]
-    relation_exports: [has_discovery, freezes, uses_direction, supported_by, governed_by, reviewed_by, packages_as, tested_by, replaces, fits_archetype, assesses, recommends, has_signal, has_audit, has_outreach_draft, gated_by, has_reply]
+    relation_exports: [has_discovery, freezes, uses_direction, supported_by, governed_by, reviewed_by, packages_as, tested_by, replaces, fits_archetype, assesses, recommends, has_signal, has_audit, has_outreach_draft, gated_by, has_reply, produces_advisory, evaluated_by, advises]
     wiki:
       enabled: false

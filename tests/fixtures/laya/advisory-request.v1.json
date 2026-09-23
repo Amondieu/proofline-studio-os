@@ -1,0 +1,20 @@
+{
+  "schema_version": "studio.laya-request.v1",
+  "request_id": "laya_req_demo_fixture",
+  "task": "prospect_triage",
+  "question_id": "triage",
+  "state": {
+    "company_type": "B2B software studio",
+    "public_signal": "The landing page has a clear offer but no visible conversion path."
+  },
+  "questions": {
+    "triage": {
+      "type": "choice",
+      "options": ["qualified", "review", "reject"]
+    }
+  },
+  "language": "en",
+  "requested_model": "typed-decisions",
+  "evidence_refs": ["docs/strategy/25-PROSPECT-SCORING.md"],
+  "contains_sensitive_data": false
+}
