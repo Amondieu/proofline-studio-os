@@ -1,0 +1,5 @@
+prompt_id,version,date,change_type,reason,evidence,decision,human_reviewer
+hf-proofline-precision-hero,1.0.0,2026-09-23,initial,controlled V1 abstract hero hypothesis,repository scope only,pilot pending,
+hf-proofline-cinematic-authority-hero,1.0.0,2026-09-23,initial,secondary direction concept,repository scope only,pilot pending,
+hf-proofline-editorial-luxury-hero,1.0.0,2026-09-23,initial,secondary direction concept,repository scope only,pilot pending,
+hf-proofline-motion-loop-constraints,1.0.0,2026-09-23,initial,reduced motion and performance guardrails,repository scope only,pilot pending,

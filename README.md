@@ -74,6 +74,9 @@ network dependency and its teardown form is a local demonstration only.
   archetype research protocol, and master-template evaluation rules.
 - `.specify/` and `specs/` — lightweight project-local specification workflow,
   constitution, plan, tasks, and convergence evidence.
+- `specs/100–130` — proposed WITHKODEX portfolio vertical slice: master site,
+  Proofline route, AI / Automation Authority archetype, and interest-only
+  teardown intake.
 - `specs/170-withkodex-proofline-integration/` — proposed parent-brand route
   integration for WITHKODEX; it is a handoff specification and does not modify
   the external WITHKODEX site.
@@ -90,6 +93,9 @@ network dependency and its teardown form is a local demonstration only.
   preflight bundle. It is intentionally draft/gated and is not a live intake.
 - `legal/` — jurisdiction-specific research notes and blocking business/legal
   gates; currently Austria is the working jurisdiction assumption.
+- `prompts/` and `docs/architecture/HIGGSFIELD-ASSET-POLICY.md` — versioned
+  LLMArena planning prompts, Higgsfield creative prompts, evaluation rubrics,
+  and human-gated asset provenance boundaries.
 - `docs/architecture/LAYA-ADVISORY-LAYER.md` — optional model routing,
   abstention, calibration, and authority boundaries.
 - `LLMarena/` — preserved deep-research bundle; see
