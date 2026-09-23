@@ -5,6 +5,7 @@ from studio.outbound import (
     ProspectScore,
     ReplyRecord,
     SendApproval,
+    SuppressionRecord,
     calculate_prospect_score,
 )
 
@@ -67,6 +68,28 @@ class OutboundContractTests(unittest.TestCase):
             approved_on=datetime(2026, 9, 23, 10, 0),
         )
         self.assertEqual(approval.decision, "approved")
+
+    def test_suppression_records_are_minimal_and_lifetime_is_explicit(self):
+        permanent = SuppressionRecord(
+            suppression_id="sup_demo_1",
+            identifier="person@example.com",
+            scope="person",
+            suppressed_at=datetime(2026, 9, 23, 10, 0),
+            reason="opt_out",
+            source="reply",
+        )
+        self.assertTrue(permanent.permanent)
+        with self.assertRaises(ValueError):
+            SuppressionRecord(
+                suppression_id="sup_demo_2",
+                identifier="example.com",
+                scope="domain",
+                suppressed_at=datetime(2026, 9, 23, 10, 0),
+                reason="opt_out",
+                source="reply",
+                permanent=False,
+                expires_on=date(2026, 12, 23),
+            )
 
 
 if __name__ == "__main__":

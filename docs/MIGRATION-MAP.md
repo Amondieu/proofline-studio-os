@@ -53,6 +53,10 @@ domain machinery that belongs to social-media publishing.
 - A pilot-only outbound intelligence loop with a 70-point triage threshold,
   evidence-backed teardowns, suppression records, and an exact-message human
   send gate; no live prospect list or credentials are stored here.
+- A NewLLM adoption boundary in `docs/architecture/NEWLLM-ADOPTION.md`, with
+  source admissibility, suppression, nine-condition send gates, and a
+  rule→card→blocker→test quality loop merged into the existing modules rather
+  than duplicated beside them.
 
 ## Acceptance check
 

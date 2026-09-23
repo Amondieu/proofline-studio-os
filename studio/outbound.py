@@ -186,6 +186,31 @@ class ReplyRecord(Contract):
         return self
 
 
+class SuppressionRecord(Contract):
+    """Minimal, append-only suppression evidence; never a campaign target list."""
+
+    schema_version: Literal["studio.suppression-record.v1"] = "studio.suppression-record.v1"
+    suppression_id: str = Field(pattern=r"^sup_[a-z0-9_-]{4,80}$")
+    identifier: str = Field(min_length=3, max_length=320)
+    scope: Literal["person", "domain", "company"]
+    suppressed_at: datetime
+    reason: Literal["opt_out", "complaint", "manual_add", "bounce_hard", "data_subject_request"]
+    source: Literal["reply", "unsubscribe_link", "manual_review", "data_subject_request", "hard_bounce"]
+    note: str | None = Field(default=None, max_length=500)
+    permanent: bool = True
+    expires_on: date | None = None
+
+    @model_validator(mode="after")
+    def enforce_suppression_lifetime(self) -> "SuppressionRecord":
+        if self.permanent and self.expires_on is not None:
+            raise ValueError("permanent suppression records cannot have an expiry date")
+        if not self.permanent and self.expires_on is None:
+            raise ValueError("temporary suppression records require an expiry date")
+        if self.reason in {"opt_out", "complaint", "data_subject_request"} and not self.permanent:
+            raise ValueError("objections and data-subject requests require permanent suppression")
+        return self
+
+
 def calculate_prospect_score(**components: int) -> ProspectScore:
     """Calculate the declared score; it never changes outreach state."""
 

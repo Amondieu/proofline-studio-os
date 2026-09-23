@@ -68,6 +68,8 @@ network dependency and its teardown form is a local demonstration only.
 - `docs/strategy/19–22` — business archetypes, selection rubric, blueprints, and sales playbook.
 - `docs/strategy/23–29` — human-gated outbound intelligence, scoring, teardown,
   compliance, messaging, and reply learning.
+- `docs/strategy/30–31` — NewLLM-derived source policy, suppression boundary,
+  send gate, and evidence-backed quality standard.
 - `docs/architecture/LAYA-ADVISORY-LAYER.md` — optional model routing,
   abstention, calibration, and authority boundaries.
 - `LLMarena/` — preserved deep-research bundle; see

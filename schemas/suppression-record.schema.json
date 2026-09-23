@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:suppression-record:v1",
+  "title": "Proofline Suppression Record v1",
+  "description": "Minimal suppression evidence. It is never a prospect target list and is never exported to a campaign tool.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "suppression_id", "identifier", "scope", "suppressed_at", "reason", "source", "permanent"],
+  "properties": {
+    "schema_version": { "const": "studio.suppression-record.v1" },
+    "suppression_id": { "type": "string", "pattern": "^sup_[a-z0-9_-]{4,80}$" },
+    "identifier": { "type": "string", "minLength": 3, "maxLength": 320 },
+    "scope": { "enum": ["person", "domain", "company"] },
+    "suppressed_at": { "type": "string", "format": "date-time" },
+    "reason": { "enum": ["opt_out", "complaint", "manual_add", "bounce_hard", "data_subject_request"] },
+    "source": { "enum": ["reply", "unsubscribe_link", "manual_review", "data_subject_request", "hard_bounce"] },
+    "note": { "type": ["string", "null"], "maxLength": 500 },
+    "permanent": { "type": "boolean" },
+    "expires_on": { "type": ["string", "null"], "format": "date" }
+  },
+  "allOf": [
+    {
+      "if": { "properties": { "permanent": { "const": true } } },
+      "then": { "properties": { "expires_on": { "type": "null" } } }
+    },
+    {
+      "if": { "properties": { "permanent": { "const": false } } },
+      "then": { "required": ["expires_on"], "properties": { "expires_on": { "type": "string", "format": "date" } } }
+    }
+  ]
+}

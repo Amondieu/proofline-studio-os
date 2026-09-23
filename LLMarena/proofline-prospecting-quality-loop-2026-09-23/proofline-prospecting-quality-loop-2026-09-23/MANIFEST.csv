@@ -1,0 +1,25 @@
+path,bytes,purpose,sha256_16
+context/MASTER-REPORT.md,74344,Mission v1 report + §14 addendum describing this loop,a15ccfe2a4080107
+context/README.md,5299,"Repository orientation (read order, gates, commands, tree index)",d3764d3ef6a7981c
+demo/direction-switcher.html,20936,The artefact the phase-1 run reviewed (0 external requests),52f84faf608bf548
+docs/03-DESIGN-DIRECTIONS.md,6821,Direction token spec — updated with measured contrast values and the divergence table,91fb58005681ff75
+docs/30-PROSPECTING-DATA-SOURCES.md,20505,"Source inventory, 9-condition Send Gate, signals, metrics, suppression rules",cda8dcb494d02e0c
+docs/31-EVIDENCE-BACKED-QUALITY-COOKBOOK.md,55825,"Evidence ladder, 40 pattern cards, 40 anti-patterns, checklist, blockers, tiers",11a11809d86d6caf
+prompts/quality-master-prompt-phase1.md,7378,Reusable phase-1 prompt (hero/CTA/forms/a11y/perf),adb68ebd7fb6a950
+prompts/quality-master-prompt-phase2.md,7030,Phase-2 prompt (motion/SEO/AI assets/portfolio) + consolidation,73d5a23e55eb8063
+research/poc-backlog.md,3795,Open proofs-of-concept incl. POC-11 (tokens.json) and POC-12 (Notion EU/DPA),0e7236e2bdcce20f
+research/qa-matrix.md,6380,Generated checklist → test mapping and full test table,dc9b8579e187239f
+research/quality-run-2026-09-23.md,16854,"Executed phase-1 run: findings MD-01…MD-13, fixes, decisions",3d7e551fe2b8e233
+schemas/prospect-record.schema.json,5159,Machine-readable prospect record (data-minimised),19f2258e80013959
+schemas/suppression-record.schema.json,1077,Machine-readable suppression record,d6b6b315a5e0b645
+skills/evidence-quality/SKILL.md,3445,Claim → pattern card → code-review blocker → QA test,61dccf1f9a134784
+skills/outreach-review/SKILL.md,3653,Send Gate enforcement skill with hard refusals,e32ab4e1a3c8c5fd
+templates/lia-b2b-outreach.md,2969,Legitimate-interest assessment for B2B outreach,aaf8f87310738c8a
+templates/outreach-email-sequences.md,5853,3-touch sequence + reply/objection handling,73ea843cdafcc65e
+templates/prospect-record.example.json,2464,Filled 8-field prospect record,b33e34d0480be246
+templates/send-gate-checklist.md,1600,"Per-message approval checklist (9 items, hard stops)",0861ed2798a78f48
+templates/suppression-list.csv,435,"Suppression list (minimal fields, never a target list)",a35b5195b19e9208
+templates/teardown-quick-audit.md,2594,5–12 min 3-point teardown (outbound mini-value),f26325131a92b3da
+tools/contrast_check.py,4081,Token-pair WCAG contrast audit (exit 1 on text failure),838a4d108dacc526
+tools/qa_matrix.py,14887,28 test rows + cookbook checklist mapping (--check verified),0a7a50aee265a9c1
+verification/RESULTS.md,2006,Captured command outputs proving the checks in this bundle,fab1d15c114671bd

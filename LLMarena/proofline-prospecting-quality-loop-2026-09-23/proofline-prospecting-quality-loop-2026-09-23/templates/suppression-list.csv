@@ -1,0 +1,4 @@
+email_or_domain,scope,suppressed_at,reason,source,note
+contact@example-old-client.example,domain,2026-09-23,optout,reply_to_outreach,replied "no thanks" on touch 1 — never contact again
+someone@example-competitor.example,person,2026-09-23,complaint,reply_to_outreach,asked to be removed; review signal quality for this ICP slice
+example-noreply.example,domain,2026-09-23,manual_add,precaution,automated/system mailbox — do not use

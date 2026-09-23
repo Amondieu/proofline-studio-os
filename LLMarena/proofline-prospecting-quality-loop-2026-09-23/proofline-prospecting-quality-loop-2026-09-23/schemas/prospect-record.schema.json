@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proofline.studio/schemas/prospect-record.schema.json",
+  "title": "Proofline Prospect Record (minimised B2B/FR-EU)",
+  "type": "object",
+  "required": ["prospect_id", "company_name", "country", "company_url", "source_record", "public_signal", "website_observations", "contact_route", "compliance"],
+  "additionalProperties": false,
+  "properties": {
+    "prospect_id": { "type": "string", "pattern": "^pr_[0-9]{4}_[0-9]{4}$" },
+    "company_name": { "type": "string" },
+    "country": { "type": "string", "minLength": 2, "maxLength": 2 },
+    "company_url": { "type": "string", "format": "uri" },
+    "icp_slice": { "type": "string" },
+    "source_record": {
+      "type": "object",
+      "required": ["source_type", "source_url", "collected_at", "terms_checked"],
+      "properties": {
+        "source_type": { "enum": ["insee_sirene", "annuaire_entreprises", "pappers", "bodacc_inpi", "companies_house", "official_company_site", "official_job_page", "press_page_manual", "inbound_form", "referral"] },
+        "source_url": { "type": "string", "format": "uri" },
+        "collected_at": { "type": "string", "format": "date" },
+        "terms_checked": { "const": true },
+        "attribution": { "type": "string", "description": "Required for INSEE SIRENE: www.insee.fr + date of last update" }
+      }
+    },
+    "firmographics": {
+      "type": "object",
+      "properties": {
+        "legal_form": { "type": "string" }, "naf_ape": { "type": "string" },
+        "creation_date": { "type": "string", "format": "date" },
+        "employee_band": { "type": "string" },
+        "verified_against": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "public_signal": {
+      "type": "object",
+      "required": ["type", "claim", "evidence_url", "observed_at", "confidence"],
+      "properties": {
+        "type": { "enum": ["product_service_launch", "new_ai_automation_service", "funding_or_accelerator", "new_growth_role", "rebrand_or_repositioning", "new_case_study", "social_momentum_weak_cta", "hero_clarity_leak", "mobile_flow_defect"] },
+        "claim": { "type": "string", "maxLength": 200 },
+        "evidence_url": { "type": "string", "format": "uri" },
+        "observed_at": { "type": "string", "format": "date" },
+        "expires_on": { "type": "string", "format": "date", "description": "observed_at + 90 days" },
+        "confidence": { "enum": ["high", "medium", "low"] }
+      }
+    },
+    "website_observations": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["category", "observation", "evidence_url", "verified_by_human"],
+        "properties": {
+          "category": { "enum": ["hero_clarity", "proof", "action_path", "mobile_flow", "pricing_clarity", "navigation", "performance_visible", "accessibility_visible"] },
+          "observation": { "type": "string", "maxLength": 240 },
+          "evidence_url": { "type": "string", "format": "uri" },
+          "verified_by_human": { "const": true },
+          "verified_at": { "type": "string", "format": "date" },
+          "device": { "enum": ["mobile_375", "tablet_768", "desktop_1280"] }
+        }
+      }
+    },
+    "contact_route": {
+      "type": "object",
+      "required": ["type", "source_url", "role_relevance"],
+      "properties": {
+        "type": { "enum": ["public_professional_email", "contact_form", "inbound", "referral"] },
+        "address_ref": { "type": ["string", "null"] },
+        "source_url": { "type": "string", "format": "uri" },
+        "role_relevance": { "type": "string" },
+        "is_nominative": { "type": "boolean", "description": "Nominative pro addresses are personal data: information + objection duties always apply" }
+      }
+    },
+    "compliance": {
+      "type": "object",
+      "required": ["lawful_basis", "opt_out_status", "suppression_checked", "send_status"],
+      "properties": {
+        "lawful_basis": { "enum": ["legitimate_interest_art_6_1_f", "consent", "contract"] },
+        "lia_reference": { "type": ["string", "null"] },
+        "opt_out_status": { "enum": ["not_contacted", "contacted_no_objection", "objected_suppressed"] },
+        "suppression_checked": { "const": true },
+        "suppression_checked_at": { "type": "string", "format": "date" },
+        "send_status": { "enum": ["draft_only", "approved", "sent", "stopped"] },
+        "retention_delete_on": { "type": "string", "format": "date" },
+        "human_approval_id": { "type": ["string", "null"], "pattern": "^AP-[0-9]{4,}$" }
+      }
+    },
+    "outreach_log": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["touch", "date", "outcome"],
+        "properties": {
+          "touch": { "type": "integer", "minimum": 1, "maximum": 3 },
+          "date": { "type": "string", "format": "date" },
+          "template_id": { "type": "string" },
+          "outcome": { "enum": ["no_reply", "positive", "neutral", "negative", "optout", "booked", "proposal"] },
+          "note": { "type": "string" }
+        }
+      }
+    },
+    "notes": { "type": "string" }
+  }
+}

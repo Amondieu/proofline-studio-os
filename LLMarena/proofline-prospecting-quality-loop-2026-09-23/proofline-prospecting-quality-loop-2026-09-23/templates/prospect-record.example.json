@@ -1,0 +1,67 @@
+{
+  "prospect_id": "pr_2026_0007",
+  "company_name": "Example Automation Studio",
+  "country": "FR",
+  "company_url": "https://example-automation.example",
+  "icp_slice": "b2b_ai_automation_consultants_fr",
+  "source_record": {
+    "source_type": "insee_sirene",
+    "source_url": "https://api.insee.fr/entreprises/sirene/V3.11/siren/000000000",
+    "collected_at": "2026-09-22",
+    "terms_checked": true,
+    "attribution": "INSEE SIRENE, Licence Ouverte 2.0, data as of 2026-09-01"
+  },
+  "firmographics": {
+    "legal_form": "SAS",
+    "naf_ape": "6202A",
+    "creation_date": "2024-03-11",
+    "employee_band": "1-9",
+    "verified_against": ["insee_sirene", "annuaire_entreprises"]
+  },
+  "public_signal": {
+    "type": "new_service_launch",
+    "claim": "Announced a new AI workflow assessment service on their news page.",
+    "evidence_url": "https://example-automation.example/news/new-service",
+    "observed_at": "2026-09-18",
+    "source_type": "official_company_site",
+    "confidence": "high",
+    "expires_on": "2026-12-17"
+  },
+  "website_observations": [
+    {
+      "category": "hero_clarity",
+      "observation": "First viewport names the service but not the buyer or a primary action.",
+      "evidence_url": "https://example-automation.example",
+      "verified_by_human": true,
+      "verified_at": "2026-09-22",
+      "device": "mobile_375"
+    },
+    {
+      "category": "action_path",
+      "observation": "Contact form requires 7 fields including company size and budget before any reply.",
+      "evidence_url": "https://example-automation.example/contact",
+      "verified_by_human": true,
+      "verified_at": "2026-09-22",
+      "device": "mobile_375"
+    }
+  ],
+  "contact_route": {
+    "type": "public_professional_email",
+    "address_ref": "contact@example-automation.example",
+    "source_url": "https://example-automation.example/contact",
+    "role_relevance": "Founder is named as the owner of the new service line.",
+    "is_nominative": false
+  },
+  "compliance": {
+    "lawful_basis": "legitimate_interest_art_6_1_f",
+    "lia_reference": "LIA-2026-01",
+    "opt_out_status": "not_contacted",
+    "suppression_checked": true,
+    "suppression_checked_at": "2026-09-23",
+    "send_status": "draft_only",
+    "retention_delete_on": "2029-09-23",
+    "human_approval_id": null
+  },
+  "outreach_log": [],
+  "notes": "Treated as a company-level (generic) address; no personal data stored beyond the public company contact."
+}

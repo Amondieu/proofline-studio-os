@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "studio.prospecting-source-policy.v1",
+  "status": "pilot_only",
+  "owner": "founder",
+  "humanReviewRequired": true,
+  "defaultSourceTypes": [
+    "inbound_or_referral",
+    "public_company_website",
+    "public_job_page",
+    "public_news",
+    "official_register",
+    "official_api"
+  ],
+  "conditionalSources": [
+    {
+      "name": "pappers_api",
+      "purpose": "French entity verification and dated change signals",
+      "condition": "Use only after contract and redistribution terms have been reviewed by a human."
+    },
+    {
+      "name": "product_or_launch_directory",
+      "purpose": "Manual, dated launch signal",
+      "condition": "Read-only use until the platform terms have been checked for the actual use case."
+    }
+  ],
+  "rejectedSources": [
+    "google_maps_or_places_scraping",
+    "linkedin_scraping_or_automation",
+    "purchased_lists_without_provenance",
+    "guessed_email_addresses",
+    "private_channels",
+    "sensitive_trait_enrichment"
+  ],
+  "retentionDefaults": {
+    "firmographicVerificationDays": 365,
+    "currentSignalDays": 90,
+    "inactiveProspectYears": 3,
+    "postSequenceSuppressionDays": 90,
+    "objectionSuppression": "permanent_minimal_record"
+  },
+  "requiredEvidence": ["source_url", "collected_or_observed_at", "terms_review_status", "human_reviewer"],
+  "disclaimer": "Internal operating policy, not legal advice. A qualified review is required before client-facing or production outreach."
+}

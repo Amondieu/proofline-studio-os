@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://proofline.studio/schemas/suppression-record.schema.json",
+  "title": "Proofline Suppression Record",
+  "description": "Minimal record kept indefinitely, because it is necessary to honour an objection (GDPR Art. 21). Never used as a target list, never exported to campaign tools.",
+  "type": "object",
+  "required": ["email_or_domain", "scope", "suppressed_at", "reason"],
+  "properties": {
+    "email_or_domain": { "type": "string" },
+    "scope": { "enum": ["person", "domain", "company"] },
+    "suppressed_at": { "type": "string", "format": "date" },
+    "reason": { "enum": ["optout", "complaint", "manual_add", "bounce_hard", "data_subject_request"] },
+    "source": { "type": "string", "description": "how the objection reached us (reply, unsubscribe link, request)" },
+    "note": { "type": "string" },
+    "review_on": { "type": ["string", "null"], "format": "date", "description": "optional: date to re-confirm the record is still needed; suppression itself is not time-limited" }
+  }
+}
