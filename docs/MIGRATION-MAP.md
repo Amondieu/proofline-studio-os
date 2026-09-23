@@ -17,6 +17,8 @@ domain machinery that belongs to social-media publishing.
 | Human review / compliance gates | Discovery, message, direction, build, QA, and launch gates | Quality is a process and ownership boundary, not a visual style. |
 | Research-backed receipts and rights records | `schemas/studio/qa-receipt.v1.json`, `asset-record.v1.json`, `approval-record.v1.json` | QA, provenance, and human approvals remain portable instead of living in chat history. |
 | Business archetype thinking | `config/studio/archetypes.v1.json`, `ClientArchetypeAssessment`, docs/strategy/19–22 | Reuse observable buyer jobs and conversion blueprints without turning them into industry templates or automatic approvals. |
+| Notion operations / client portal | Planned; see `docs/architecture/NOTION-CANVA-INTEGRATION.md` | Add a human-readable status, decisions, feedback, and handover layer without moving technical authority out of Git. |
+| Canva sales / creative production | Planned; see `docs/architecture/NOTION-CANVA-INTEGRATION.md` | Package teardowns, proposals, direction boards, and simple client assets without making Canva the website source. |
 
 ## Exclude from the first studio slice
 

@@ -47,6 +47,8 @@ network dependency and its teardown form is a local demonstration only.
 - `docs/strategy/` — studio positioning, offers, creative directions, and
   client-facing operating recipes.
 - `docs/architecture/` — authority model and harness design.
+- `docs/architecture/NOTION-CANVA-INTEGRATION.md` — deferred Notion/Canva roles,
+  ownership boundaries, and adapter backlog.
 - `docs/operations/` — reusable briefs and checklists for client work.
 - `studio/` — typed project contracts, deterministic gate evaluator, portable
   path helpers, QA receipt, provenance records, and explicit human-gate ledger
@@ -58,7 +60,7 @@ network dependency and its teardown form is a local demonstration only.
 - `docs/strategy/19–22` — business archetypes, selection rubric, blueprints, and sales playbook.
 - `LLMarena/` — preserved deep-research bundle; see
   `docs/architecture/LLMARENA-ADOPTION.md` for what is operational.
-- `config/studio/` — profile, offers, creative directions, and QA policy.
+- `config/studio/` — profile, offers, creative directions, archetypes, and QA policy.
 - `site/` — Proofline Studio master-site proof of work.
 - `skills/landing-studio/` — agent execution envelope for studio tasks.
 
