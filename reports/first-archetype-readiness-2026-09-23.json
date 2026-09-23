@@ -395,6 +395,334 @@
       ]
     }
   ],
+  "theoreticalLaunchBasisPercent": 76,
+  "theoreticalCategoryScores": [
+    {
+      "id": "strategy_archetype",
+      "label": "Strategy & archetype fit",
+      "weight": 20,
+      "score": 72,
+      "weightedPoints": 14.4,
+      "checks": [
+        {
+          "id": "preflight_index",
+          "label": "Project preflight index exists",
+          "weight": 30,
+          "status": "pass",
+          "evidence": "projects/first-archetype-portfolio/preflight.json",
+          "gap": null,
+          "points": 30.0
+        },
+        {
+          "id": "discovery_brief",
+          "label": "Discovery brief records audience, scope, and assumptions",
+          "weight": 30,
+          "status": "partial",
+          "evidence": "first-archetype discovery brief; human decision remains pending",
+          "gap": "Keep the artifact reviewable and record the named human decision.",
+          "points": 15.0
+        },
+        {
+          "id": "archetype_basis",
+          "label": "Archetype catalog and candidate evaluation remain linked",
+          "weight": 25,
+          "status": "partial",
+          "evidence": "catalog plus candidate evaluation; human decision remains pending",
+          "gap": "Keep the artifact reviewable and record the named human decision.",
+          "points": 12.5
+        },
+        {
+          "id": "scope_boundary",
+          "label": "Studio-owned concept boundary is stated",
+          "weight": 15,
+          "status": "pass",
+          "evidence": "preflight README claim boundary",
+          "gap": null,
+          "points": 15.0
+        }
+      ]
+    },
+    {
+      "id": "message_conversion",
+      "label": "Message & conversion path",
+      "weight": 15,
+      "score": 72,
+      "weightedPoints": 10.8,
+      "checks": [
+        {
+          "id": "message_map",
+          "label": "Archetype message map exists",
+          "weight": 35,
+          "status": "partial",
+          "evidence": "first-archetype message map; human decision remains pending",
+          "gap": "Keep the artifact reviewable and record the named human decision.",
+          "points": 17.5
+        },
+        {
+          "id": "form_data_map",
+          "label": "CTA data flow is mapped without pretending it is live",
+          "weight": 25,
+          "status": "pass",
+          "evidence": "form/data-flow preflight",
+          "gap": null,
+          "points": 25.0
+        },
+        {
+          "id": "cta_boundary",
+          "label": "CTA and unsupported-outcome boundary are explicit",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "message and discovery proof boundary",
+          "gap": null,
+          "points": 20.0
+        },
+        {
+          "id": "message_gate_record",
+          "label": "Message decision has a named gate location",
+          "weight": 20,
+          "status": "partial",
+          "evidence": "human-gate ledger; human decision remains pending",
+          "gap": "Keep the artifact reviewable and record the named human decision.",
+          "points": 10.0
+        }
+      ]
+    },
+    {
+      "id": "portfolio_proof",
+      "label": "Portfolio proof & evidence honesty",
+      "weight": 15,
+      "score": 75,
+      "weightedPoints": 11.25,
+      "checks": [
+        {
+          "id": "portfolio_scope",
+          "label": "Portfolio project scope and truth boundary exist",
+          "weight": 25,
+          "status": "pass",
+          "evidence": "preflight README",
+          "gap": null,
+          "points": 25.0
+        },
+        {
+          "id": "asset_register",
+          "label": "Project asset register exists",
+          "weight": 25,
+          "status": "partial",
+          "evidence": "project asset register; human decision remains pending",
+          "gap": "Keep the artifact reviewable and record the named human decision.",
+          "points": 12.5
+        },
+        {
+          "id": "concept_proof_boundary",
+          "label": "Concept work is separated from client outcomes",
+          "weight": 25,
+          "status": "pass",
+          "evidence": "concept/proof-of-work boundary",
+          "gap": null,
+          "points": 25.0
+        },
+        {
+          "id": "case_study_gate",
+          "label": "Case-study evidence has an explicit future gate",
+          "weight": 25,
+          "status": "partial",
+          "evidence": "human ledger has no-results-without-evidence boundary; human decision remains pending",
+          "gap": "Keep the artifact reviewable and record the named human decision.",
+          "points": 12.5
+        }
+      ]
+    },
+    {
+      "id": "design_build",
+      "label": "Design system & build basis",
+      "weight": 15,
+      "score": 75,
+      "weightedPoints": 11.25,
+      "checks": [
+        {
+          "id": "direction_brief",
+          "label": "Focused direction proposal exists",
+          "weight": 30,
+          "status": "partial",
+          "evidence": "proposed Precision direction; human decision remains pending",
+          "gap": "Keep the artifact reviewable and record the named human decision.",
+          "points": 15.0
+        },
+        {
+          "id": "build_boundary",
+          "label": "Build checklist separates concept and production scope",
+          "weight": 30,
+          "status": "pass",
+          "evidence": "first-archetype build checklist",
+          "gap": null,
+          "points": 30.0
+        },
+        {
+          "id": "master_site_basis",
+          "label": "Existing master site remains available as the studio index",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "master site implementation basis",
+          "gap": null,
+          "points": 20.0
+        },
+        {
+          "id": "direction_gate_record",
+          "label": "Direction selection has a named gate location",
+          "weight": 20,
+          "status": "partial",
+          "evidence": "human-gate ledger; human decision remains pending",
+          "gap": "Keep the artifact reviewable and record the named human decision.",
+          "points": 10.0
+        }
+      ]
+    },
+    {
+      "id": "qa_evidence",
+      "label": "QA, accessibility & performance evidence",
+      "weight": 15,
+      "score": 72,
+      "weightedPoints": 10.8,
+      "checks": [
+        {
+          "id": "qa_receipt",
+          "label": "Project QA receipt exists with known gaps",
+          "weight": 35,
+          "status": "partial",
+          "evidence": "static/concept QA receipt; human decision remains pending",
+          "gap": "Keep the artifact reviewable and record the named human decision.",
+          "points": 17.5
+        },
+        {
+          "id": "qa_toolchain",
+          "label": "Contract, QA, contrast, and portability tools exist",
+          "weight": 25,
+          "status": "pass",
+          "evidence": "repository QA toolchain",
+          "gap": null,
+          "points": 25.0
+        },
+        {
+          "id": "prior_browser_evidence",
+          "label": "Prior browser evidence is linked as context, not proof of launch",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "retained browser quality run",
+          "gap": null,
+          "points": 20.0
+        },
+        {
+          "id": "focused_qa_gate",
+          "label": "Focused-page QA and performance are named as open gates",
+          "weight": 20,
+          "status": "partial",
+          "evidence": "focused-page receipt and launch preflight; human decision remains pending",
+          "gap": "Keep the artifact reviewable and record the named human decision.",
+          "points": 10.0
+        }
+      ]
+    },
+    {
+      "id": "operations_trust_legal",
+      "label": "Operations, trust & legal production basis",
+      "weight": 10,
+      "score": 90,
+      "weightedPoints": 9.0,
+      "checks": [
+        {
+          "id": "form_operations",
+          "label": "Form fields, provider, retention, and recovery are mapped",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "form/data-flow preflight",
+          "gap": null,
+          "points": 20.0
+        },
+        {
+          "id": "legal_draft_basis",
+          "label": "Legal notice and privacy structures exist as unpublished drafts",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "unpublished legal draft structures",
+          "gap": null,
+          "points": 20.0
+        },
+        {
+          "id": "ownership_receipt",
+          "label": "Hosting, domain, access, and rollback fields are prepared",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "ownership and handover receipt",
+          "gap": null,
+          "points": 20.0
+        },
+        {
+          "id": "sow_template",
+          "label": "Future engagement scope and legal review fields exist",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "studio SOW planning template",
+          "gap": null,
+          "points": 20.0
+        },
+        {
+          "id": "business_gate_reference",
+          "label": "Austria business gate is linked into the preflight",
+          "weight": 20,
+          "status": "partial",
+          "evidence": "business gate and human ledger; human decision remains pending",
+          "gap": "Keep the artifact reviewable and record the named human decision.",
+          "points": 10.0
+        }
+      ]
+    },
+    {
+      "id": "human_gates",
+      "label": "Human decisions & launch gates",
+      "weight": 10,
+      "score": 90,
+      "weightedPoints": 9.0,
+      "checks": [
+        {
+          "id": "human_gate_ledger",
+          "label": "All pipeline gates have an explicit ledger",
+          "weight": 30,
+          "status": "pass",
+          "evidence": "human-gate ledger",
+          "gap": null,
+          "points": 30.0
+        },
+        {
+          "id": "launch_preflight",
+          "label": "Launch preflight enumerates remaining dependencies",
+          "weight": 30,
+          "status": "pass",
+          "evidence": "launch preflight",
+          "gap": null,
+          "points": 30.0
+        },
+        {
+          "id": "machine_status_boundary",
+          "label": "Machine-readable status keeps production approval blocked",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "preflight productionApproval=blocked_until_gates_complete",
+          "gap": null,
+          "points": 20.0
+        },
+        {
+          "id": "launch_review_route",
+          "label": "Canonical launch review remains part of the studio pipeline",
+          "weight": 20,
+          "status": "partial",
+          "evidence": "studio launch review; human decision remains pending",
+          "gap": "Keep the artifact reviewable and record the named human decision.",
+          "points": 10.0
+        }
+      ]
+    }
+  ],
+  "theoreticalLaunchStatus": "ready_for_human_preflight",
   "hardBlockers": [
     {
       "checkId": "discovery_selection",
@@ -476,7 +804,7 @@
     }
   ],
   "productionStatus": "blocked_until_gates_complete",
-  "recommendation": "Build the focused AI/automation portfolio page next, then attach project-specific Discovery, message, direction, QA, form, rights, legal, and launch evidence.",
+  "recommendation": "Use the preflight bundle to run human Discovery, Message, Direction, QA, business/legal, and Launch gates; keep production blocked until the external evidence is complete.",
   "limitations": [
     "The percentage measures repository evidence and implementation basis, not conversion performance or business success.",
     "A concept or redesign can demonstrate method but cannot establish client results, rights, or universal quality.",

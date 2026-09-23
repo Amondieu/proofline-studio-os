@@ -14,6 +14,15 @@ class ReadinessAuditTests(unittest.TestCase):
         self.assertEqual("blocked_until_gates_complete", audit["productionStatus"])
         self.assertTrue(audit["hardBlockers"])
 
+    def test_theoretical_preflight_has_at_least_seventy_percent_per_area(self) -> None:
+        audit = build_audit()
+
+        self.assertEqual("ready_for_human_preflight", audit["theoreticalLaunchStatus"])
+        self.assertGreaterEqual(audit["theoreticalLaunchBasisPercent"], 70)
+        self.assertTrue(
+            all(item["score"] >= 70 for item in audit["theoreticalCategoryScores"])
+        )
+
     def test_audit_is_not_allowed_to_call_the_site_launch_ready(self) -> None:
         audit = build_audit()
 

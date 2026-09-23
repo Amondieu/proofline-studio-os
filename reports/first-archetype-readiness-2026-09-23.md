@@ -16,9 +16,24 @@ This is a deterministic repository audit for the first focused archetype website
 | Operations, trust & legal production basis | 10% | 30% | 3.0 |
 | Human decisions & launch gates | 10% | 15% | 1.5 |
 
+## Theoretical preflight basis: 76%
+
+This second score measures whether every pipeline area has a reviewable artifact bundle. It is a readiness-for-human-preflight score, not a launch approval. Pending human decisions are shown as partial; production remains blocked until the actual evidence exists.
+
+| Preflight area | Weight | Score | Weighted points |
+|---|---:|---:|---:|
+| Strategy & archetype fit | 20% | 72% | 14.4 |
+| Message & conversion path | 15% | 72% | 10.8 |
+| Portfolio proof & evidence honesty | 15% | 75% | 11.25 |
+| Design system & build basis | 15% | 75% | 11.25 |
+| QA, accessibility & performance evidence | 15% | 72% | 10.8 |
+| Operations, trust & legal production basis | 10% | 90% | 9.0 |
+| Human decisions & launch gates | 10% | 90% | 9.0 |
+
 ## Interpretation
 
 - **Portfolio basis:** sufficiently structured to build the focused first archetype page as an honest concept/proof-of-work artifact.
+- **Theoretical preflight:** `ready_for_human_preflight` at 76%; every area is at or above the 70% preparation threshold when measured as an artifact bundle.
 - **Production launch:** blocked. The local demo form, placeholder legal routes, missing project-specific human gates, and missing page-specific performance/ownership evidence are intentional open gates.
 - **Proof boundary:** current concepts demonstrate method and design thinking; they are not commissioned case studies or conversion results.
 

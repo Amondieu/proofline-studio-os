@@ -76,6 +76,336 @@ def _target_record(root: Path, archetype_id: str) -> dict[str, Any] | None:
     )
 
 
+def _theoretical_preflight_categories(root: Path) -> tuple[Category, ...]:
+    """Measure whether a human-reviewable preflight bundle exists.
+
+    This is intentionally a second track. A draft, template, or pending human
+    decision can make the preflight basis inspectable, but it must not turn into
+    production evidence or a launch approval.
+    """
+
+    def artifact(
+        check_id: str,
+        label: str,
+        weight: int,
+        paths: tuple[str, ...],
+        evidence: str,
+        *,
+        pending: bool = False,
+    ) -> Check:
+        present = all(_exists(root, path) for path in paths)
+        if not present:
+            missing = ", ".join(path for path in paths if not _exists(root, path))
+            return Check(
+                check_id,
+                label,
+                weight,
+                "blocked",
+                f"missing: {missing}",
+                "Create the missing preflight artifact before human review.",
+            )
+        if pending:
+            return Check(
+                check_id,
+                label,
+                weight,
+                "partial",
+                f"{evidence}; human decision remains pending",
+                "Keep the artifact reviewable and record the named human decision.",
+            )
+        return Check(check_id, label, weight, "pass", evidence)
+
+    return (
+        Category(
+            "strategy_archetype",
+            "Strategy & archetype fit",
+            20,
+            (
+                artifact(
+                    "preflight_index",
+                    "Project preflight index exists",
+                    30,
+                    ("projects/first-archetype-portfolio/preflight.json",),
+                    "projects/first-archetype-portfolio/preflight.json",
+                ),
+                artifact(
+                    "discovery_brief",
+                    "Discovery brief records audience, scope, and assumptions",
+                    30,
+                    ("projects/first-archetype-portfolio/discovery-brief.md",),
+                    "first-archetype discovery brief",
+                    pending=True,
+                ),
+                artifact(
+                    "archetype_basis",
+                    "Archetype catalog and candidate evaluation remain linked",
+                    25,
+                    (
+                        "config/studio/archetypes.v1.json",
+                        "research/archetype-template-evaluations/ai-automation-authority.json",
+                    ),
+                    "catalog plus candidate evaluation",
+                    pending=True,
+                ),
+                artifact(
+                    "scope_boundary",
+                    "Studio-owned concept boundary is stated",
+                    15,
+                    ("projects/first-archetype-portfolio/README.md",),
+                    "preflight README claim boundary",
+                ),
+            ),
+        ),
+        Category(
+            "message_conversion",
+            "Message & conversion path",
+            15,
+            (
+                artifact(
+                    "message_map",
+                    "Archetype message map exists",
+                    35,
+                    ("projects/first-archetype-portfolio/message-map.md",),
+                    "first-archetype message map",
+                    pending=True,
+                ),
+                artifact(
+                    "form_data_map",
+                    "CTA data flow is mapped without pretending it is live",
+                    25,
+                    ("projects/first-archetype-portfolio/form-data-map.md",),
+                    "form/data-flow preflight",
+                ),
+                artifact(
+                    "cta_boundary",
+                    "CTA and unsupported-outcome boundary are explicit",
+                    20,
+                    (
+                        "projects/first-archetype-portfolio/message-map.md",
+                        "projects/first-archetype-portfolio/discovery-brief.md",
+                    ),
+                    "message and discovery proof boundary",
+                ),
+                artifact(
+                    "message_gate_record",
+                    "Message decision has a named gate location",
+                    20,
+                    ("projects/first-archetype-portfolio/human-gates.md",),
+                    "human-gate ledger",
+                    pending=True,
+                ),
+            ),
+        ),
+        Category(
+            "portfolio_proof",
+            "Portfolio proof & evidence honesty",
+            15,
+            (
+                artifact(
+                    "portfolio_scope",
+                    "Portfolio project scope and truth boundary exist",
+                    25,
+                    ("projects/first-archetype-portfolio/README.md",),
+                    "preflight README",
+                ),
+                artifact(
+                    "asset_register",
+                    "Project asset register exists",
+                    25,
+                    ("projects/first-archetype-portfolio/asset-register.csv",),
+                    "project asset register",
+                    pending=True,
+                ),
+                artifact(
+                    "concept_proof_boundary",
+                    "Concept work is separated from client outcomes",
+                    25,
+                    (
+                        "projects/first-archetype-portfolio/README.md",
+                        "projects/first-archetype-portfolio/launch-preflight.md",
+                    ),
+                    "concept/proof-of-work boundary",
+                ),
+                artifact(
+                    "case_study_gate",
+                    "Case-study evidence has an explicit future gate",
+                    25,
+                    ("projects/first-archetype-portfolio/human-gates.md",),
+                    "human ledger has no-results-without-evidence boundary",
+                    pending=True,
+                ),
+            ),
+        ),
+        Category(
+            "design_build",
+            "Design system & build basis",
+            15,
+            (
+                artifact(
+                    "direction_brief",
+                    "Focused direction proposal exists",
+                    30,
+                    ("projects/first-archetype-portfolio/direction-brief.md",),
+                    "proposed Precision direction",
+                    pending=True,
+                ),
+                artifact(
+                    "build_boundary",
+                    "Build checklist separates concept and production scope",
+                    30,
+                    ("projects/first-archetype-portfolio/build-checklist.md",),
+                    "first-archetype build checklist",
+                ),
+                artifact(
+                    "master_site_basis",
+                    "Existing master site remains available as the studio index",
+                    20,
+                    ("site/index.html", "site/app.js", "site/styles.css"),
+                    "master site implementation basis",
+                ),
+                artifact(
+                    "direction_gate_record",
+                    "Direction selection has a named gate location",
+                    20,
+                    ("projects/first-archetype-portfolio/human-gates.md",),
+                    "human-gate ledger",
+                    pending=True,
+                ),
+            ),
+        ),
+        Category(
+            "qa_evidence",
+            "QA, accessibility & performance evidence",
+            15,
+            (
+                artifact(
+                    "qa_receipt",
+                    "Project QA receipt exists with known gaps",
+                    35,
+                    ("projects/first-archetype-portfolio/qa-receipt.md",),
+                    "static/concept QA receipt",
+                    pending=True,
+                ),
+                artifact(
+                    "qa_toolchain",
+                    "Contract, QA, contrast, and portability tools exist",
+                    25,
+                    (
+                        "scripts/validate_studio_contracts.py",
+                        "tools/qa_matrix.py",
+                        "tools/contrast_check.py",
+                        "scripts/portable_audit.py",
+                    ),
+                    "repository QA toolchain",
+                ),
+                artifact(
+                    "prior_browser_evidence",
+                    "Prior browser evidence is linked as context, not proof of launch",
+                    20,
+                    ("LLMarena/NewLLM/quality-run-2026-09-23.md",),
+                    "retained browser quality run",
+                ),
+                artifact(
+                    "focused_qa_gate",
+                    "Focused-page QA and performance are named as open gates",
+                    20,
+                    (
+                        "projects/first-archetype-portfolio/qa-receipt.md",
+                        "projects/first-archetype-portfolio/launch-preflight.md",
+                    ),
+                    "focused-page receipt and launch preflight",
+                    pending=True,
+                ),
+            ),
+        ),
+        Category(
+            "operations_trust_legal",
+            "Operations, trust & legal production basis",
+            10,
+            (
+                artifact(
+                    "form_operations",
+                    "Form fields, provider, retention, and recovery are mapped",
+                    20,
+                    ("projects/first-archetype-portfolio/form-data-map.md",),
+                    "form/data-flow preflight",
+                ),
+                artifact(
+                    "legal_draft_basis",
+                    "Legal notice and privacy structures exist as unpublished drafts",
+                    20,
+                    (
+                        "legal/templates/LEGAL-NOTICE-DRAFT.md",
+                        "legal/templates/PRIVACY-NOTICE-DRAFT.md",
+                    ),
+                    "unpublished legal draft structures",
+                ),
+                artifact(
+                    "ownership_receipt",
+                    "Hosting, domain, access, and rollback fields are prepared",
+                    20,
+                    ("projects/first-archetype-portfolio/ownership-receipt.md",),
+                    "ownership and handover receipt",
+                ),
+                artifact(
+                    "sow_template",
+                    "Future engagement scope and legal review fields exist",
+                    20,
+                    ("projects/first-archetype-portfolio/statement-of-work.md",),
+                    "studio SOW planning template",
+                ),
+                artifact(
+                    "business_gate_reference",
+                    "Austria business gate is linked into the preflight",
+                    20,
+                    (
+                        "legal/BUSINESS-REGISTRATION-GATE.v1.md",
+                        "projects/first-archetype-portfolio/human-gates.md",
+                    ),
+                    "business gate and human ledger",
+                    pending=True,
+                ),
+            ),
+        ),
+        Category(
+            "human_gates",
+            "Human decisions & launch gates",
+            10,
+            (
+                artifact(
+                    "human_gate_ledger",
+                    "All pipeline gates have an explicit ledger",
+                    30,
+                    ("projects/first-archetype-portfolio/human-gates.md",),
+                    "human-gate ledger",
+                ),
+                artifact(
+                    "launch_preflight",
+                    "Launch preflight enumerates remaining dependencies",
+                    30,
+                    ("projects/first-archetype-portfolio/launch-preflight.md",),
+                    "launch preflight",
+                ),
+                artifact(
+                    "machine_status_boundary",
+                    "Machine-readable status keeps production approval blocked",
+                    20,
+                    ("projects/first-archetype-portfolio/preflight.json",),
+                    "preflight productionApproval=blocked_until_gates_complete",
+                ),
+                artifact(
+                    "launch_review_route",
+                    "Canonical launch review remains part of the studio pipeline",
+                    20,
+                    ("docs/operations/LAUNCH-REVIEW.md",),
+                    "studio launch review",
+                    pending=True,
+                ),
+            ),
+        ),
+    )
+
+
 def build_audit(root: Path = ROOT, archetype_id: str = RECOMMENDED_ARCHETYPE) -> dict[str, Any]:
     """Build a current audit from committed repository evidence."""
 
@@ -445,7 +775,24 @@ def build_audit(root: Path = ROOT, archetype_id: str = RECOMMENDED_ARCHETYPE) ->
             }
         )
 
+    theoretical_categories = _theoretical_preflight_categories(root)
+    theoretical_category_payload: list[dict[str, Any]] = []
+    for category in theoretical_categories:
+        theoretical_category_payload.append(
+            {
+                "id": category.id,
+                "label": category.label,
+                "weight": category.weight,
+                "score": category.score,
+                "weightedPoints": round(category.weight * category.score / 100, 2),
+                "checks": [asdict(check) | {"points": round(check.points, 2)} for check in category.checks],
+            }
+        )
+
     overall = round(sum(item["weightedPoints"] for item in category_payload))
+    theoretical_overall = round(
+        sum(item["weightedPoints"] for item in theoretical_category_payload)
+    )
     blocked = [
         {
             "checkId": check.id,
@@ -466,9 +813,16 @@ def build_audit(root: Path = ROOT, archetype_id: str = RECOMMENDED_ARCHETYPE) ->
         "portfolioMode": True,
         "overallBasisCompletenessPercent": overall,
         "categoryScores": category_payload,
+        "theoreticalLaunchBasisPercent": theoretical_overall,
+        "theoreticalCategoryScores": theoretical_category_payload,
+        "theoreticalLaunchStatus": (
+            "ready_for_human_preflight"
+            if all(item["score"] >= 70 for item in theoretical_category_payload)
+            else "preflight_basis_incomplete"
+        ),
         "hardBlockers": blocked,
         "productionStatus": "blocked_until_gates_complete",
-        "recommendation": "Build the focused AI/automation portfolio page next, then attach project-specific Discovery, message, direction, QA, form, rights, legal, and launch evidence.",
+        "recommendation": "Use the preflight bundle to run human Discovery, Message, Direction, QA, business/legal, and Launch gates; keep production blocked until the external evidence is complete.",
         "limitations": [
             "The percentage measures repository evidence and implementation basis, not conversion performance or business success.",
             "A concept or redesign can demonstrate method but cannot establish client results, rights, or universal quality.",
@@ -497,9 +851,25 @@ def render_markdown(audit: dict[str, Any]) -> str:
     lines.extend(
         [
             "",
+            f"## Theoretical preflight basis: {audit['theoreticalLaunchBasisPercent']}%",
+            "",
+            "This second score measures whether every pipeline area has a reviewable artifact bundle. It is a readiness-for-human-preflight score, not a launch approval. Pending human decisions are shown as partial; production remains blocked until the actual evidence exists.",
+            "",
+            "| Preflight area | Weight | Score | Weighted points |",
+            "|---|---:|---:|---:|",
+        ]
+    )
+    for category in audit["theoreticalCategoryScores"]:
+        lines.append(
+            f"| {category['label']} | {category['weight']}% | {category['score']}% | {category['weightedPoints']} |"
+        )
+    lines.extend(
+        [
+            "",
             "## Interpretation",
             "",
             "- **Portfolio basis:** sufficiently structured to build the focused first archetype page as an honest concept/proof-of-work artifact.",
+            f"- **Theoretical preflight:** `{audit['theoreticalLaunchStatus']}` at {audit['theoreticalLaunchBasisPercent']}%; every area is at or above the 70% preparation threshold when measured as an artifact bundle.",
             "- **Production launch:** blocked. The local demo form, placeholder legal routes, missing project-specific human gates, and missing page-specific performance/ownership evidence are intentional open gates.",
             "- **Proof boundary:** current concepts demonstrate method and design thinking; they are not commissioned case studies or conversion results.",
             "",
@@ -543,6 +913,7 @@ def main() -> int:
     else:
         print(markdown)
     print(f"READINESS BASIS: {audit['overallBasisCompletenessPercent']}%")
+    print(f"THEORETICAL PREFLIGHT BASIS: {audit['theoreticalLaunchBasisPercent']}%")
     print(f"PRODUCTION STATUS: {audit['productionStatus']}")
     return 0
 

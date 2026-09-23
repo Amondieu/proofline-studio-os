@@ -82,7 +82,12 @@ network dependency and its teardown form is a local demonstration only.
   candidate evaluations.
 - `tools/readiness_audit.py` and `reports/` — reproducible percentage audit for
   the first focused archetype portfolio site; it measures repository basis and
-  reports production blockers without granting launch authority.
+  reports production blockers without granting launch authority. Its separate
+  theoretical preflight score measures whether every area has a reviewable
+  artifact bundle; see `projects/first-archetype-portfolio/`.
+- `projects/first-archetype-portfolio/` — first-archetype Discovery, Message,
+  Direction, Build, QA, legal/data-flow, ownership, SOW, and human-gate
+  preflight bundle. It is intentionally draft/gated and is not a live intake.
 - `legal/` — jurisdiction-specific research notes and blocking business/legal
   gates; currently Austria is the working jurisdiction assumption.
 - `docs/architecture/LAYA-ADVISORY-LAYER.md` — optional model routing,

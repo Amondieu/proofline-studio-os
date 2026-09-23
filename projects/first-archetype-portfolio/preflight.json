@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "studio.launch-preflight.v1",
+  "projectId": "studio_proofline_first_archetype_portfolio",
+  "targetArchetypeId": "ai-automation-authority",
+  "status": "theoretical_preflight",
+  "productionApproval": "blocked_until_gates_complete",
+  "artifactPaths": {
+    "discovery": "projects/first-archetype-portfolio/discovery-brief.md",
+    "message": "projects/first-archetype-portfolio/message-map.md",
+    "direction": "projects/first-archetype-portfolio/direction-brief.md",
+    "build": "projects/first-archetype-portfolio/build-checklist.md",
+    "qa": "projects/first-archetype-portfolio/qa-receipt.md",
+    "launch": "projects/first-archetype-portfolio/launch-preflight.md",
+    "humanGates": "projects/first-archetype-portfolio/human-gates.md",
+    "formDataMap": "projects/first-archetype-portfolio/form-data-map.md",
+    "ownership": "projects/first-archetype-portfolio/ownership-receipt.md",
+    "statementOfWork": "projects/first-archetype-portfolio/statement-of-work.md",
+    "assetRegister": "projects/first-archetype-portfolio/asset-register.csv"
+  },
+  "humanGates": {
+    "discovery": "pending",
+    "message": "pending",
+    "direction": "pending",
+    "launch": "blocked"
+  },
+  "externalDependencies": {
+    "austriaBusinessRegistration": "pending_human_confirmation",
+    "legalIdentityAndNotices": "draft_only",
+    "formEndpointAndRetention": "not_implemented",
+    "hostingDomainAndOwnership": "not_recorded",
+    "analyticsAndConsent": "out_of_scope"
+  },
+  "claimBoundary": "concept_and_method_proof_only"
+}
