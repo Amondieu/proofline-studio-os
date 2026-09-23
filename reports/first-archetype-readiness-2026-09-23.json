@@ -1,0 +1,470 @@
+{
+  "schemaVersion": "studio.readiness-audit.v1",
+  "auditId": "readiness_first_archetype_2026-09-23",
+  "generatedOn": "2026-09-23",
+  "targetArchetypeId": "ai-automation-authority",
+  "targetArchetypeName": "AI / Automation Authority System",
+  "portfolioMode": true,
+  "overallBasisCompletenessPercent": 66,
+  "categoryScores": [
+    {
+      "id": "strategy_archetype",
+      "label": "Strategy & archetype fit",
+      "weight": 20,
+      "score": 78,
+      "weightedPoints": 15.6,
+      "checks": [
+        {
+          "id": "catalog_entry",
+          "label": "Target archetype is defined in the catalog",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "config/studio/archetypes.v1.json",
+          "gap": null,
+          "points": 20.0
+        },
+        {
+          "id": "master_template",
+          "label": "Direction-neutral master template exists",
+          "weight": 25,
+          "status": "pass",
+          "evidence": "templates/archetypes/ai-automation-authority-master.v1.md",
+          "gap": null,
+          "points": 25.0
+        },
+        {
+          "id": "candidate_evaluation",
+          "label": "Template evaluation exists with source references",
+          "weight": 25,
+          "status": "partial",
+          "evidence": "research\\archetype-template-evaluations\\ai-automation-authority.json; decision=candidate",
+          "gap": "Run human task tests and review limitations before promotion beyond candidate.",
+          "points": 12.5
+        },
+        {
+          "id": "public_surface_alignment",
+          "label": "Current portfolio surface names the target archetype and CTA",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "site/index.html archetype card and teardown CTA",
+          "gap": null,
+          "points": 20.0
+        },
+        {
+          "id": "discovery_selection",
+          "label": "A project-specific human archetype selection is recorded",
+          "weight": 10,
+          "status": "blocked",
+          "evidence": "No project-specific ClientArchetypeAssessment or selected human gate is recorded for the portfolio site.",
+          "gap": "Create the first project brief and record human confirmation of archetype fit.",
+          "points": 0.0
+        }
+      ]
+    },
+    {
+      "id": "message_conversion",
+      "label": "Message & conversion path",
+      "weight": 15,
+      "score": 65,
+      "weightedPoints": 9.75,
+      "checks": [
+        {
+          "id": "hero_offer_audience",
+          "label": "Hero states offer, audience context, and outcome",
+          "weight": 25,
+          "status": "pass",
+          "evidence": "site/index.html hero and meta description",
+          "gap": "Rewrite the hero around the selected archetype and buyer job.",
+          "points": 25.0
+        },
+        {
+          "id": "primary_cta",
+          "label": "Primary CTA is visible and repeated consistently",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "site/index.html contains 9 teardown routes",
+          "gap": "Keep one dominant action and verify every route in a live test.",
+          "points": 20.0
+        },
+        {
+          "id": "conversion_architecture",
+          "label": "Offer and funnel are documented outside the page",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "master-site concept and message-map documents",
+          "gap": "Document the archetype-specific message map and objection path.",
+          "points": 20.0
+        },
+        {
+          "id": "form_delivery",
+          "label": "Form delivery is real and tested",
+          "weight": 25,
+          "status": "blocked",
+          "evidence": "site/index.html explicitly labels the form as a local demo",
+          "gap": "Add a reviewed production endpoint or an approved handoff route with recovery states.",
+          "points": 0.0
+        },
+        {
+          "id": "message_signoff",
+          "label": "Message has human/client sign-off",
+          "weight": 10,
+          "status": "blocked",
+          "evidence": "No project-specific sign-off record is present.",
+          "gap": "Record the human message decision in the first project gate log.",
+          "points": 0.0
+        }
+      ]
+    },
+    {
+      "id": "portfolio_proof",
+      "label": "Portfolio proof & evidence honesty",
+      "weight": 15,
+      "score": 72,
+      "weightedPoints": 10.8,
+      "checks": [
+        {
+          "id": "work_surface",
+          "label": "Portfolio work surface contains multiple inspectable examples",
+          "weight": 25,
+          "status": "pass",
+          "evidence": "site/index.html contains 3 work cards",
+          "gap": "Add a relevant first archetype case walkthrough when it exists.",
+          "points": 25.0
+        },
+        {
+          "id": "concept_labels",
+          "label": "Non-client work is explicitly labelled",
+          "weight": 25,
+          "status": "pass",
+          "evidence": "site/index.html contains 3 concept/redesign labels",
+          "gap": "Keep every non-client example labelled at the artifact level.",
+          "points": 25.0
+        },
+        {
+          "id": "case_evidence",
+          "label": "A permissioned, outcome-backed case study exists",
+          "weight": 20,
+          "status": "blocked",
+          "evidence": "Current work is concept or independent redesign material; no commissioned client result is recorded.",
+          "gap": "Add one permissioned case with role, scope, evidence, and limitations; do not invent results.",
+          "points": 0.0
+        },
+        {
+          "id": "rights_register",
+          "label": "Rights and claim policy exists for future portfolio assets",
+          "weight": 15,
+          "status": "partial",
+          "evidence": "asset provenance template and trust/proof standards",
+          "gap": "Create a site-specific asset and claim register before adding external or client work.",
+          "points": 7.5
+        },
+        {
+          "id": "portfolio_truth_rule",
+          "label": "Portfolio truth rule is documented",
+          "weight": 15,
+          "status": "pass",
+          "evidence": "docs/strategy/09-MASTER-SITE-CONCEPT.md",
+          "gap": "Document how concept, redesign, and commissioned work are distinguished.",
+          "points": 15.0
+        }
+      ]
+    },
+    {
+      "id": "design_build",
+      "label": "Design system & build basis",
+      "weight": 15,
+      "score": 92,
+      "weightedPoints": 13.8,
+      "checks": [
+        {
+          "id": "directions",
+          "label": "Three governed creative directions exist",
+          "weight": 25,
+          "status": "pass",
+          "evidence": "config/studio/directions.v1.json",
+          "gap": "Keep direction changes separate from message and conversion architecture.",
+          "points": 25.0
+        },
+        {
+          "id": "direction_switcher",
+          "label": "Direction switcher is implemented and stateful",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "site/index.html and site/app.js",
+          "gap": "Implement a tested switcher without changing the core CTA path.",
+          "points": 20.0
+        },
+        {
+          "id": "semantic_site_shell",
+          "label": "Semantic, keyboard-oriented site shell exists",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "site/index.html semantic landmarks and skip link",
+          "gap": "Complete a keyboard sweep through the actual first-archetype page.",
+          "points": 20.0
+        },
+        {
+          "id": "responsive_css",
+          "label": "Responsive and reduced-motion rules exist",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "site/styles.css",
+          "gap": "Attach viewport-specific screenshots or a reproducible browser QA receipt.",
+          "points": 20.0
+        },
+        {
+          "id": "archetype_page_scope",
+          "label": "The public surface is already dedicated to the selected archetype",
+          "weight": 15,
+          "status": "partial",
+          "evidence": "Current site is a studio master site with multiple archetype cards.",
+          "gap": "Build the focused AI/automation portfolio page while preserving the master site as the studio index.",
+          "points": 7.5
+        }
+      ]
+    },
+    {
+      "id": "qa_evidence",
+      "label": "QA, accessibility & performance evidence",
+      "weight": 15,
+      "score": 72,
+      "weightedPoints": 10.8,
+      "checks": [
+        {
+          "id": "contract_tests",
+          "label": "Contracts and unit tests exist",
+          "weight": 25,
+          "status": "pass",
+          "evidence": "contract validator and archetype evaluation tests",
+          "gap": "Keep the first page wired to the same contract/test loop.",
+          "points": 25.0
+        },
+        {
+          "id": "qa_matrix",
+          "label": "QA matrix and contrast tooling exist",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "tools/qa_matrix.py and tools/contrast_check.py",
+          "gap": "Record the first-archetype run results with the page artifact.",
+          "points": 20.0
+        },
+        {
+          "id": "portable_graph",
+          "label": "Portability and Graphify checks exist",
+          "weight": 15,
+          "status": "pass",
+          "evidence": "portable audit and Graphify profile configuration",
+          "gap": "Run both checks after adding the focused page and its assets.",
+          "points": 15.0
+        },
+        {
+          "id": "manual_browser_evidence",
+          "label": "Current page has committed manual browser evidence",
+          "weight": 25,
+          "status": "partial",
+          "evidence": "LLMarena/NewLLM quality run is preserved, but not a focused-page receipt",
+          "gap": "Create a project-specific receipt for keyboard, mobile, reduced motion, form, and direction behavior.",
+          "points": 12.5
+        },
+        {
+          "id": "performance_receipt",
+          "label": "Page-specific performance receipt exists",
+          "weight": 15,
+          "status": "blocked",
+          "evidence": "No committed page-specific LCP/INP/CLS receipt is present for the first archetype page.",
+          "gap": "Measure the focused page on constrained mobile conditions and attach the result.",
+          "points": 0.0
+        }
+      ]
+    },
+    {
+      "id": "operations_trust_legal",
+      "label": "Operations, trust & legal production basis",
+      "weight": 10,
+      "score": 35,
+      "weightedPoints": 3.5,
+      "checks": [
+        {
+          "id": "legal_routes",
+          "label": "Privacy, legal notice, and accessibility routes are real",
+          "weight": 25,
+          "status": "blocked",
+          "evidence": "Footer currently displays non-linked placeholder labels.",
+          "gap": "Add reviewed, jurisdiction-appropriate routes before any public production launch.",
+          "points": 0.0
+        },
+        {
+          "id": "analytics_consent",
+          "label": "Analytics and consent behavior is configured",
+          "weight": 20,
+          "status": "blocked",
+          "evidence": "No analytics provider or consent implementation is part of this foundation slice.",
+          "gap": "Add a separately reviewed adapter and consent record; do not add tracking by default.",
+          "points": 0.0
+        },
+        {
+          "id": "hosting_ownership",
+          "label": "Hosting, domain, and account ownership are recorded",
+          "weight": 20,
+          "status": "blocked",
+          "evidence": "Repository intentionally keeps hosting, DNS, and credentials outside the foundation slice.",
+          "gap": "Record an approved hosting/ownership handoff for the eventual portfolio deployment.",
+          "points": 0.0
+        },
+        {
+          "id": "asset_policy",
+          "label": "Asset, AI, and claim boundaries are documented",
+          "weight": 20,
+          "status": "pass",
+          "evidence": "trust/proof standards and asset provenance template",
+          "gap": "Fill the register for every actual image, font, icon, and claim used.",
+          "points": 20.0
+        },
+        {
+          "id": "handover_basis",
+          "label": "Build and launch handover checklists exist",
+          "weight": 15,
+          "status": "pass",
+          "evidence": "build checklist and launch review",
+          "gap": "Complete them for the focused page rather than relying on templates alone.",
+          "points": 15.0
+        }
+      ]
+    },
+    {
+      "id": "human_gates",
+      "label": "Human decisions & launch gates",
+      "weight": 10,
+      "score": 15,
+      "weightedPoints": 1.5,
+      "checks": [
+        {
+          "id": "discovery_gate",
+          "label": "Discovery gate is signed for this site",
+          "weight": 20,
+          "status": "blocked",
+          "evidence": "No project-specific human gate ledger entry exists for the first archetype site.",
+          "gap": "Record discovery assumptions, evidence owner, and human decision.",
+          "points": 0.0
+        },
+        {
+          "id": "message_gate",
+          "label": "Message gate is signed for this site",
+          "weight": 20,
+          "status": "blocked",
+          "evidence": "No project-specific message approval is recorded.",
+          "gap": "Approve the first-archetype message map and proof boundary.",
+          "points": 0.0
+        },
+        {
+          "id": "direction_gate",
+          "label": "Direction gate is signed for this site",
+          "weight": 20,
+          "status": "blocked",
+          "evidence": "The master site demonstrates directions but does not record a selected project direction.",
+          "gap": "Select and record one direction for the focused portfolio page.",
+          "points": 0.0
+        },
+        {
+          "id": "launch_review",
+          "label": "Launch review and human approval exist",
+          "weight": 25,
+          "status": "blocked",
+          "evidence": "Current site is explicitly a concept/proof-of-work site, not an approved production launch.",
+          "gap": "Run the launch review only after form, legal, rights, ownership, and rollback evidence exist.",
+          "points": 0.0
+        },
+        {
+          "id": "concept_boundary",
+          "label": "The current public surface is honest about its status",
+          "weight": 15,
+          "status": "pass",
+          "evidence": "site/index.html concept labels and local-demo note",
+          "gap": "Preserve the concept boundary until production gates are genuinely complete.",
+          "points": 15.0
+        }
+      ]
+    }
+  ],
+  "hardBlockers": [
+    {
+      "checkId": "discovery_selection",
+      "category": "strategy_archetype",
+      "label": "A project-specific human archetype selection is recorded",
+      "gap": "Create the first project brief and record human confirmation of archetype fit."
+    },
+    {
+      "checkId": "form_delivery",
+      "category": "message_conversion",
+      "label": "Form delivery is real and tested",
+      "gap": "Add a reviewed production endpoint or an approved handoff route with recovery states."
+    },
+    {
+      "checkId": "message_signoff",
+      "category": "message_conversion",
+      "label": "Message has human/client sign-off",
+      "gap": "Record the human message decision in the first project gate log."
+    },
+    {
+      "checkId": "case_evidence",
+      "category": "portfolio_proof",
+      "label": "A permissioned, outcome-backed case study exists",
+      "gap": "Add one permissioned case with role, scope, evidence, and limitations; do not invent results."
+    },
+    {
+      "checkId": "performance_receipt",
+      "category": "qa_evidence",
+      "label": "Page-specific performance receipt exists",
+      "gap": "Measure the focused page on constrained mobile conditions and attach the result."
+    },
+    {
+      "checkId": "legal_routes",
+      "category": "operations_trust_legal",
+      "label": "Privacy, legal notice, and accessibility routes are real",
+      "gap": "Add reviewed, jurisdiction-appropriate routes before any public production launch."
+    },
+    {
+      "checkId": "analytics_consent",
+      "category": "operations_trust_legal",
+      "label": "Analytics and consent behavior is configured",
+      "gap": "Add a separately reviewed adapter and consent record; do not add tracking by default."
+    },
+    {
+      "checkId": "hosting_ownership",
+      "category": "operations_trust_legal",
+      "label": "Hosting, domain, and account ownership are recorded",
+      "gap": "Record an approved hosting/ownership handoff for the eventual portfolio deployment."
+    },
+    {
+      "checkId": "discovery_gate",
+      "category": "human_gates",
+      "label": "Discovery gate is signed for this site",
+      "gap": "Record discovery assumptions, evidence owner, and human decision."
+    },
+    {
+      "checkId": "message_gate",
+      "category": "human_gates",
+      "label": "Message gate is signed for this site",
+      "gap": "Approve the first-archetype message map and proof boundary."
+    },
+    {
+      "checkId": "direction_gate",
+      "category": "human_gates",
+      "label": "Direction gate is signed for this site",
+      "gap": "Select and record one direction for the focused portfolio page."
+    },
+    {
+      "checkId": "launch_review",
+      "category": "human_gates",
+      "label": "Launch review and human approval exist",
+      "gap": "Run the launch review only after form, legal, rights, ownership, and rollback evidence exist."
+    }
+  ],
+  "productionStatus": "blocked_until_gates_complete",
+  "recommendation": "Build the focused AI/automation portfolio page next, then attach project-specific Discovery, message, direction, QA, form, rights, legal, and launch evidence.",
+  "limitations": [
+    "The percentage measures repository evidence and implementation basis, not conversion performance or business success.",
+    "A concept or redesign can demonstrate method but cannot establish client results, rights, or universal quality.",
+    "Automated checks can expose gaps and block; they cannot approve a launch or legal sufficiency."
+  ]
+}

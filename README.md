@@ -77,6 +77,9 @@ network dependency and its teardown form is a local demonstration only.
 - `templates/archetypes/` and `research/archetype-template-evaluations/` — five
   direction-neutral master templates and their deliberately human-gated
   candidate evaluations.
+- `tools/readiness_audit.py` and `reports/` — reproducible percentage audit for
+  the first focused archetype portfolio site; it measures repository basis and
+  reports production blockers without granting launch authority.
 - `docs/architecture/LAYA-ADVISORY-LAYER.md` — optional model routing,
   abstention, calibration, and authority boundaries.
 - `LLMarena/` — preserved deep-research bundle; see
