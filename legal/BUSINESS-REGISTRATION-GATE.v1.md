@@ -20,12 +20,17 @@ not legal advice and not proof that a specific activity is or is not a Gewerbe.
 - [ ] Actual service description written in plain language.
 - [ ] Exact Gewerbewortlaut and scope confirmed with the regional WKO or
       competent authority.
+- [ ] The combined WITHKODEX/Proofline scope has been checked against the
+      proposed `Werbeagentur, Multimediaagentur` and IT-service wordings;
+      neither is assumed to cover the full scope without written confirmation.
 - [ ] General personal, residence, and eligibility requirements confirmed for
       the actual founder situation.
 - [ ] Registration record or documented professional exemption reviewed by a
       human; no assumption based on a price threshold.
 - [ ] Free-Gewerbe status is not being confused with an exemption from
       registration or scope limits.
+- [ ] `Unternehmensberatung einschließlich Unternehmensorganisation` is not
+      used as a public umbrella claim without a separate qualification review.
 - [ ] Business identity, contact address, and invoice profile prepared.
 - [ ] Tax, VAT, SVS, and WKO follow-up questions assigned to a qualified
       reviewer for the actual personal situation.

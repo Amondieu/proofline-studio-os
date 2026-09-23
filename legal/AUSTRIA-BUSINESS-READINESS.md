@@ -67,6 +67,36 @@ Do not market the studio as “officially qualified”, “certified”, or cove
 a particular Gewerbe until the wording has been confirmed for the actual
 service mix.
 
+### Working two-track option for WKO clarification
+
+Based on the current WKO profiles, the most useful clarification request for
+the combined WITHKODEX/Proofline scope is whether these two free-trade wordings
+are needed, sufficient, or need narrowing:
+
+1. `Werbeagentur, Multimediaagentur` for online-agency work such as webdesign,
+   information architecture, UX/UI optimisation, content, and the technical
+   implementation of digital communication surfaces; and
+2. `Dienstleistungen in der automatischen Datenverarbeitung und
+   Informationstechnik` for software, integrations, data processing, AI/system
+   implementation, and technical maintenance.
+
+The [WKO online-agency profile](https://www.wko.at/information-consulting/werbung-marktkommunikation/online-agentur)
+lists both creative and technical online-agency activities. The [WKO IT
+profile](https://www.wko.at/vlbg/information-consulting/unternehmensberatung-buchhaltung-informationstechnologie/infomappe-it-3.pdf)
+describes the IT service scope. These profiles are evidence for questions to
+ask, not permission to self-classify or an instruction to register both.
+
+`Werbegrafik-Designer` remains a separate design-related clarification lead if
+graphic/brand design becomes an independent core service. Dataset products and
+licensing require their own product, source, rights, tax, and contract review.
+
+Do not use `Unternehmensberatung einschließlich Unternehmensorganisation` as a
+casual umbrella label for strategy, management, or organisation work. The WKO
+identifies that field with a qualification/examination path; keep Proofline
+and WITHKODEX copy anchored in concrete design, communication, IT, integration,
+and implementation work until a separate qualification review says otherwise.
+See [WKO — Unternehmensberatung](https://www.wko.at/noe/bildung-lehre/ausscheibung-bp-unternehmensberatung).
+
 ### WKO clarification request
 
 Use this as a starting draft for the regional WKO Gründerservice. It is a
@@ -75,25 +105,29 @@ questionnaire, not a legal filing and must be adapted to the actual facts:
 ```text
 Betreff: Gewerbewortlaut für Webdesign- und Landing-Page-Studio
 
-Ich möchte in Österreich nebenberuflich als Einzelunternehmer B2B-Websites
-und Landing Pages anbieten. Mein tatsächlicher Leistungsumfang umfasst:
+Ich wohne in Österreich und möchte als Einzelunternehmer unter der
+Geschäftsbezeichnung „WITHKODEX“ B2B-Websites, Landing Pages und technische
+AI-/IT-Leistungen anbieten. Mein tatsächlicher Leistungsumfang umfasst:
 
 - Konzeption und Informationsarchitektur
 - UI-/Webdesign und visuelle Gestaltung
-- technische Umsetzung und Deployment
+- technische Umsetzung, Deployment und laufende Wartung
 - Formulare sowie Kalender-, CRM- und Analytics-Integrationen
-- laufende technische Wartung
-- conversion-orientierte Copy und Optimierung bestehender Landing Pages
+- API-/Schnittstellenintegration und technische Automatisierung
+- AI-/Agent-/MCP-Prototyping, Datenverarbeitung und technische Dokumentation
+- conversion-orientierte Copy und Optimierung digitaler Kommunikationsflächen
 
-Bitte teilen Sie mir mit, welche freien Gewerbe bzw. Gewerbewortlaute diesen
-konkreten Leistungsumfang abdecken und ob
+Bitte teilen Sie mir mit, ob die freien Gewerbe bzw. Gewerbewortlaute
+„Werbeagentur, Multimediaagentur“ und
 „Dienstleistungen in der automatischen Datenverarbeitung und
-Informationstechnik“ die technische Umsetzung, Integrationen und Wartung
-umfasst.
+Informationstechnik“ diesen konkreten Leistungsumfang abdecken.
 
-Bitte weisen Sie auch darauf hin, ob für UI-/Webdesign oder Copy/
-Conversion-Beratung eine zusätzliche Abgrenzung oder Anmeldung erforderlich
-ist.
+Bitte weisen Sie darauf hin, ob für UI-/Webdesign, Copy/Conversion-Arbeit,
+Dataset-/Lizenzprodukte oder einzelne Integrationen eine zusätzliche
+Abgrenzung oder Anmeldung erforderlich ist.
+
+Ich biete keine Rechts-, Steuer-, Finanz-, medizinische oder allgemeine
+Unternehmensberatung und keine verbindliche Compliance-Zertifizierung an.
 ```
 
 Record the written response, date, contact, exact scope discussed, and any
