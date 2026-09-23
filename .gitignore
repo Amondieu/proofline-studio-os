@@ -10,6 +10,9 @@ node_modules/
 .graphify/studio/
 .graphify/wiki/
 .graphify/converted/
+.graphify/profile/
+.graphify/.graphify_detect.json
+.graphify/.graphify_labels.json
 .graphify/manifest.json
 .graphify/branch.json
 .graphify/worktree.json
