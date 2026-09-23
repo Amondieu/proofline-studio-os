@@ -1,0 +1,25 @@
+{
+  "schemaVersion": "studio.qa-policy.v1",
+  "requiredViewportWidths": [360, 390, 768, 1024, 1440],
+  "launchReviews": ["mobile_conversion", "technical", "trust", "legal"],
+  "accessibilityBaseline": "WCAG 2.2 AA target; human review required",
+  "requiredEvidence": [
+    "client-owned-or-authorized-hosting",
+    "form-delivery-test",
+    "cta-route-test",
+    "keyboard-navigation-test",
+    "visible-focus-review",
+    "reduced-motion-review",
+    "contrast-review",
+    "asset-rights-confirmation",
+    "privacy-and-legal-link-review",
+    "analytics-consent-review",
+    "backup-or-export"
+  ],
+  "prohibitedClaims": ["conversion guaranteed", "GDPR compliant guaranteed", "exclusive AI asset", "results guaranteed"],
+  "authority": {
+    "automatedChecksCanBlock": true,
+    "automatedChecksCanApprove": false,
+    "automatedChecksCanPublish": false
+  }
+}

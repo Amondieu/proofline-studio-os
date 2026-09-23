@@ -1,0 +1,15 @@
+{
+  "schema": "graphify_ontology_outputs_v1",
+  "graph_hash": "101dc7cb6b11192e4d862b09ae626481a63ad47e952a68a35ef5d0c7b7bc86f5",
+  "profile_hash": "e08519eb11206649141d6b2b3ebc1e2700d89244855905184e826df489a227b1",
+  "generated_at": "2026-09-23T13:53:42.419Z",
+  "node_count": 0,
+  "relation_count": 0,
+  "wiki_page_count": 0,
+  "source_graph": ".graphify/graph.json",
+  "provenance_coverage": {
+    "criterion": "source_refs carries a citation span (file#location)",
+    "anchored": 0,
+    "total": 0
+  }
+}

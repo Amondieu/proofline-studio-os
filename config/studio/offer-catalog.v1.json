@@ -1,0 +1,32 @@
+{
+  "schemaVersion": "studio.offer-catalog.v1",
+  "offers": [
+    {
+      "id": "conversion-starter",
+      "label": "Conversion Starter",
+      "priceRange": "€500–750",
+      "delivery": "5 working days",
+      "bestFor": "A focused first landing page for a local or early-stage service offer.",
+      "includes": ["One-page landing page", "Copy for up to 7 sections", "Mobile-first build", "Inquiry form", "Basic metadata and Open Graph", "One revision round"],
+      "excludes": ["Full brand identity", "Complex integrations", "Unlimited revisions", "Legal advice"]
+    },
+    {
+      "id": "authority-sprint",
+      "label": "Authority Landing Sprint",
+      "priceRange": "€1,250–1,750",
+      "delivery": "7–10 working days",
+      "bestFor": "B2B AI, SaaS, and premium service offers that need message and trust architecture.",
+      "includes": ["90-minute discovery", "Message map and information architecture", "Custom creative direction", "8–10 sections", "Lead routing", "Analytics event plan", "Accessibility and launch QA", "Two revision rounds", "Handover recording"],
+      "excludes": ["Full rebrand", "E-commerce", "Custom app features", "Legal text drafting"]
+    },
+    {
+      "id": "launch-system",
+      "label": "Launch System",
+      "priceRange": "€2,500–3,000",
+      "delivery": "10–14 working days",
+      "bestFor": "A launch where positioning, offer architecture, variants, and operational handoff matter.",
+      "includes": ["Positioning memo", "Offer design", "Two hero or page variants", "8–12 custom visual assets", "Short motion direction", "CRM, calendar, or email routing", "Tracking plan", "Performance and accessibility QA", "14 days launch support", "Post-launch review"],
+      "excludes": ["Full brand relaunch", "Membership product", "Guaranteed conversion outcome", "Unlicensed client assets"]
+    }
+  ]
+}

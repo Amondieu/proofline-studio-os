@@ -1,0 +1,29 @@
+{
+  "schemaVersion": "studio.profile.v1",
+  "studioName": "Proofline Studio",
+  "positioning": {
+    "for": "B2B AI consultants, micro-SaaS founders, and premium creative businesses",
+    "weBuild": "High-trust, conversion-focused landing pages",
+    "soTheyCan": "Turn unclear offers into booked calls, qualified leads, or product demand",
+    "deliveryWindow": "7–14 days",
+    "without": ["generic templates", "endless revisions", "fabricated proof", "conversion guarantees"]
+  },
+  "primaryConversion": "Get a 3-point landing page teardown",
+  "secondaryConversion": "Explore the 10-day launch system",
+  "defaultDirection": "precision",
+  "nonNegotiables": [
+    "One page has one primary conversion.",
+    "Copy and message map precede visual production.",
+    "Every final build is tested at 360, 390, 768, 1024, and 1440 pixels.",
+    "No launch without mobile, technical, trust, and legal review.",
+    "No invented testimonials, logos, metrics, claims, or rights.",
+    "Client owns or controls domain, hosting, analytics, CRM, and access.",
+    "Automation may recommend or block; a human authorizes launch."
+  ],
+  "authority": {
+    "evaluationIsReadOnly": true,
+    "humanLaunchRequired": true,
+    "livePublishingEnabled": false,
+    "providerCredentialsStored": false
+  }
+}

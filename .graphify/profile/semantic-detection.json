@@ -1,0 +1,60 @@
+{
+  "files": {
+    "code": [
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\scripts\\normalize_graphify_manifest.mjs",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\scripts\\portable_audit.py",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\scripts\\validate_studio_contracts.py",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\tests\\test_studio_harness.py",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\studio\\__init__.py",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\studio\\__main__.py",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\studio\\cli.py",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\studio\\harness.py",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\studio\\models.py",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\studio\\portability.py",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\site\\app.js"
+    ],
+    "document": [
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\MIGRATION-MAP.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\architecture\\LANDING-STUDIO-HARNESS.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\architecture\\STUDIO-OPERATING-MODEL.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\operations\\BUILD-CHECKLIST.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\operations\\CLIENT-DISCOVERY-BRIEF.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\operations\\LAUNCH-REVIEW.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\operations\\MESSAGE-MAP.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\strategy\\08-LANDING-STUDIO-OS.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\strategy\\09-MASTER-SITE-CONCEPT.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\strategy\\10-CREATIVE-DIRECTIONS.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\strategy\\11-OFFER-CATALOG.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\strategy\\12-CLIENT-QA-AND-COMPLIANCE.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\docs\\strategy\\README.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\skills\\landing-studio\\SKILL.md",
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\site\\index.html"
+    ],
+    "paper": [],
+    "image": [
+      "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\site\\favicon.svg"
+    ],
+    "video": []
+  },
+  "total_files": 27,
+  "total_words": 6272,
+  "needs_graph": false,
+  "warning": "Corpus is ~6.272 words - fits in a single context window. You may not need a graph.",
+  "skipped_sensitive": [],
+  "graphifyignore_patterns": 168,
+  "scope": {
+    "requested_mode": "all",
+    "resolved_mode": "all",
+    "source": "configured-default",
+    "root": "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio",
+    "git_root": "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio",
+    "candidate_count": null,
+    "included_count": 27,
+    "excluded_untracked_count": 0,
+    "excluded_ignored_count": 0,
+    "excluded_sensitive_count": 0,
+    "missing_committed_count": 0,
+    "warnings": [],
+    "recommendation": null
+  }
+}

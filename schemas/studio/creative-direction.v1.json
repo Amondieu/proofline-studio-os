@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:creative-direction:v1",
+  "title": "Proofline Creative Direction v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "label", "audience", "promise", "tokens", "motion"],
+  "properties": {
+    "id": { "enum": ["precision", "cinematic", "editorial"] },
+    "label": { "type": "string", "minLength": 3 },
+    "audience": { "type": "string", "minLength": 3 },
+    "promise": { "type": "string", "minLength": 3 },
+    "tokens": { "type": "object", "additionalProperties": { "type": "string" } },
+    "motion": { "enum": ["signal-grid", "cinematic-object", "editorial-light"] }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "name": "proofline-studio",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Human-governed operating system and proof-of-work site for a conversion landing-page studio.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "graph:validate": "graphify profile validate --config graphify.yaml",
+    "graph:update": "graphify profile build . --config graphify.yaml && graphify update . --scope all --no-description --no-label && node scripts/normalize_graphify_manifest.mjs .",
+    "graph:status": "graphify check-update .",
+    "graph:portable": "graphify portable-check .",
+    "studio:validate": "python scripts/validate_studio_contracts.py",
+    "studio:test": "python -m unittest discover -s tests -p \"test_*.py\"",
+    "portable:audit": "python scripts/portable_audit.py"
+  },
+  "devDependencies": {
+    "@sentropic/graphify": "0.18.0"
+  }
+}

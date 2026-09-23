@@ -1,0 +1,61 @@
+# Proofline Studio
+
+Proofline Studio is a human-governed operating system for professional
+websites and conversion landing pages. It combines a repeatable studio method,
+scope-aware offers, creative direction systems, implementation checklists, and
+a read-only launch harness.
+
+The public `site/` is an interactive proof-of-work master site. The `studio/`
+package is the operational core. It evaluates a project manifest through:
+
+`Discovery -> Message -> Direction -> Build -> QA -> Launch`
+
+The evaluator can block and explain missing work. It cannot approve, publish,
+deploy, or assert that a legal or factual claim is true. A human owns every
+meaningful sign-off.
+
+## What this repo is for
+
+- productized landing-page delivery for B2B AI/automation, micro-SaaS, and
+  premium service offers;
+- strategy, copy, art direction, implementation, accessibility, performance,
+  tracking, and handover as one controlled service;
+- a reusable harness that prevents scope drift, fabricated proof, and premature
+  launch;
+- a master site that demonstrates three controlled creative directions without
+  changing the underlying information architecture or conversion path.
+
+## Quick start
+
+```powershell
+python -m pip install -r requirements.txt
+python scripts/validate_studio_contracts.py
+python -m unittest discover -s tests -p "test_*.py"
+python -m studio validate tests/fixtures/studio/blocked-project.v1.json
+python scripts/portable_audit.py
+```
+
+Open `site/index.html` directly for the local proof-of-work site. It has no
+network dependency and its teardown form is a local demonstration only.
+
+## Repository map
+
+- `docs/strategy/` — studio positioning, offers, creative directions, and
+  client-facing operating recipes.
+- `docs/architecture/` — authority model and harness design.
+- `docs/operations/` — reusable briefs and checklists for client work.
+- `studio/` — typed project contracts, deterministic gate evaluator, portable
+  path helpers, and explicit human-gate ledger writer.
+- `schemas/studio/` — versioned JSON contracts.
+- `config/studio/` — profile, offers, creative directions, and QA policy.
+- `site/` — Proofline Studio master-site proof of work.
+- `skills/landing-studio/` — agent execution envelope for studio tasks.
+
+## Deliberately outside this repo
+
+There is no social publishing, content persona engine, viral cookbook, Ruflo
+swarm, live provider credential, scheduler authority, or autonomous client
+deployment. Those were part of the source project's AI-media scope and would
+make this studio's responsibilities less clear.
+
+See [MIGRATION-MAP.md](docs/MIGRATION-MAP.md) for the full adoption decision.

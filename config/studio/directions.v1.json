@@ -1,0 +1,56 @@
+{
+  "schemaVersion": "studio.creative-directions.v1",
+  "directions": [
+    {
+      "id": "precision",
+      "label": "Precision System",
+      "audience": "SaaS, AI, automation, analytics, and complex B2B offers",
+      "promise": "Complexity becomes a clear decision system.",
+      "tokens": {
+        "background": "#f6f4ef",
+        "surface": "#ffffff",
+        "text": "#151515",
+        "muted": "#686868",
+        "accent": "#165dff",
+        "radius": "18px",
+        "displayFont": "Instrument Sans, sans-serif",
+        "bodyFont": "Inter, sans-serif"
+      },
+      "motion": "signal-grid"
+    },
+    {
+      "id": "cinematic",
+      "label": "Cinematic Authority",
+      "audience": "Ambitious launches, creative studios, and memorable brands",
+      "promise": "Your offer deserves a stage, not another page.",
+      "tokens": {
+        "background": "#0a0a0a",
+        "surface": "#151515",
+        "text": "#f6f1e7",
+        "muted": "#b8b0a5",
+        "accent": "#ef3d35",
+        "radius": "4px",
+        "displayFont": "Cormorant Garamond, serif",
+        "bodyFont": "Manrope, sans-serif"
+      },
+      "motion": "cinematic-object"
+    },
+    {
+      "id": "editorial",
+      "label": "Editorial Luxury",
+      "audience": "Premium advisory, architecture, hospitality, and high-trust services",
+      "promise": "Clarity is the ultimate luxury.",
+      "tokens": {
+        "background": "#f2eee5",
+        "surface": "#e7dfd0",
+        "text": "#263128",
+        "muted": "#667064",
+        "accent": "#8d6a38",
+        "radius": "1px",
+        "displayFont": "DM Serif Display, serif",
+        "bodyFont": "DM Sans, sans-serif"
+      },
+      "motion": "editorial-light"
+    }
+  ]
+}

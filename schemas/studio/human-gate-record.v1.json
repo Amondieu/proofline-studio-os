@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:human-gate-record:v1",
+  "title": "Proofline Human Gate Record v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "projectId", "gateId", "decision", "actor", "rationale", "recordedAt", "previousHash", "recordHash"],
+  "properties": {
+    "schemaVersion": { "const": "studio.human-gate-record.v1" },
+    "projectId": { "type": "string" },
+    "gateId": { "enum": ["discovery", "message", "direction", "build", "qa", "launch"] },
+    "decision": { "enum": ["approved", "blocked", "superseded"] },
+    "actor": { "type": "string", "minLength": 1 },
+    "rationale": { "type": "string", "minLength": 1 },
+    "recordedAt": { "type": "string", "format": "date-time" },
+    "previousHash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" },
+    "recordHash": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" }
+  }
+}

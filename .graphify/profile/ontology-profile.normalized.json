@@ -1,0 +1,319 @@
+{
+  "id": "proofline-studio",
+  "version": "1",
+  "default_language": "en",
+  "sourcePath": "C:\\Users\\Shadow\\ShadowDrive\\0.1.Ai\\proofline-studio\\graphify\\ontology-profile.yaml",
+  "node_types": {
+    "StudioProject": {
+      "aliases": [
+        "project",
+        "client_project",
+        "landing_project"
+      ],
+      "source_backed": true,
+      "status_policy": "operational"
+    },
+    "DiscoveryBrief": {
+      "aliases": [
+        "brief",
+        "client_discovery",
+        "discovery"
+      ],
+      "source_backed": true,
+      "status_policy": "human_review"
+    },
+    "MessageMap": {
+      "aliases": [
+        "copy_map",
+        "message_architecture",
+        "positioning"
+      ],
+      "source_backed": true,
+      "status_policy": "human_review"
+    },
+    "CreativeDirection": {
+      "aliases": [
+        "direction",
+        "visual_direction",
+        "design_system"
+      ],
+      "source_backed": true,
+      "status_policy": "human_review"
+    },
+    "ProofAsset": {
+      "aliases": [
+        "proof",
+        "testimonial",
+        "logo",
+        "case_study",
+        "asset"
+      ],
+      "source_backed": true,
+      "status_policy": "evidence_required"
+    },
+    "QAReview": {
+      "aliases": [
+        "qa",
+        "quality_assurance",
+        "launch_review"
+      ],
+      "source_backed": true,
+      "status_policy": "human_review"
+    },
+    "GateDecision": {
+      "aliases": [
+        "gate",
+        "signoff",
+        "human_gate"
+      ],
+      "source_backed": true,
+      "status_policy": "human_review"
+    },
+    "Standard": {
+      "aliases": [
+        "quality_standard",
+        "accessibility",
+        "performance",
+        "compliance"
+      ],
+      "source_backed": true,
+      "status_policy": "reference"
+    },
+    "Offer": {
+      "aliases": [
+        "package",
+        "service",
+        "sprint"
+      ],
+      "source_backed": true,
+      "status_policy": "reference"
+    },
+    "Task": {
+      "aliases": [
+        "task",
+        "work_item",
+        "job"
+      ],
+      "source_backed": true,
+      "status_policy": "operational"
+    }
+  },
+  "relation_types": {
+    "has_discovery": {
+      "source_types": [
+        "StudioProject"
+      ],
+      "target_types": [
+        "DiscoveryBrief"
+      ],
+      "requires_evidence": true,
+      "assertion_basis": [
+        "EXTRACTED"
+      ],
+      "derivation_methods": [
+        "source_citation"
+      ]
+    },
+    "freezes": {
+      "source_types": [
+        "MessageMap",
+        "GateDecision"
+      ],
+      "target_types": [
+        "StudioProject",
+        "CreativeDirection"
+      ],
+      "requires_evidence": true,
+      "assertion_basis": [
+        "EXTRACTED",
+        "INFERRED"
+      ],
+      "derivation_methods": [
+        "human_action",
+        "reviewed_synthesis"
+      ]
+    },
+    "uses_direction": {
+      "source_types": [
+        "StudioProject"
+      ],
+      "target_types": [
+        "CreativeDirection"
+      ],
+      "requires_evidence": true,
+      "assertion_basis": [
+        "EXTRACTED"
+      ],
+      "derivation_methods": [
+        "source_citation"
+      ]
+    },
+    "supported_by": {
+      "source_types": [
+        "StudioProject",
+        "MessageMap"
+      ],
+      "target_types": [
+        "ProofAsset"
+      ],
+      "requires_evidence": true,
+      "assertion_basis": [
+        "EXTRACTED"
+      ],
+      "derivation_methods": [
+        "source_citation"
+      ]
+    },
+    "governed_by": {
+      "source_types": [
+        "StudioProject",
+        "CreativeDirection",
+        "QAReview"
+      ],
+      "target_types": [
+        "Standard"
+      ],
+      "requires_evidence": true,
+      "assertion_basis": [
+        "EXTRACTED",
+        "INFERRED"
+      ],
+      "derivation_methods": [
+        "policy_match",
+        "reviewed_synthesis"
+      ]
+    },
+    "reviewed_by": {
+      "source_types": [
+        "StudioProject"
+      ],
+      "target_types": [
+        "QAReview",
+        "GateDecision"
+      ],
+      "requires_evidence": true,
+      "assertion_basis": [
+        "EXTRACTED"
+      ],
+      "derivation_methods": [
+        "human_action"
+      ]
+    },
+    "packages_as": {
+      "source_types": [
+        "StudioProject"
+      ],
+      "target_types": [
+        "Offer"
+      ],
+      "requires_evidence": true,
+      "assertion_basis": [
+        "EXTRACTED"
+      ],
+      "derivation_methods": [
+        "source_citation"
+      ]
+    }
+  },
+  "registries": {},
+  "citation_policy": {
+    "minimum_granularity": "page",
+    "require_source_file": true,
+    "allow_bbox": "when_available"
+  },
+  "hardening": {
+    "statuses": [
+      "candidate",
+      "proposed",
+      "needs_review",
+      "validated",
+      "reference",
+      "rejected",
+      "superseded"
+    ],
+    "default_status": "candidate",
+    "promotion_requires": [
+      "evidence_refs",
+      "human_review"
+    ],
+    "status_transitions": []
+  },
+  "inference_policy": {
+    "allow_inferred_relations": true,
+    "allowed_relation_types": [
+      "freezes",
+      "governed_by"
+    ],
+    "require_evidence_refs": true
+  },
+  "evidence_policy": {
+    "require_evidence_refs": true,
+    "min_refs": 1,
+    "node_types": [
+      "StudioProject",
+      "DiscoveryBrief",
+      "MessageMap",
+      "CreativeDirection",
+      "ProofAsset",
+      "QAReview",
+      "GateDecision",
+      "Standard",
+      "Offer"
+    ],
+    "relation_types": [
+      "has_discovery",
+      "freezes",
+      "uses_direction",
+      "supported_by",
+      "governed_by",
+      "reviewed_by",
+      "packages_as"
+    ]
+  },
+  "hierarchies": {},
+  "class_hierarchies": {},
+  "outputs": {
+    "ontology": {
+      "enabled": true,
+      "artifact_schema": "graphify_ontology_outputs_v1",
+      "canonical_node_types": [
+        "StudioProject",
+        "DiscoveryBrief",
+        "MessageMap",
+        "CreativeDirection",
+        "ProofAsset",
+        "QAReview",
+        "GateDecision",
+        "Standard",
+        "Offer",
+        "Task"
+      ],
+      "source_node_types": [
+        "ProofAsset",
+        "QAReview",
+        "GateDecision"
+      ],
+      "occurrence_node_types": [],
+      "alias_fields": [
+        "aliases",
+        "normalized_terms"
+      ],
+      "relation_exports": [
+        "has_discovery",
+        "freezes",
+        "uses_direction",
+        "supported_by",
+        "governed_by",
+        "reviewed_by",
+        "packages_as"
+      ],
+      "wiki": {
+        "enabled": false,
+        "page_node_types": [],
+        "include_backlinks": false,
+        "include_source_snippets": false
+      }
+    }
+  },
+  "profile_hash": "e08519eb11206649141d6b2b3ebc1e2700d89244855905184e826df489a227b1"
+}

@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:proofline:studio:project:v1",
+  "title": "Proofline Studio Project v1",
+  "description": "A human-governed landing-page delivery manifest. It never grants launch authority.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "client_slug", "current_stage", "discovery"],
+  "properties": {
+    "schema_version": { "const": "studio.project.v1" },
+    "project_id": { "type": "string", "pattern": "^studio_[a-z0-9_-]{4,80}$" },
+    "client_slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]{2,60}$" },
+    "current_stage": { "enum": ["discovery", "message", "direction", "build", "qa", "launch"] },
+    "discovery": { "$ref": "#/$defs/discovery" },
+    "message_map": { "$ref": "#/$defs/message_map" },
+    "design_direction": { "$ref": "#/$defs/design_direction" },
+    "build": { "$ref": "#/$defs/build" },
+    "launch_review": { "$ref": "#/$defs/launch_review" }
+  },
+  "$defs": {
+    "discovery": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["company_name", "market", "offer", "average_order_value", "target_buyer", "buying_situation", "expensive_problem", "current_alternatives", "buyer_hesitations", "primary_conversion", "tone_of_voice"],
+      "properties": {
+        "company_name": { "type": "string", "minLength": 2 },
+        "website_url": { "type": ["string", "null"] },
+        "market": { "type": "string", "minLength": 2 },
+        "offer": { "type": "string", "minLength": 10 },
+        "average_order_value": { "type": "string", "minLength": 1 },
+        "target_buyer": { "type": "string", "minLength": 10 },
+        "buying_situation": { "type": "string", "minLength": 10 },
+        "expensive_problem": { "type": "string", "minLength": 10 },
+        "current_alternatives": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "buyer_hesitations": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "primary_conversion": { "type": "string", "minLength": 3 },
+        "secondary_conversion": { "type": ["string", "null"] },
+        "current_traffic": { "type": ["string", "null"] },
+        "current_conversion_rate": { "type": ["string", "null"] },
+        "existing_tools": { "type": "array", "items": { "type": "string" } },
+        "proof": { "type": "array", "items": { "type": "string" } },
+        "brand_assets": { "type": "array", "items": { "type": "string" } },
+        "tone_of_voice": { "type": "array", "minItems": 1, "items": { "type": "string" } },
+        "legal_constraints": { "type": "array", "items": { "type": "string" } },
+        "assumption_map": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "message_map": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["target_audience", "primary_job_to_be_done", "core_pain", "desired_outcome", "mechanism", "primary_promise", "primary_cta", "top_objections", "required_sections", "client_signoff"],
+      "properties": {
+        "target_audience": { "type": "string", "minLength": 10 },
+        "primary_job_to_be_done": { "type": "string", "minLength": 10 },
+        "core_pain": { "type": "string", "minLength": 10 },
+        "desired_outcome": { "type": "string", "minLength": 10 },
+        "mechanism": { "type": "string", "minLength": 10 },
+        "primary_promise": { "type": "string", "minLength": 10 },
+        "primary_cta": { "type": "string", "minLength": 3 },
+        "proof": { "type": "array", "items": { "type": "string" } },
+        "top_objections": { "type": "array", "minItems": 3, "items": { "type": "string" } },
+        "required_sections": { "type": "array", "minItems": 6, "items": { "type": "string" } },
+        "assumptions_to_confirm": { "type": "array", "items": { "type": "string" } },
+        "client_signoff": { "type": "boolean" },
+        "signed_off_by": { "type": ["string", "null"] },
+        "signed_off_at": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "design_direction": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["direction_id", "label", "intended_audience", "visual_principle", "palette", "typography", "motion_principle", "mobile_preview_reviewed", "selected_by_client"],
+      "properties": {
+        "direction_id": { "enum": ["precision", "cinematic", "editorial"] },
+        "label": { "type": "string", "minLength": 3 },
+        "intended_audience": { "type": "string", "minLength": 10 },
+        "visual_principle": { "type": "string", "minLength": 10 },
+        "palette": { "type": "array", "minItems": 3, "items": { "type": "string" } },
+        "typography": { "type": "array", "minItems": 2, "items": { "type": "string" } },
+        "motion_principle": { "type": "string", "minLength": 10 },
+        "desktop_asset_ref": { "type": ["string", "null"] },
+        "mobile_asset_ref": { "type": ["string", "null"] },
+        "mobile_preview_reviewed": { "type": "boolean" },
+        "selected_by_client": { "type": "boolean" },
+        "selected_by": { "type": ["string", "null"] },
+        "selected_at": { "type": ["string", "null"], "format": "date-time" }
+      }
+    },
+    "build": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["responsive_viewports", "navigation_works", "ctas_route_correctly", "form_validation_works", "form_delivery_tested", "calendar_or_secondary_flow_tested", "metadata_present", "open_graph_present", "alt_text_reviewed", "privacy_and_legal_links_present", "analytics_consent_configured", "assets_rights_confirmed", "no_fabricated_claims", "client_admin_access_ready", "backup_export_supplied"],
+      "properties": {
+        "responsive_viewports": { "type": "array", "items": { "enum": ["360", "390", "768", "1024", "1440"] } },
+        "navigation_works": { "type": "boolean" },
+        "ctas_route_correctly": { "type": "boolean" },
+        "form_validation_works": { "type": "boolean" },
+        "form_delivery_tested": { "type": "boolean" },
+        "calendar_or_secondary_flow_tested": { "type": "boolean" },
+        "metadata_present": { "type": "boolean" },
+        "open_graph_present": { "type": "boolean" },
+        "alt_text_reviewed": { "type": "boolean" },
+        "privacy_and_legal_links_present": { "type": "boolean" },
+        "analytics_consent_configured": { "type": "boolean" },
+        "assets_rights_confirmed": { "type": "boolean" },
+        "no_fabricated_claims": { "type": "boolean" },
+        "client_admin_access_ready": { "type": "boolean" },
+        "backup_export_supplied": { "type": "boolean" }
+      }
+    },
+    "launch_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mobile_conversion_pass", "technical_pass", "trust_pass", "legal_pass", "client_approval"],
+      "properties": {
+        "mobile_conversion_pass": { "type": "boolean" },
+        "technical_pass": { "type": "boolean" },
+        "trust_pass": { "type": "boolean" },
+        "legal_pass": { "type": "boolean" },
+        "reviewer": { "type": ["string", "null"] },
+        "client_approval": { "type": "boolean" },
+        "review_notes": { "type": "array", "items": { "type": "string" } },
+        "reviewed_at": { "type": ["string", "null"], "format": "date-time" }
+      }
+    }
+  }
+}

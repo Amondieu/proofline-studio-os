@@ -1,0 +1,21 @@
+{
+  "schema_version": "studio.project.v1",
+  "project_id": "studio_demo_blocked",
+  "client_slug": "demo-client",
+  "current_stage": "discovery",
+  "discovery": {
+    "company_name": "Demo Systems",
+    "market": "B2B workflow software",
+    "offer": "A workflow system for small operations teams that need fewer manual handoffs.",
+    "average_order_value": "€2,000 annual contract",
+    "target_buyer": "Operations leaders at growing B2B teams with repeated manual handoffs.",
+    "buying_situation": "The team has outgrown spreadsheets and needs a reliable workflow before hiring.",
+    "expensive_problem": "Manual handoffs create delays, missed follow-ups, and unclear ownership.",
+    "current_alternatives": ["Spreadsheets", "Internal scripts"],
+    "buyer_hesitations": ["Implementation effort", "Switching cost"],
+    "primary_conversion": "Book a workflow audit",
+    "tone_of_voice": ["precise", "calm", "direct"],
+    "proof": [],
+    "assumption_map": ["Customer proof still needs to be supplied by the client."]
+  }
+}

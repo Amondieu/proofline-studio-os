@@ -1,0 +1,19 @@
+version: 1
+
+profile:
+  path: graphify/ontology-profile.yaml
+
+inputs:
+  corpus:
+    - docs
+    - schemas
+    - scripts
+    - tests
+    - config
+    - studio
+    - skills
+    - site
+
+dataprep:
+  pdf_ocr: auto
+  citation_minimum: file
